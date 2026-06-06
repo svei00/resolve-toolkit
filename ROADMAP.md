@@ -70,6 +70,21 @@ UserControls Current + Total as integer sliders). Pop-in reused from Keystroke.
 
 ## Toolkit — Python scripting (specs in SKILL.md, build in this order)
 
+**Interface: CLI, not GUI.** Single-editor workflow, needs to run quick checks and batch jobs alongside Resolve —
+a GUI would be pure overhead here. Use Python's `argparse` (stdlib, no extra dependency) so every command gets
+"describe yourself" behavior for free:
+
+- Running `python scripts\rtk.py` with **no arguments** must print usage + the list of subcommands (wire this
+  explicitly — don't rely on default argparse behavior, which exits with an error instead of showing help when no
+  subcommand is given).
+- Every subcommand needs a one-line `help=` and a longer `description=` so `rtk.py apply -h` explains what it does,
+  its required/optional args, and gives one example invocation in the epilog.
+- Top-level `rtk.py -h` output must explain: what this tool is (Resolve must be open, Studio-only), the one-time
+  setup step (External scripting using = Local), and list all subcommands with a one-line summary each.
+- Acceptance for T1 explicitly includes: `python scripts\rtk.py` (no args) and `python scripts\rtk.py -h` both print
+  clear self-documenting help — not just `info` working.
+
+Commands:
 - ⬜ **T1 `scripts/resolve_toolkit/connect.py` + `rtk.py info`** — bootstrap connection (code sketch in skill), print
   project/timeline/fps/marker count. Acceptance: Svei runs `python scripts\rtk.py info` with Resolve open, sees his project.
   One-time manual step: Preferences → System → General → External scripting using = **Local**.
@@ -78,6 +93,11 @@ UserControls Current + Total as integer sliders). Pop-in reused from Keystroke.
   Generators/Titles only (API can't apply Effects — document). Verify empirically which track it lands on.
 - ⬜ **T4 `rtk.py export`** — whole timeline with `--preset`, or `--by-markers --color X` using duration markers as MarkIn/MarkOut segments. `rtk.py presets` lists render presets.
 - ⬜ **T5** config file `marker-map.json` (marker color → template name) so one command dresses a whole timeline.
+
+**Model for this toolkit: Sonnet 5** for all of T1–T5. It's documented-API glue code — no architecture left to invent
+(specs above + connection code in SKILL.md) and no need for Opus-level reasoning. Fable stays out per the
+fable-for-architecture-only rule. Haiku is not recommended even for the simpler read-only commands (T1/T2) — keep
+one model across the whole toolkit rather than risk it fumbling frame-rate/timecode edge cases in T3/T4.
 
 ## Housekeeping
 
