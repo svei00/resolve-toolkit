@@ -1,0 +1,327 @@
+{
+	Tools = ordered() {
+		Cross1 = MacroOperator {
+			CtrlWZoom = false,
+			Inputs = ordered() {
+				Position = InstanceInput {
+					SourceOp = "FinalMerge",
+					Source = "Center",
+					Name = "Position",
+					Page = "Controls",
+				},
+				Zoom = InstanceInput {
+					SourceOp = "FinalMerge",
+					Source = "Size",
+					Name = "Zoom",
+					MinScale = 0.1,
+					MaxScale = 4,
+					Page = "Controls",
+					Default = 1,
+				},
+				Rotation = InstanceInput {
+					SourceOp = "FinalMerge",
+					Source = "Angle",
+					Name = "Rotation",
+					Page = "Controls",
+					Default = 0,
+				},
+				Thickness = InstanceInput {
+					SourceOp = "ThickenCross",
+					Source = "XAmount",
+					Name = "Thickness",
+					MinScale = -0.004,
+					MaxScale = 0.012,
+					Page = "Controls",
+					Default = 0,
+				},
+				DrawTime = InstanceInput {
+					SourceOp = "XBG",
+					Source = "DrawTime",
+					Name = "Draw Time (Frames)",
+					Page = "Controls",
+					Default = 30,
+				},
+				ColorR = InstanceInput {
+					SourceOp = "ColorBG",
+					Source = "TopLeftRed",
+					Name = "Color",
+					ControlGroup = 6,
+					Page = "Controls",
+					Default = 1,
+				},
+				ColorG = InstanceInput {
+					SourceOp = "ColorBG",
+					Source = "TopLeftGreen",
+					ControlGroup = 6,
+					Default = 0,
+				},
+				ColorB = InstanceInput {
+					SourceOp = "ColorBG",
+					Source = "TopLeftBlue",
+					ControlGroup = 6,
+					Default = 0,
+				},
+				ShadowStrength = InstanceInput {
+					SourceOp = "DropShadow1",
+					Source = "shadowStrength",
+					Name = "Shadow Opacity",
+					Page = "Shadow",
+					Default = 0.45,
+				},
+				ShadowAngle = InstanceInput {
+					SourceOp = "DropShadow1",
+					Source = "shadowAngle",
+					Name = "Shadow Angle",
+					Page = "Shadow",
+					Default = 45,
+				},
+				ShadowDistance = InstanceInput {
+					SourceOp = "DropShadow1",
+					Source = "ShadowDistance",
+					Name = "Shadow Distance",
+					MaxScale = 0.2000000029802,
+					Page = "Shadow",
+					Default = 0.015,
+				},
+				ShadowBlur = InstanceInput {
+					SourceOp = "DropShadow1",
+					Source = "shadowBlur",
+					Name = "Shadow Softness",
+					Page = "Shadow",
+					Default = 0.38,
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "FinalMerge",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				XBG = Background {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 2048, },
+						Height = Input { Value = 2048, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0, },
+						TopLeftGreen = Input { Value = 0, },
+						TopLeftBlue = Input { Value = 0, },
+						TopLeftAlpha = Input { Value = 0, },
+						DrawTime = Input { Value = 30, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -440, -103 } },
+					UserControls = ordered() {
+						DrawTime = { INP_Default = 30, INP_Integer = true, INPID_InputControl = "SliderControl", INP_MinScale = 1, INP_MaxScale = 120, INP_MinAllowed = 1, INP_MaxAllowed = 600, LINKID_DataType = "Number", LINKS_Name = "Draw Time (Frames)", ICS_ControlPage = "Controls", }
+					}
+				},
+				PaintX = Paint {
+					CtrlWShown = false,
+					Inputs = {
+						Input = Input {
+							SourceOp = "XBG",
+							Source = "Output",
+						},
+						Paint = Input {
+							SourceOp = "StrokeX2",
+							Source = "Out",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -330, -103 } },
+				},
+				StrokeX1 = Stroke {
+					Points = {
+						{ X = -0.135, Y = 0.150, Time = 0 },
+						{ X = -0.106, Y = 0.119, Time = 6 },
+						{ X = -0.077, Y = 0.083, Time = 12 },
+						{ X = -0.047, Y = 0.045, Time = 18 },
+						{ X = -0.016, Y = 0.013, Time = 24 },
+						{ X = 0.015, Y = -0.020, Time = 30 },
+						{ X = 0.046, Y = -0.059, Time = 36 },
+						{ X = 0.077, Y = -0.097, Time = 42 },
+						{ X = 0.107, Y = -0.127, Time = 48 },
+						{ X = 0.135, Y = -0.155, Time = 54 }
+					},
+					IsThreaded = false,
+					Brushes = { "CircleBrush" },
+					ApplyModes = { "PaintApplyColor" },
+					CtrlWZoom = false,
+					Inputs = {
+						BrushSize = Input {
+							Value = Number {
+								Value = 0.022
+							},
+						},
+						Softness = Input {
+							Value = Number {
+								Value = 0.08
+							},
+						},
+						BrushControls = Input { Value = 1, },
+						BrushShape = Input { Value = FuID { "CircleBrush" }, },
+						["PaintApplyColor.Red"] = Input { Value = 1, },
+						["PaintApplyColor.Green"] = Input { Value = 1, },
+						["PaintApplyColor.Blue"] = Input { Value = 1, },
+						StrokeControls = Input { Value = 1, },
+						StrokeAnimation = Input { Value = 2, },
+						Duration = Input { Value = 30, },
+						WriteOnEnd = Input {
+							Value = 1,
+							Expression = "min(1, time/max(0.5*XBG.DrawTime,1))*min(1, time/max(0.5*XBG.DrawTime,1))*(3 - 2*min(1, time/max(0.5*XBG.DrawTime,1)))",
+						},
+						Center = Input { Value = { 0.5, 0.5 }, }
+					},
+				},
+				StrokeX2 = Stroke {
+					Points = {
+						{ X = 0.135, Y = 0.150, Time = 0 },
+						{ X = 0.106, Y = 0.118, Time = 6 },
+						{ X = 0.076, Y = 0.084, Time = 12 },
+						{ X = 0.046, Y = 0.047, Time = 18 },
+						{ X = 0.015, Y = 0.012, Time = 24 },
+						{ X = -0.016, Y = -0.022, Time = 30 },
+						{ X = -0.047, Y = -0.060, Time = 36 },
+						{ X = -0.078, Y = -0.093, Time = 42 },
+						{ X = -0.108, Y = -0.126, Time = 48 },
+						{ X = -0.135, Y = -0.155, Time = 54 }
+					},
+					IsThreaded = false,
+					Brushes = { "CircleBrush" },
+					ApplyModes = { "PaintApplyColor" },
+					CtrlWZoom = false,
+					Inputs = {
+						Paint = Input {
+							SourceOp = "StrokeX1",
+							Source = "Out",
+						},
+						BrushSize = Input {
+							Value = Number {
+								Value = 0.022
+							},
+						},
+						Softness = Input {
+							Value = Number {
+								Value = 0.08
+							},
+						},
+						BrushControls = Input { Value = 1, },
+						BrushShape = Input { Value = FuID { "CircleBrush" }, },
+						["PaintApplyColor.Red"] = Input { Value = 1, },
+						["PaintApplyColor.Green"] = Input { Value = 1, },
+						["PaintApplyColor.Blue"] = Input { Value = 1, },
+						StrokeControls = Input { Value = 1, },
+						StrokeAnimation = Input { Value = 2, },
+						Duration = Input { Value = 30, },
+						WriteOnEnd = Input {
+							Value = 1,
+							Expression = "min(1, max(0, (time - 0.5*XBG.DrawTime)/max(0.5*XBG.DrawTime,1)))*min(1, max(0, (time - 0.5*XBG.DrawTime)/max(0.5*XBG.DrawTime,1)))*(3 - 2*min(1, max(0, (time - 0.5*XBG.DrawTime)/max(0.5*XBG.DrawTime,1))))",
+						},
+						Center = Input { Value = { 0.5, 0.5 }, }
+					},
+				},
+				ThickenCross = ErodeDilate {
+					CtrlWShown = false,
+					Inputs = {
+						XAmount = Input { Value = 0, },
+						Input = Input {
+							SourceOp = "PaintX",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -220, -103 } },
+				},
+				BmpMask = BitmapMask {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 2048, },
+						MaskHeight = Input { Value = 2048, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Image = Input {
+							SourceOp = "ThickenCross",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -110, -103 } },
+				},
+				ColorBG = Background {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "BmpMask",
+							Source = "Mask",
+						},
+						Width = Input { Value = 2048, },
+						Height = Input { Value = 2048, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 1, },
+						TopLeftGreen = Input { Value = 0, },
+						TopLeftBlue = Input { Value = 0, },
+						TopLeftAlpha = Input { Value = 1, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 0, -103 } },
+				},
+				DropShadow1 = ofx.com.blackmagicdesign.resolvefx.DropShadow {
+					CtrlWShown = false,
+					Inputs = {
+						Source = Input {
+							SourceOp = "ColorBG",
+							Source = "Output",
+						},
+						shadowStrength = Input { Value = 0.45, },
+						shadowAngle = Input { Value = 45, },
+						ShadowDistance = Input { Value = 0.015, },
+						shadowBlur = Input { Value = 0.38, },
+						shadowColorRed = Input { Value = 0, },
+						shadowColorGreen = Input { Value = 0, },
+						shadowColorBlue = Input { Value = 0, },
+						isLegacyComp = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						srcProcessingAlphaMode = Input { Value = 2, },
+						dstProcessingAlphaMode = Input { Value = 2, },
+						resolvefxVersion = Input { Value = "2.0", }
+					},
+					ViewInfo = OperatorInfo { Pos = { 110, -103 } },
+				},
+				FrameBG = Background {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0, },
+						TopLeftGreen = Input { Value = 0, },
+						TopLeftBlue = Input { Value = 0, },
+						TopLeftAlpha = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 110, 22 } },
+				},
+				FinalMerge = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "FrameBG",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "DropShadow1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 220, -103 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "Cross1"
+}

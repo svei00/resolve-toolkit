@@ -1,0 +1,428 @@
+{
+	Tools = ordered() {
+		BrandBadge = MacroOperator {
+			CtrlWZoom = false,
+			Inputs = ordered() {
+				Position = InstanceInput {
+					SourceOp = "FinalMerge",
+					Source = "Center",
+					Name = "Position",
+					Page = "Controls",
+				},
+				Scale = InstanceInput {
+					SourceOp = "FinalMerge",
+					Source = "Size",
+					Name = "Scale",
+					MinScale = 0.1,
+					MaxScale = 4,
+					Page = "Controls",
+					Default = 1,
+				},
+				Rotation = InstanceInput {
+					SourceOp = "FinalMerge",
+					Source = "Angle",
+					Name = "Rotation",
+					Page = "Controls",
+					Default = 0,
+				},
+				BadgeText = InstanceInput {
+					SourceOp = "BadgeText",
+					Source = "StyledText",
+					Name = "Text",
+					Page = "Controls",
+				},
+				TextSize = InstanceInput {
+					SourceOp = "BadgeText",
+					Source = "Size",
+					Name = "Text Size",
+					MinScale = 0.01,
+					MaxScale = 0.2,
+					Page = "Controls",
+					Default = 0.05,
+				},
+				PillWidth = InstanceInput {
+					SourceOp = "PanelMask",
+					Source = "PillWidth",
+					Name = "Pill Width",
+					Page = "Controls",
+					Default = 0.5,
+				},
+				BadgeHeight = InstanceInput {
+					SourceOp = "PanelMask",
+					Source = "BadgeHeight",
+					Name = "Badge Height",
+					MinScale = 0.05,
+					MaxScale = 0.5,
+					Page = "Controls",
+					Default = 0.12,
+				},
+				CornerRadius = InstanceInput { SourceOp = "PanelMask", Source = "CornerRadiusU", Name = "Corner Radius", MinScale = 0, MaxScale = 1, Page = "Controls", Default = 0.4, },
+				TextSpeed = InstanceInput { SourceOp = "PanelMask", Source = "TextSpeed", Name = "Text Speed (Frames)", Page = "Controls", Default = 12, },
+				EntranceMotion = InstanceInput { SourceOp = "TravelXF", Source = "EntranceMotion", Name = "Entrance Motion", Page = "Controls", Default = 0, },
+				TravelSpeedI = InstanceInput { SourceOp = "TravelXF", Source = "TravelSpeed", Name = "Travel Speed (Frames)", Page = "Controls", Default = 15, },
+				BadgePreset = InstanceInput { SourceOp = "PanelFill", Source = "BadgePreset", Name = "Badge Color", Page = "Controls", Default = 2, },
+				CustomBadgeColorR = InstanceInput { SourceOp = "CustomBadgeColorBG", Source = "TopLeftRed", Name = "Custom Badge Color", ControlGroup = 1, Page = "Controls", Default = 0.19216, },
+				CustomBadgeColorG = InstanceInput { SourceOp = "CustomBadgeColorBG", Source = "TopLeftGreen", ControlGroup = 1, Default = 0.50980, },
+				CustomBadgeColorB = InstanceInput { SourceOp = "CustomBadgeColorBG", Source = "TopLeftBlue", ControlGroup = 1, Default = 0.87451, },
+				BadgeOpacity = InstanceInput {
+					SourceOp = "PanelFill",
+					Source = "TopLeftAlpha",
+					Name = "Badge Opacity",
+					Page = "Controls",
+					Default = 1,
+				},
+				TextPreset = InstanceInput { SourceOp = "BadgeText", Source = "TextPreset", Name = "Text Color", Page = "Controls", Default = 9, },
+				CustomTextColorR = InstanceInput { SourceOp = "CustomTextColorBG", Source = "TopLeftRed", Name = "Custom Text Color", ControlGroup = 2, Page = "Controls", Default = 0.94510, },
+				CustomTextColorG = InstanceInput { SourceOp = "CustomTextColorBG", Source = "TopLeftGreen", ControlGroup = 2, Default = 0.92157, },
+				CustomTextColorB = InstanceInput { SourceOp = "CustomTextColorBG", Source = "TopLeftBlue", ControlGroup = 2, Default = 0.87451, },
+				FontName = InstanceInput { SourceOp = "BadgeText", Source = "Font", Name = "Font", Page = "Controls", },
+				FontStyle = InstanceInput { SourceOp = "BadgeText", Source = "Style", Name = "Font Style", Page = "Controls", },
+				OutlineWidth = InstanceInput { SourceOp = "BadgeText", Source = "Thickness2", Name = "Outline Width", MinScale = 0, MaxScale = 0.2, Page = "Controls", Default = 0.05, },
+				OutlineColorR = InstanceInput { SourceOp = "BadgeText", Source = "Red2", Name = "Outline Color", ControlGroup = 4, Page = "Controls", Default = 0, },
+				OutlineColorG = InstanceInput { SourceOp = "BadgeText", Source = "Green2", ControlGroup = 4, Default = 0, },
+				OutlineColorB = InstanceInput { SourceOp = "BadgeText", Source = "Blue2", ControlGroup = 4, Default = 0, },
+				BorderWidth = InstanceInput { SourceOp = "BorderMask", Source = "BorderWidth", Name = "Border Width", MinScale = 0, MaxScale = 0.02, Page = "Controls", Default = 0, },
+				BorderColorR = InstanceInput { SourceOp = "BorderBG", Source = "TopLeftRed", Name = "Border Color", ControlGroup = 5, Page = "Controls", Default = 0.70196, },
+				BorderColorG = InstanceInput { SourceOp = "BorderBG", Source = "TopLeftGreen", ControlGroup = 5, Default = 0.55686, },
+				BorderColorB = InstanceInput { SourceOp = "BorderBG", Source = "TopLeftBlue", ControlGroup = 5, Default = 0.36471, },
+				IntroSpeed = InstanceInput {
+					SourceOp = "PanelMask",
+					Source = "IntroSpeed",
+					Name = "Intro Speed (Frames)",
+					Page = "Controls",
+					Default = 18,
+				},
+				OutroSpeed = InstanceInput {
+					SourceOp = "PanelMask",
+					Source = "OutroSpeed",
+					Name = "Outro Speed (Frames)",
+					Page = "Controls",
+					Default = 15,
+				},
+				ShadowStrength = InstanceInput {
+					SourceOp = "DropShadow1",
+					Source = "shadowStrength",
+					Name = "Shadow Opacity",
+					Page = "Shadow",
+					Default = 0.4,
+				},
+				ShadowAngle = InstanceInput {
+					SourceOp = "DropShadow1",
+					Source = "shadowAngle",
+					Name = "Shadow Angle",
+					Page = "Shadow",
+					Default = 315,
+				},
+				ShadowDistance = InstanceInput {
+					SourceOp = "DropShadow1",
+					Source = "ShadowDistance",
+					Name = "Shadow Distance",
+					MaxScale = 0.2000000029802,
+					Page = "Shadow",
+					Default = 0.012,
+				},
+				ShadowBlur = InstanceInput {
+					SourceOp = "DropShadow1",
+					Source = "shadowBlur",
+					Name = "Shadow Softness",
+					Page = "Shadow",
+					Default = 0.4,
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "FinalMerge",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				BadgeBG = Background {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 2048, },
+						Height = Input { Value = 2048, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0, },
+						TopLeftGreen = Input { Value = 0, },
+						TopLeftBlue = Input { Value = 0, },
+						TopLeftAlpha = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -440, 50 } },
+				},
+				CustomBadgeColorBG = Background {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 2048, },
+						Height = Input { Value = 2048, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0.19216, },
+						TopLeftGreen = Input { Value = 0.50980, },
+						TopLeftBlue = Input { Value = 0.87451, },
+						TopLeftAlpha = Input { Value = 1, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -600, 150 } },
+				},
+				CustomTextColorBG = Background {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 2048, },
+						Height = Input { Value = 2048, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0.94510, },
+						TopLeftGreen = Input { Value = 0.92157, },
+						TopLeftBlue = Input { Value = 0.87451, },
+						TopLeftAlpha = Input { Value = 1, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -600, 220 } },
+				},
+				PanelMask = RectangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 2048, },
+						MaskHeight = Input { Value = 2048, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						CornerRadius = Input { Expression = "1-(1-CornerRadiusU)*min(((min(1,max(0,((min(1,max(0,(time-iif(TravelXF.EntranceMotion>0.5,TravelXF.TravelSpeed,0))/max(IntroSpeed,1))))-0.5)*2)))*(min(1,max(0,((min(1,max(0,(time-iif(TravelXF.EntranceMotion>0.5,TravelXF.TravelSpeed,0))/max(IntroSpeed,1))))-0.5)*2)))*(3-2*(min(1,max(0,((min(1,max(0,(time-iif(TravelXF.EntranceMotion>0.5,TravelXF.TravelSpeed,0))/max(IntroSpeed,1))))-0.5)*2))))),((min(1,max(0,((min(1,max(0,(comp.RenderEnd-time)/max(OutroSpeed,1))))-0.5)*2)))*(min(1,max(0,((min(1,max(0,(comp.RenderEnd-time)/max(OutroSpeed,1))))-0.5)*2)))*(3-2*(min(1,max(0,((min(1,max(0,(comp.RenderEnd-time)/max(OutroSpeed,1))))-0.5)*2))))))" },
+						Height = Input { Expression = "BadgeHeight*min((iif(TravelXF.EntranceMotion>0.5,0.25,0)+(1-iif(TravelXF.EntranceMotion>0.5,0.25,0))*((min(1,(min(1,max(0,(time-iif(TravelXF.EntranceMotion>0.5,TravelXF.TravelSpeed,0))/max(IntroSpeed,1))))*2))*(min(1,(min(1,max(0,(time-iif(TravelXF.EntranceMotion>0.5,TravelXF.TravelSpeed,0))/max(IntroSpeed,1))))*2))*(3-2*(min(1,(min(1,max(0,(time-iif(TravelXF.EntranceMotion>0.5,TravelXF.TravelSpeed,0))/max(IntroSpeed,1))))*2))))),((min(1,(min(1,max(0,(comp.RenderEnd-time)/max(OutroSpeed,1))))*2))*(min(1,(min(1,max(0,(comp.RenderEnd-time)/max(OutroSpeed,1))))*2))*(3-2*(min(1,(min(1,max(0,(comp.RenderEnd-time)/max(OutroSpeed,1))))*2)))))" },
+						Width = Input { Expression = "BadgeHeight*min((iif(TravelXF.EntranceMotion>0.5,0.25,0)+(1-iif(TravelXF.EntranceMotion>0.5,0.25,0))*((min(1,(min(1,max(0,(time-iif(TravelXF.EntranceMotion>0.5,TravelXF.TravelSpeed,0))/max(IntroSpeed,1))))*2))*(min(1,(min(1,max(0,(time-iif(TravelXF.EntranceMotion>0.5,TravelXF.TravelSpeed,0))/max(IntroSpeed,1))))*2))*(3-2*(min(1,(min(1,max(0,(time-iif(TravelXF.EntranceMotion>0.5,TravelXF.TravelSpeed,0))/max(IntroSpeed,1))))*2))))),((min(1,(min(1,max(0,(comp.RenderEnd-time)/max(OutroSpeed,1))))*2))*(min(1,(min(1,max(0,(comp.RenderEnd-time)/max(OutroSpeed,1))))*2))*(3-2*(min(1,(min(1,max(0,(comp.RenderEnd-time)/max(OutroSpeed,1))))*2)))))+(PillWidth-BadgeHeight)*min(((min(1,max(0,((min(1,max(0,(time-iif(TravelXF.EntranceMotion>0.5,TravelXF.TravelSpeed,0))/max(IntroSpeed,1))))-0.5)*2)))*(min(1,max(0,((min(1,max(0,(time-iif(TravelXF.EntranceMotion>0.5,TravelXF.TravelSpeed,0))/max(IntroSpeed,1))))-0.5)*2)))*(3-2*(min(1,max(0,((min(1,max(0,(time-iif(TravelXF.EntranceMotion>0.5,TravelXF.TravelSpeed,0))/max(IntroSpeed,1))))-0.5)*2))))),((min(1,max(0,((min(1,max(0,(comp.RenderEnd-time)/max(OutroSpeed,1))))-0.5)*2)))*(min(1,max(0,((min(1,max(0,(comp.RenderEnd-time)/max(OutroSpeed,1))))-0.5)*2)))*(3-2*(min(1,max(0,((min(1,max(0,(comp.RenderEnd-time)/max(OutroSpeed,1))))-0.5)*2))))))" },
+						Center = Input { Value = { 0.5, 0.5 }, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -440, -50 } },
+					UserControls = ordered() {
+						PillWidth = { INP_Default = 0.5, INPID_InputControl = "SliderControl", INP_MinScale = 0.1, INP_MaxScale = 1, LINKID_DataType = "Number", LINKS_Name = "Pill Width", ICS_ControlPage = "Controls", },
+						BadgeHeight = { INP_Default = 0.12, INPID_InputControl = "SliderControl", INP_MinScale = 0.05, INP_MaxScale = 0.5, LINKID_DataType = "Number", LINKS_Name = "Badge Height", ICS_ControlPage = "Controls", },
+						CornerRadiusU = { INP_Default = 0.4, INPID_InputControl = "SliderControl", INP_MinScale = 0, INP_MaxScale = 1, LINKID_DataType = "Number", LINKS_Name = "Corner Radius", ICS_ControlPage = "Controls", },
+						TextSpeed = { INP_Default = 12, INP_Integer = true, INPID_InputControl = "SliderControl", INP_MinScale = 1, INP_MaxScale = 60, INP_MinAllowed = 1, INP_MaxAllowed = 240, LINKID_DataType = "Number", LINKS_Name = "Text Speed (Frames)", ICS_ControlPage = "Controls", },
+						IntroSpeed = { INP_Default = 18, INP_Integer = true, INPID_InputControl = "SliderControl", INP_MinScale = 1, INP_MaxScale = 60, INP_MinAllowed = 1, INP_MaxAllowed = 240, LINKID_DataType = "Number", LINKS_Name = "Intro Speed (Frames)", ICS_ControlPage = "Controls", },
+						OutroSpeed = { INP_Default = 15, INP_Integer = true, INPID_InputControl = "SliderControl", INP_MinScale = 1, INP_MaxScale = 60, INP_MinAllowed = 1, INP_MaxAllowed = 240, LINKID_DataType = "Number", LINKS_Name = "Outro Speed (Frames)", ICS_ControlPage = "Controls", }
+					}
+				},
+				PanelFill = Background {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "PanelMask",
+							Source = "Mask",
+						},
+						Width = Input { Value = 2048, },
+						Height = Input { Value = 2048, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Expression = "iif(BadgePreset<0.5, CustomBadgeColorBG.TopLeftRed, iif(BadgePreset<1.5, 0.19216, iif(BadgePreset<2.5, 0.12941, iif(BadgePreset<3.5, 0.82353, iif(BadgePreset<4.5, 0.48235, iif(BadgePreset<5.5, 0.38431, iif(BadgePreset<6.5, 0.83137, iif(BadgePreset<7.5, 0.15686, iif(BadgePreset<8.5, 0.70196, iif(BadgePreset<9.5, 0.94510, iif(BadgePreset<10.5, 0.43137, 0.03922)))))))))))", },
+						TopLeftGreen = Input { Expression = "iif(BadgePreset<0.5, CustomBadgeColorBG.TopLeftGreen, iif(BadgePreset<1.5, 0.50980, iif(BadgePreset<2.5, 0.72157, iif(BadgePreset<3.5, 0.41176, iif(BadgePreset<4.5, 0.12157, iif(BadgePreset<5.5, 0.06667, iif(BadgePreset<6.5, 0.75686, iif(BadgePreset<7.5, 0.36078, iif(BadgePreset<8.5, 0.55686, iif(BadgePreset<9.5, 0.92157, iif(BadgePreset<10.5, 0.39216, 0.03922)))))))))))", },
+						TopLeftBlue = Input { Expression = "iif(BadgePreset<0.5, CustomBadgeColorBG.TopLeftBlue, iif(BadgePreset<1.5, 0.87451, iif(BadgePreset<2.5, 0.40784, iif(BadgePreset<3.5, 0.11765, iif(BadgePreset<4.5, 0.63529, iif(BadgePreset<5.5, 0.19608, iif(BadgePreset<6.5, 0.61176, iif(BadgePreset<7.5, 0.30196, iif(BadgePreset<8.5, 0.36471, iif(BadgePreset<9.5, 0.87451, iif(BadgePreset<10.5, 0.31373, 0.03922)))))))))))", },
+						TopLeftAlpha = Input { Value = 1, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -330, -50 } },
+					UserControls = ordered() {
+						BadgePreset = { LINKS_Name = "Badge Color", LINKID_DataType = "Number", INPID_InputControl = "ComboControl", INP_Integer = true, INP_Default = 2, { CCS_AddString = "Custom" }, { CCS_AddString = "Azul" }, { CCS_AddString = "Verde" }, { CCS_AddString = "Naranja" }, { CCS_AddString = "Purpura" }, { CCS_AddString = "Red" }, { CCS_AddString = "Gold" }, { CCS_AddString = "Verde Osc" }, { CCS_AddString = "Strong" }, { CCS_AddString = "Light" }, { CCS_AddString = "Cafe" }, { CCS_AddString = "Black" }, ICS_ControlPage = "Controls", },
+					}
+				},
+				BorderMask = RectangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 2048, },
+						MaskHeight = Input { Value = 2048, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Solid = Input { Value = 0, },
+						BorderWidth = Input { Value = 0, },
+						CornerRadius = Input { Expression = "PanelMask.CornerRadius", },
+						Width = Input { Expression = "PanelMask.Width", },
+						Height = Input { Expression = "PanelMask.Height", },
+						Center = Input { Expression = "PanelMask.Center", }
+					},
+					ViewInfo = OperatorInfo { Pos = { -330, 30 } },
+				},
+				BorderBG = Background {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input { SourceOp = "BorderMask", Source = "Mask", },
+						Width = Input { Value = 2048, },
+						Height = Input { Value = 2048, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0.70196, },
+						TopLeftGreen = Input { Value = 0.55686, },
+						TopLeftBlue = Input { Value = 0.36471, },
+						TopLeftAlpha = Input { Value = 1, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -220, 30 } },
+				},
+				PillBorder = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input { SourceOp = "PanelFill", Source = "Output", },
+						Foreground = Input { SourceOp = "BorderBG", Source = "Output", },
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -275, -50 } },
+				},
+				CircleMerge = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "BadgeBG",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "PillBorder",
+							Source = "Output",
+						},
+						Blend = Input { Value = 1, },
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -220, -50 } },
+				},
+				BadgeText = TextPlus {
+					CtrlWShown = false,
+					Inputs = {
+						GlobalOut = Input { Value = 20000, },
+						SelectElement = Input { Value = 1, },
+						Select = Input { Value = 1, },
+						AdvancedFontControls = Input { Value = 1, },
+						Width = Input { Value = 2048, },
+						Height = Input { Value = 2048, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Center = Input { Value = { 0.5, 0.5 }, },
+						StyledText = Input { Value = "FORMULAS", },
+						Font = Input { Value = "Open Sans", },
+						Style = Input { Value = "Bold", },
+						Size = Input { Value = 0.05, },
+						Start = Input { Value = 0, },
+						End = Input { Expression = "min(((min(1,max(0,(time-PanelMask.IntroSpeed-iif(TravelXF.EntranceMotion>0.5,TravelXF.TravelSpeed,0))/max(PanelMask.TextSpeed,1))))*(min(1,max(0,(time-PanelMask.IntroSpeed-iif(TravelXF.EntranceMotion>0.5,TravelXF.TravelSpeed,0))/max(PanelMask.TextSpeed,1))))*(3-2*(min(1,max(0,(time-PanelMask.IntroSpeed-iif(TravelXF.EntranceMotion>0.5,TravelXF.TravelSpeed,0))/max(PanelMask.TextSpeed,1)))))),((min(1,max(0,(comp.RenderEnd-time-PanelMask.OutroSpeed)/max(PanelMask.TextSpeed,1))))*(min(1,max(0,(comp.RenderEnd-time-PanelMask.OutroSpeed)/max(PanelMask.TextSpeed,1))))*(3-2*(min(1,max(0,(comp.RenderEnd-time-PanelMask.OutroSpeed)/max(PanelMask.TextSpeed,1)))))))" },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalJustificationNew = Input { Value = 3, },
+						Red1 = Input { Expression = "iif(TextPreset<0.5, CustomTextColorBG.TopLeftRed, iif(TextPreset<1.5, 0.19216, iif(TextPreset<2.5, 0.12941, iif(TextPreset<3.5, 0.82353, iif(TextPreset<4.5, 0.48235, iif(TextPreset<5.5, 0.38431, iif(TextPreset<6.5, 0.83137, iif(TextPreset<7.5, 0.15686, iif(TextPreset<8.5, 0.70196, iif(TextPreset<9.5, 0.94510, iif(TextPreset<10.5, 0.43137, 0.03922)))))))))))", },
+						Green1 = Input { Expression = "iif(TextPreset<0.5, CustomTextColorBG.TopLeftGreen, iif(TextPreset<1.5, 0.50980, iif(TextPreset<2.5, 0.72157, iif(TextPreset<3.5, 0.41176, iif(TextPreset<4.5, 0.12157, iif(TextPreset<5.5, 0.06667, iif(TextPreset<6.5, 0.75686, iif(TextPreset<7.5, 0.36078, iif(TextPreset<8.5, 0.55686, iif(TextPreset<9.5, 0.92157, iif(TextPreset<10.5, 0.39216, 0.03922)))))))))))", },
+						Blue1 = Input { Expression = "iif(TextPreset<0.5, CustomTextColorBG.TopLeftBlue, iif(TextPreset<1.5, 0.87451, iif(TextPreset<2.5, 0.40784, iif(TextPreset<3.5, 0.11765, iif(TextPreset<4.5, 0.63529, iif(TextPreset<5.5, 0.19608, iif(TextPreset<6.5, 0.61176, iif(TextPreset<7.5, 0.30196, iif(TextPreset<8.5, 0.36471, iif(TextPreset<9.5, 0.87451, iif(TextPreset<10.5, 0.31373, 0.03922)))))))))))", },
+						Enabled2 = Input { Value = 1, },
+						Name2 = Input { Value = "Outline", },
+						Level2 = Input { Value = 1, },
+						Softness2 = Input { Value = 1, },
+						Thickness2 = Input { Value = 0.05, },
+						Red2 = Input { Value = 0, },
+						Green2 = Input { Value = 0, },
+						Blue2 = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -330, 75 } },
+					UserControls = ordered() {
+						TextPreset = { LINKS_Name = "Text Color", LINKID_DataType = "Number", INPID_InputControl = "ComboControl", INP_Integer = true, INP_Default = 9, { CCS_AddString = "Custom" }, { CCS_AddString = "Azul" }, { CCS_AddString = "Verde" }, { CCS_AddString = "Naranja" }, { CCS_AddString = "Purpura" }, { CCS_AddString = "Red" }, { CCS_AddString = "Gold" }, { CCS_AddString = "Verde Osc" }, { CCS_AddString = "Strong" }, { CCS_AddString = "Light" }, { CCS_AddString = "Cafe" }, { CCS_AddString = "Black" }, ICS_ControlPage = "Controls", },
+					}
+				},
+				TextMerge = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "DropShadow1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "TextShadow",
+							Source = "Output",
+						},
+						Blend = Input { Value = 1, },
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -110, -50 } },
+				},
+				DropShadow1 = ofx.com.blackmagicdesign.resolvefx.DropShadow {
+					CtrlWShown = false,
+					Inputs = {
+						Source = Input {
+							SourceOp = "CircleMerge",
+							Source = "Output",
+						},
+						shadowStrength = Input { Value = 0.4, },
+						shadowAngle = Input { Value = 315, },
+						ShadowDistance = Input { Value = 0.012, },
+						shadowBlur = Input { Value = 0.4, },
+						shadowColorRed = Input { Value = 0, },
+						shadowColorGreen = Input { Value = 0, },
+						shadowColorBlue = Input { Value = 0, },
+						isLegacyComp = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						srcProcessingAlphaMode = Input { Value = 2, },
+						dstProcessingAlphaMode = Input { Value = 2, },
+						resolvefxVersion = Input { Value = "2.0", }
+					},
+					ViewInfo = OperatorInfo { Pos = { 0, -50 } },
+				},
+				TextShadow = ofx.com.blackmagicdesign.resolvefx.DropShadow {
+					CtrlWShown = false,
+					Inputs = {
+						Source = Input { SourceOp = "BadgeText", Source = "Output", },
+						shadowStrength = Input { Expression = "DropShadow1.shadowStrength", },
+						shadowAngle = Input { Expression = "DropShadow1.shadowAngle", },
+						ShadowDistance = Input { Expression = "DropShadow1.ShadowDistance", },
+						shadowBlur = Input { Expression = "DropShadow1.shadowBlur", },
+						shadowColorRed = Input { Value = 0, },
+						shadowColorGreen = Input { Value = 0, },
+						shadowColorBlue = Input { Value = 0, },
+						isLegacyComp = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						srcProcessingAlphaMode = Input { Value = 2, },
+						dstProcessingAlphaMode = Input { Value = 2, },
+						resolvefxVersion = Input { Value = "2.0", }
+					},
+					ViewInfo = OperatorInfo { Pos = { -55, 75 } },
+				},
+				FrameBG = Background {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0, },
+						TopLeftGreen = Input { Value = 0, },
+						TopLeftBlue = Input { Value = 0, },
+						TopLeftAlpha = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 0, 75 } },
+				},
+				TravelXF = Transform {
+					CtrlWShown = false,
+					Inputs = {
+						Center = Input { Expression = "Point((iif(EntranceMotion<0.5,0.5,iif(EntranceMotion<1.5,0,iif(EntranceMotion<2.5,1,iif(EntranceMotion<3.5,0,1)))))+(0.5-(iif(EntranceMotion<0.5,0.5,iif(EntranceMotion<1.5,0,iif(EntranceMotion<2.5,1,iif(EntranceMotion<3.5,0,1))))))*((min(1,max(0,time/max(TravelSpeed,1))))*(min(1,max(0,time/max(TravelSpeed,1))))*(3-2*(min(1,max(0,time/max(TravelSpeed,1)))))),(iif(EntranceMotion<0.5,0.5,iif(EntranceMotion<1.5,1,iif(EntranceMotion<2.5,1,iif(EntranceMotion<3.5,0,0)))))+(0.5-(iif(EntranceMotion<0.5,0.5,iif(EntranceMotion<1.5,1,iif(EntranceMotion<2.5,1,iif(EntranceMotion<3.5,0,0))))))*((min(1,max(0,time/max(TravelSpeed,1))))*(min(1,max(0,time/max(TravelSpeed,1))))*(3-2*(min(1,max(0,time/max(TravelSpeed,1)))))))" },
+						Input = Input { SourceOp = "TextMerge", Source = "Output", }
+					},
+					ViewInfo = OperatorInfo { Pos = { 165, -50 } },
+					UserControls = ordered() {
+						EntranceMotion = { LINKS_Name = "Entrance Motion", LINKID_DataType = "Number", INPID_InputControl = "ComboControl", INP_Integer = true, INP_Default = 0, { CCS_AddString = "Grow in Place" }, { CCS_AddString = "From Top-Left" }, { CCS_AddString = "From Top-Right" }, { CCS_AddString = "From Bottom-Left" }, { CCS_AddString = "From Bottom-Right" }, ICS_ControlPage = "Controls", },
+						TravelSpeed = { INP_Default = 15, INP_Integer = true, INPID_InputControl = "SliderControl", INP_MinScale = 1, INP_MaxScale = 60, INP_MinAllowed = 1, INP_MaxAllowed = 240, LINKID_DataType = "Number", LINKS_Name = "Travel Speed (Frames)", ICS_ControlPage = "Controls", }
+					}
+				},
+				FinalMerge = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "FrameBG",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "TravelXF",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 110, -50 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "BrandBadge"
+}

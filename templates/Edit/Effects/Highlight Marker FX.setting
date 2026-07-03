@@ -1,0 +1,170 @@
+{
+	Tools = ordered() {
+		HighlightMarkerFX = MacroOperator {
+			Inputs = ordered() {
+				Input1  = InstanceInput { SourceOp = "HLMarkerCore", Source = "Input1",  Page = "Highlight", },
+				Input2  = InstanceInput { SourceOp = "HLMarkerCore", Source = "Input2",  Page = "Highlight", Default = 0.4, },
+				Input3  = InstanceInput { SourceOp = "HLMarkerCore", Source = "Input3",  Page = "Highlight", Default = 0.09, },
+				Input4  = InstanceInput { SourceOp = "HLMarkerCore", Source = "Input4",  Page = "Highlight", Default = 1, },
+				Input5  = InstanceInput { SourceOp = "HLMarkerCore", Source = "Input5",  Page = "Highlight", Default = 0, },
+				Input6  = InstanceInput { SourceOp = "HLMarkerCore", Source = "Input6",  Page = "Highlight", Default = 0.5, },
+				Input7  = InstanceInput { SourceOp = "HLMarkerCore", Source = "Input7",  Page = "Highlight", },
+				Input8  = InstanceInput { SourceOp = "HLMarkerCore", Source = "Input8",  Page = "Highlight", Default = 0, },
+				Input9  = InstanceInput { SourceOp = "HLMarkerCore", Source = "Input9",  Page = "Highlight", Default = 1, },
+				Input10 = InstanceInput { SourceOp = "HLMarkerCore", Source = "Input10", ControlGroup = 11, Page = "Highlight", Default = 1, },
+				Input11 = InstanceInput { SourceOp = "HLMarkerCore", Source = "Input11", ControlGroup = 11, Default = 0.4, },
+				Input12 = InstanceInput { SourceOp = "HLMarkerCore", Source = "Input12", ControlGroup = 11, Default = 0.9, },
+				Input13 = InstanceInput { SourceOp = "HLMarkerCore", Source = "Input13", Page = "Animation", Default = 20, },
+				Input14 = InstanceInput { SourceOp = "HLMarkerCore", Source = "Input14", Page = "Animation", Default = 15, }
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput { SourceOp = "HLMarkerCore", Source = "MainOutput", },
+				Output1 = InstanceOutput { SourceOp = "Left", Source = "Data", },
+				Output2 = InstanceOutput { SourceOp = "Right", Source = "Data", }
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				HLMarkerCore = MacroOperator {
+					CtrlWZoom = false,
+					Inputs = ordered() {
+						Input1  = InstanceInput { SourceOp = "HiliteMask", Source = "Center", Name = "Position", Page = "Highlight", },
+						Input2  = InstanceInput { SourceOp = "HiliteMask", Source = "BaseWidth", Name = "Width (Length)", MinScale = 0.05, MaxScale = 1.5, Page = "Highlight", Default = 0.4, },
+						Input3  = InstanceInput { SourceOp = "HiliteMask", Source = "BaseHeight", Name = "Height (Thickness)", MinScale = 0.01, MaxScale = 1, Page = "Highlight", Default = 0.09, },
+						Input4  = InstanceInput { SourceOp = "HiliteMask", Source = "Zoom", Name = "Zoom (Overall Size)", MinScale = 0.1, MaxScale = 4, Page = "Highlight", Default = 1, },
+						Input5  = InstanceInput { SourceOp = "HiliteMask", Source = "Angle", Name = "Rotation", Page = "Highlight", Default = 0, },
+						Input6  = InstanceInput { SourceOp = "HiliteMask", Source = "CornerRadius", Name = "End Roundness", MinScale = 0, MaxScale = 1, Page = "Highlight", Default = 0.5, },
+						Input7  = InstanceInput { SourceOp = "MultMerge", Source = "ApplyMode", Name = "Blend Mode (Darken/Multiply/Lighten/Linear Burn/Normal)", Page = "Highlight", },
+						Input8  = InstanceInput { SourceOp = "ColorBG", Source = "Preset", Name = "Color Preset", Page = "Highlight", Default = 0, },
+						Input9  = InstanceInput { SourceOp = "MultMerge", Source = "Blend", Name = "Highlight Opacity", MinScale = 0, MaxScale = 1, Page = "Highlight", Default = 1, },
+						Input10 = InstanceInput { SourceOp = "ColorBG", Source = "CustomRed",   Name = "Custom Color", ControlGroup = 5, Page = "Highlight", Default = 1, },
+						Input11 = InstanceInput { SourceOp = "ColorBG", Source = "CustomGreen", ControlGroup = 5, Default = 0.4, },
+						Input12 = InstanceInput { SourceOp = "ColorBG", Source = "CustomBlue",  ControlGroup = 5, Default = 0.9, },
+						Input13 = InstanceInput { SourceOp = "ColorBG", Source = "DrawTime", Name = "Intro Draw Time (Frames)", Page = "Animation", Default = 20, },
+						Input14 = InstanceInput { SourceOp = "ColorBG", Source = "OutTime", Name = "Outro Erase Time (Frames, 0=off)", Page = "Animation", Default = 15, }
+					},
+					Outputs = {
+						MainOutput = InstanceOutput { SourceOp = "FinalMerge", Source = "Output", }
+					},
+					ViewInfo = GroupInfo { Pos = { 0, 0 } },
+					Tools = ordered() {
+						MediaIn1_1 = MediaIn {
+							ExtentSet = true,
+							CtrlWZoom = false,
+							CtrlWShown = false,
+							CustomData = { MediaProps = { MEDIA_HEIGHT = 1080, MEDIA_AUDIO_TRACKS_DESC = { { MEDIA_AUDIO_BIT_DEPTH = 32, MEDIA_AUDIO_TRACK_ID = "Timeline Audio", MEDIA_AUDIO_TRACK_NAME = "Timeline Audio [Timeline 1]", MEDIA_AUDIO_FRAME_RATE = 30, MEDIA_AUDIO_START_TIME = 0, MEDIA_AUDIO_SAMPLE_RATE = 48000, MEDIA_AUDIO_NUM_CHANNELS = 2 } }, MEDIA_IS_SOURCE_RES = false, MEDIA_PAR = 1, MEDIA_START_FRAME = 0, MEDIA_WIDTH = 1920, MEDIA_AUDIO_TRACKS_NUM = 1, MEDIA_SRC_FRAME_RATE = 30, MEDIA_MARK_OUT = 246, MEDIA_HAS_AUDIO = true, MEDIA_NUM_FRAMES = 247, MEDIA_MARK_IN = 0, MEDIA_NAME = "Adjustment Clip" }, },
+							Inputs = {
+								GlobalOut = Input { Value = 246, },
+								AudioTrack = Input { Value = FuID { "Timeline Audio" }, },
+								Layer = Input { Value = "", },
+								ClipTimeEnd = Input { Value = 246, },
+								DeepOutputMode = Input { Value = 0, Disabled = true, },
+								LeftAudio = Input { SourceOp = "Left", Source = "Data", },
+								RightAudio = Input { SourceOp = "Right", Source = "Data", }
+							},
+							ViewInfo = OperatorInfo { Pos = { -550, 8.75 } },
+							Version = 1
+						},
+						ColorBG = Background {
+							CtrlWShown = false,
+							Inputs = {
+								Width = Input { Expression = "comp:GetPrefs(\"Comp.FrameFormat.Width\")", },
+								Height = Input { Expression = "comp:GetPrefs(\"Comp.FrameFormat.Height\")", },
+								["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+								TopLeftRed = Input { Value = 1, Expression = "iif(ColorBG.Preset==0,1.0,iif(ColorBG.Preset==1,0.55,iif(ColorBG.Preset==2,1.0,iif(ColorBG.Preset==3,0.2,iif(ColorBG.Preset==4,1.0,iif(ColorBG.Preset==5,0.65,ColorBG.CustomRed))))))", },
+								TopLeftGreen = Input { Value = 0.92, Expression = "iif(ColorBG.Preset==0,0.92,iif(ColorBG.Preset==1,0.95,iif(ColorBG.Preset==2,0.3,iif(ColorBG.Preset==3,0.65,iif(ColorBG.Preset==4,0.5,iif(ColorBG.Preset==5,0.3,ColorBG.CustomGreen))))))", },
+								TopLeftBlue = Input { Value = 0, Expression = "iif(ColorBG.Preset==0,0.0,iif(ColorBG.Preset==1,0.1,iif(ColorBG.Preset==2,0.65,iif(ColorBG.Preset==3,1.0,iif(ColorBG.Preset==4,0.05,iif(ColorBG.Preset==5,0.95,ColorBG.CustomBlue))))))", },
+								TopLeftAlpha = Input { Value = 1, }
+							},
+							ViewInfo = OperatorInfo { Pos = { -440, 90 } },
+							UserControls = ordered() {
+								Preset = {
+									INPID_InputControl = "ComboControl",
+									INP_Integer = true,
+									INP_Default = 0,
+									LINKID_DataType = "Number",
+									LINKS_Name = "Color Preset",
+									ICS_ControlPage = "Highlight",
+									{ CCS_AddString = "Yellow (Marker)" },
+									{ CCS_AddString = "Green" },
+									{ CCS_AddString = "Pink" },
+									{ CCS_AddString = "Blue" },
+									{ CCS_AddString = "Orange" },
+									{ CCS_AddString = "Purple" },
+									{ CCS_AddString = "Custom" },
+								},
+								DrawTime = { INPID_InputControl = "SliderControl", INP_Integer = true, INP_Default = 20, INP_MinScale = 0, INP_MaxScale = 120, INP_MinAllowed = 0, INP_MaxAllowed = 600, LINKID_DataType = "Number", LINKS_Name = "Intro Draw Time (Frames)", ICS_ControlPage = "Animation", },
+								OutTime = { INPID_InputControl = "SliderControl", INP_Integer = true, INP_Default = 15, INP_MinScale = 0, INP_MaxScale = 120, INP_MinAllowed = 0, INP_MaxAllowed = 600, LINKID_DataType = "Number", LINKS_Name = "Outro Erase Time (Frames, 0=off)", ICS_ControlPage = "Animation", },
+								CustomRed = { INPID_InputControl = "ColorControl", INP_Default = 1, LINKID_DataType = "Number", LINKS_Name = "Custom Color", ICS_ControlPage = "Highlight", IC_ControlGroup = 10, IC_ControlID = 0, ICD_Center = 1, },
+								CustomGreen = { INPID_InputControl = "ColorControl", INP_Default = 0.4, LINKID_DataType = "Number", IC_ControlGroup = 10, IC_ControlID = 1, },
+								CustomBlue = { INPID_InputControl = "ColorControl", INP_Default = 0.9, LINKID_DataType = "Number", IC_ControlGroup = 10, IC_ControlID = 2, },
+							}
+						},
+						MultMerge = Merge {
+							CtrlWShown = false,
+							Inputs = {
+								Background = Input { SourceOp = "MediaIn1_1", Source = "Output", },
+								Foreground = Input { SourceOp = "ColorBG", Source = "Output", },
+								ApplyMode = Input { Value = FuID { "Darken" }, },
+								Blend = Input { Value = 1, },
+								PerformDepthMerge = Input { Value = 0, }
+							},
+							ViewInfo = OperatorInfo { Pos = { -330, 8.75 } },
+						},
+						WipeMask = RectangleMask {
+							CtrlWShown = false,
+							Inputs = {
+								Filter = Input { Value = FuID { "Fast Gaussian" }, },
+								SoftEdge = Input { Value = 0.02, },
+								MaskWidth = Input { Expression = "comp:GetPrefs(\"Comp.FrameFormat.Width\")", },
+								MaskHeight = Input { Expression = "comp:GetPrefs(\"Comp.FrameFormat.Height\")", },
+								PixelAspect = Input { Value = { 1, 1 }, },
+								ClippingMode = Input { Value = FuID { "None" }, },
+								Center = Input { Expression = "Point((max(0,min(1,((min(1,max(0,iif(ColorBG.DrawTime<=0,1,time/ColorBG.DrawTime))))*(min(1,max(0,iif(ColorBG.DrawTime<=0,1,time/ColorBG.DrawTime))))*(3-2*(min(1,max(0,iif(ColorBG.DrawTime<=0,1,time/ColorBG.DrawTime))))))-((iif(ColorBG.OutTime<=0,0,min(1,max(0,(time-(comp.RenderEnd-ColorBG.OutTime))/max(ColorBG.OutTime,1)))))*(iif(ColorBG.OutTime<=0,0,min(1,max(0,(time-(comp.RenderEnd-ColorBG.OutTime))/max(ColorBG.OutTime,1)))))*(3-2*(iif(ColorBG.OutTime<=0,0,min(1,max(0,(time-(comp.RenderEnd-ColorBG.OutTime))/max(ColorBG.OutTime,1))))))))))/2,0.5)", },
+								Width = Input { Value = 1, Expression = "(max(0,min(1,((min(1,max(0,iif(ColorBG.DrawTime<=0,1,time/ColorBG.DrawTime))))*(min(1,max(0,iif(ColorBG.DrawTime<=0,1,time/ColorBG.DrawTime))))*(3-2*(min(1,max(0,iif(ColorBG.DrawTime<=0,1,time/ColorBG.DrawTime))))))-((iif(ColorBG.OutTime<=0,0,min(1,max(0,(time-(comp.RenderEnd-ColorBG.OutTime))/max(ColorBG.OutTime,1)))))*(iif(ColorBG.OutTime<=0,0,min(1,max(0,(time-(comp.RenderEnd-ColorBG.OutTime))/max(ColorBG.OutTime,1)))))*(3-2*(iif(ColorBG.OutTime<=0,0,min(1,max(0,(time-(comp.RenderEnd-ColorBG.OutTime))/max(ColorBG.OutTime,1))))))))))", },
+								Height = Input { Value = 1, }
+							},
+							ViewInfo = OperatorInfo { Pos = { -220, 120 } },
+						},
+						HiliteMask = RectangleMask {
+							CtrlWShown = false,
+							Inputs = {
+								EffectMask = Input { SourceOp = "WipeMask", Source = "Mask", },
+								PaintMode = Input { Value = FuID { "Multiply" }, },
+								Filter = Input { Value = FuID { "Fast Gaussian" }, },
+								SoftEdge = Input { Value = 0.0225, Expression = "HiliteMask.BaseHeight*HiliteMask.Zoom*0.25", },
+								MaskWidth = Input { Expression = "comp:GetPrefs(\"Comp.FrameFormat.Width\")", },
+								MaskHeight = Input { Expression = "comp:GetPrefs(\"Comp.FrameFormat.Height\")", },
+								PixelAspect = Input { Value = { 1, 1 }, },
+								ClippingMode = Input { Value = FuID { "None" }, },
+								Center = Input { Value = { 0.5, 0.5 }, },
+								Width = Input { Value = 0.4, Expression = "HiliteMask.BaseWidth*HiliteMask.Zoom", },
+								Height = Input { Value = 0.09, Expression = "HiliteMask.BaseHeight*HiliteMask.Zoom", },
+								Angle = Input { Value = 0, },
+								CornerRadius = Input { Value = 0.5, }
+							},
+							ViewInfo = OperatorInfo { Pos = { -220, 8.75 } },
+							UserControls = ordered() {
+								BaseWidth = { INPID_InputControl = "SliderControl", INP_Default = 0.4, INP_MinScale = 0.05, INP_MaxScale = 1.5, INP_MinAllowed = 0.001, INP_MaxAllowed = 5, LINKID_DataType = "Number", LINKS_Name = "Width (Length)", ICS_ControlPage = "Highlight", },
+								BaseHeight = { INPID_InputControl = "SliderControl", INP_Default = 0.09, INP_MinScale = 0.01, INP_MaxScale = 1, INP_MinAllowed = 0.001, INP_MaxAllowed = 5, LINKID_DataType = "Number", LINKS_Name = "Height (Thickness)", ICS_ControlPage = "Highlight", },
+								Zoom = { INPID_InputControl = "SliderControl", INP_Default = 1, INP_MinScale = 0.1, INP_MaxScale = 4, INP_MinAllowed = 0.01, INP_MaxAllowed = 20, LINKID_DataType = "Number", LINKS_Name = "Zoom (Overall Size)", ICS_ControlPage = "Highlight", },
+							}
+						},
+						FinalMerge = Merge {
+							CtrlWShown = false,
+							Inputs = {
+								EffectMask = Input { SourceOp = "HiliteMask", Source = "Mask", },
+								Background = Input { SourceOp = "MediaIn1_1", Source = "Output", },
+								Foreground = Input { SourceOp = "MultMerge", Source = "Output", },
+								PerformDepthMerge = Input { Value = 0, }
+							},
+							ViewInfo = OperatorInfo { Pos = { -110, 8.75 } },
+						}
+					},
+				},
+				Left = AudioDisplay { CtrlWZoom = false, },
+				Right = AudioDisplay { CtrlWZoom = false, }
+			},
+		}
+	},
+	ActiveTool = "HighlightMarkerFX"
+}

@@ -1,0 +1,551 @@
+{
+	Tools = ordered() {
+		Frame1 = MacroOperator {
+			CtrlWZoom = false,
+			Inputs = ordered() {
+				Position = InstanceInput {
+					SourceOp = "FinalMerge",
+					Source = "Center",
+					Name = "Position",
+					Page = "Controls",
+				},
+				Zoom = InstanceInput {
+					SourceOp = "FinalMerge",
+					Source = "Size",
+					Name = "Zoom",
+					MinScale = 0.1,
+					MaxScale = 4,
+					Page = "Controls",
+					Default = 1,
+				},
+				Rotation = InstanceInput {
+					SourceOp = "FinalMerge",
+					Source = "Angle",
+					Name = "Rotation",
+					Page = "Controls",
+					Default = 0,
+				},
+				Shape = InstanceInput {
+					SourceOp = "ColorRect",
+					Source = "ShapeSel",
+					Name = "Shape",
+					Page = "Controls",
+					Default = 0,
+				},
+				Width = InstanceInput {
+					SourceOp = "ColorRect",
+					Source = "ShapeW",
+					Name = "Width",
+					Page = "Controls",
+					Default = 0.35,
+				},
+				Height = InstanceInput {
+					SourceOp = "ColorRect",
+					Source = "ShapeH",
+					Name = "Height",
+					Page = "Controls",
+					Default = 0.35,
+				},
+				Thickness = InstanceInput {
+					SourceOp = "ColorRect",
+					Source = "Thick",
+					Name = "Thickness",
+					Page = "Controls",
+					Default = 0.006,
+				},
+				DrawTime = InstanceInput {
+					SourceOp = "ColorRect",
+					Source = "DrawTime",
+					Name = "Draw Time (Frames)",
+					Page = "Controls",
+					Default = 30,
+				},
+				ColorR = InstanceInput {
+					SourceOp = "ColorRect",
+					Source = "TopLeftRed",
+					Name = "Color",
+					ControlGroup = 9,
+					Page = "Controls",
+					Default = 1,
+				},
+				ColorG = InstanceInput {
+					SourceOp = "ColorRect",
+					Source = "TopLeftGreen",
+					ControlGroup = 9,
+					Default = 0,
+				},
+				ColorB = InstanceInput {
+					SourceOp = "ColorRect",
+					Source = "TopLeftBlue",
+					ControlGroup = 9,
+					Default = 0,
+				},
+				ColorA = InstanceInput {
+					SourceOp = "ColorRect",
+					Source = "TopLeftAlpha",
+					ControlGroup = 9,
+					Default = 1,
+				},
+				ShadowStrength = InstanceInput {
+					SourceOp = "DropShadow1",
+					Source = "shadowStrength",
+					Name = "Shadow Opacity",
+					Page = "Shadow",
+					Default = 0.6,
+				},
+				ShadowAngle = InstanceInput {
+					SourceOp = "DropShadow1",
+					Source = "shadowAngle",
+					Name = "Shadow Angle",
+					Page = "Shadow",
+					Default = -45,
+				},
+				ShadowDistance = InstanceInput {
+					SourceOp = "DropShadow1",
+					Source = "ShadowDistance",
+					Name = "Shadow Distance",
+					MaxScale = 0.2000000029802,
+					Page = "Shadow",
+					Default = 0.01,
+				},
+				ShadowBlur = InstanceInput {
+					SourceOp = "DropShadow1",
+					Source = "shadowBlur",
+					Name = "Shadow Softness",
+					Page = "Shadow",
+					Default = 0.4,
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "FinalMerge",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				RevealTop = RectangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 2048, },
+						MaskHeight = Input { Value = 2048, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Center = Input {
+							Value = { 0.5, 0.675 },
+							Expression = "Point(0.5 - ColorRect.ShapeW/2 - 0.6*ColorRect.Thick + ColorRect.Ph1*(ColorRect.ShapeW + 1.2*ColorRect.Thick)/2, 0.5 + ColorRect.ShapeH/2)",
+						},
+						Width = Input {
+							Value = 0,
+							Expression = "ColorRect.Ph1 * (ColorRect.ShapeW + 1.2*ColorRect.Thick)",
+						},
+						Height = Input {
+							Value = 0.0072,
+							Expression = "ColorRect.Thick * 1.2",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -605, -103 } },
+				},
+				RevealRight = RectangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "RevealTop",
+							Source = "Mask",
+						},
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 2048, },
+						MaskHeight = Input { Value = 2048, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Center = Input {
+							Value = { 0.675, 0.5 },
+							Expression = "Point(0.5 + ColorRect.ShapeW/2, 0.5 + ColorRect.ShapeH/2 + 0.6*ColorRect.Thick - ColorRect.Ph2*(ColorRect.ShapeH + 1.2*ColorRect.Thick)/2)",
+						},
+						Width = Input {
+							Value = 0.0072,
+							Expression = "ColorRect.Thick * 1.2",
+						},
+						Height = Input {
+							Value = 0,
+							Expression = "ColorRect.Ph2 * (ColorRect.ShapeH + 1.2*ColorRect.Thick)",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -495, -103 } },
+				},
+				RevealBottom = RectangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "RevealRight",
+							Source = "Mask",
+						},
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 2048, },
+						MaskHeight = Input { Value = 2048, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Center = Input {
+							Value = { 0.5, 0.325 },
+							Expression = "Point(0.5 + ColorRect.ShapeW/2 + 0.6*ColorRect.Thick - ColorRect.Ph3*(ColorRect.ShapeW + 1.2*ColorRect.Thick)/2, 0.5 - ColorRect.ShapeH/2)",
+						},
+						Width = Input {
+							Value = 0,
+							Expression = "ColorRect.Ph3 * (ColorRect.ShapeW + 1.2*ColorRect.Thick)",
+						},
+						Height = Input {
+							Value = 0.0072,
+							Expression = "ColorRect.Thick * 1.2",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -385, -103 } },
+				},
+				RevealLeft = RectangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "RevealBottom",
+							Source = "Mask",
+						},
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 2048, },
+						MaskHeight = Input { Value = 2048, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Center = Input {
+							Value = { 0.325, 0.5 },
+							Expression = "Point(0.5 - ColorRect.ShapeW/2, 0.5 - ColorRect.ShapeH/2 - 0.6*ColorRect.Thick + ColorRect.Ph4*(ColorRect.ShapeH + 1.2*ColorRect.Thick)/2)",
+						},
+						Width = Input {
+							Value = 0.0072,
+							Expression = "ColorRect.Thick * 1.2",
+						},
+						Height = Input {
+							Value = 0,
+							Expression = "ColorRect.Ph4 * (ColorRect.ShapeH + 1.2*ColorRect.Thick)",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -275, -103 } },
+				},
+				OuterRect = RectangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "RevealLeft",
+							Source = "Mask",
+						},
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						PaintMode = Input { Value = FuID { "Multiply" }, },
+						Level = Input {
+							Value = 1,
+							Expression = "1 - ColorRect.ShapeSel",
+						},
+						MaskWidth = Input { Value = 2048, },
+						MaskHeight = Input { Value = 2048, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Center = Input { Value = { 0.5, 0.5 }, },
+						Width = Input {
+							Value = 0.356,
+							Expression = "ColorRect.ShapeW + ColorRect.Thick",
+						},
+						Height = Input {
+							Value = 0.356,
+							Expression = "ColorRect.ShapeH + ColorRect.Thick",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -165, -103 } },
+				},
+				InnerRect = RectangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "OuterRect",
+							Source = "Mask",
+						},
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						PaintMode = Input { Value = FuID { "Subtract" }, },
+						MaskWidth = Input { Value = 2048, },
+						MaskHeight = Input { Value = 2048, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Center = Input { Value = { 0.5, 0.5 }, },
+						Width = Input {
+							Value = 0.344,
+							Expression = "max(ColorRect.ShapeW - ColorRect.Thick, 0)",
+						},
+						Height = Input {
+							Value = 0.344,
+							Expression = "max(ColorRect.ShapeH - ColorRect.Thick, 0)",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -55, -103 } },
+				},
+				ColorRect = Background {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "InnerRect",
+							Source = "Mask",
+						},
+						Width = Input { Value = 2048, },
+						Height = Input { Value = 2048, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 1, },
+						TopLeftGreen = Input { Value = 0, },
+						TopLeftBlue = Input { Value = 0, },
+						TopLeftAlpha = Input { Value = 1, },
+						ShapeW = Input { Value = 0.35, },
+						ShapeH = Input { Value = 0.35, },
+						Thick = Input { Value = 0.006, },
+						DrawTime = Input { Value = 30, },
+						ShapeSel = Input { Value = 0, },
+						Progress = Input { Expression = "min(1, time / max(DrawTime, 1))", },
+						Ph1 = Input { Expression = "min(Progress * 2*(ShapeW+ShapeH) / ShapeW, 1)", },
+						Ph2 = Input { Expression = "min(max((Progress - ShapeW/(2*(ShapeW+ShapeH))) * 2*(ShapeW+ShapeH) / ShapeH, 0), 1)", },
+						Ph3 = Input { Expression = "min(max((Progress - 0.5) * 2*(ShapeW+ShapeH) / ShapeW, 0), 1)", },
+						Ph4 = Input { Expression = "min(max((Progress - 0.5 - ShapeW/(2*(ShapeW+ShapeH))) * 2*(ShapeW+ShapeH) / ShapeH, 0), 1)", },
+						S1 = Input { Expression = "min(max(Progress * 6.28318530718, 0), 1.5707963268)", },
+						S2 = Input { Expression = "min(max(Progress * 6.28318530718 - 1.5707963268, 0), 1.5707963268)", },
+						S3 = Input { Expression = "min(max(Progress * 6.28318530718 - 3.1415926536, 0), 1.5707963268)", },
+						S4 = Input { Expression = "min(max(Progress * 6.28318530718 - 4.7123889804, 0), 1.5707963268)", }
+					},
+					ViewInfo = OperatorInfo { Pos = { 55, -103 } },
+					UserControls = ordered() {
+						ShapeW = { INP_Default = 0.35, INPID_InputControl = "SliderControl", INP_MinScale = 0.02, INP_MaxScale = 1.2, INP_MinAllowed = 0.005, INP_MaxAllowed = 3, LINKID_DataType = "Number", LINKS_Name = "Width", ICS_ControlPage = "Controls", },
+						ShapeH = { INP_Default = 0.35, INPID_InputControl = "SliderControl", INP_MinScale = 0.02, INP_MaxScale = 1.2, INP_MinAllowed = 0.005, INP_MaxAllowed = 3, LINKID_DataType = "Number", LINKS_Name = "Height", ICS_ControlPage = "Controls", },
+						Thick = { INP_Default = 0.006, INPID_InputControl = "SliderControl", INP_MinScale = 0.001, INP_MaxScale = 0.05, INP_MinAllowed = 0.0002, INP_MaxAllowed = 0.3, LINKID_DataType = "Number", LINKS_Name = "Thickness", ICS_ControlPage = "Controls", },
+						DrawTime = { INP_Default = 30, INP_Integer = true, INPID_InputControl = "SliderControl", INP_MinScale = 1, INP_MaxScale = 120, INP_MinAllowed = 1, INP_MaxAllowed = 600, LINKID_DataType = "Number", LINKS_Name = "Draw Time (Frames)", ICS_ControlPage = "Controls", },
+						ShapeSel = { { CCS_AddString = "Rectangle / Square" }, { CCS_AddString = "Circle / Oval" }, INP_Integer = true, INPID_InputControl = "ComboControl", CC_LabelPosition = "Horizontal", INP_Default = 0, INP_MinScale = 0, INP_MaxScale = 1, INP_MinAllowed = 0, INP_MaxAllowed = 1, LINKID_DataType = "Number", LINKS_Name = "Shape", ICS_ControlPage = "Controls", },
+						Progress = { INP_Default = 0, INPID_InputControl = "SliderControl", INP_MinScale = 0, INP_MaxScale = 1, LINKID_DataType = "Number", LINKS_Name = "Progress (auto)", IC_Visible = false, },
+						Ph1 = { INP_Default = 0, INPID_InputControl = "SliderControl", LINKID_DataType = "Number", LINKS_Name = "Ph1", IC_Visible = false, },
+						Ph2 = { INP_Default = 0, INPID_InputControl = "SliderControl", LINKID_DataType = "Number", LINKS_Name = "Ph2", IC_Visible = false, },
+						Ph3 = { INP_Default = 0, INPID_InputControl = "SliderControl", LINKID_DataType = "Number", LINKS_Name = "Ph3", IC_Visible = false, },
+						Ph4 = { INP_Default = 0, INPID_InputControl = "SliderControl", LINKID_DataType = "Number", LINKS_Name = "Ph4", IC_Visible = false, },
+						S1 = { INP_Default = 0, INPID_InputControl = "SliderControl", LINKID_DataType = "Number", LINKS_Name = "S1", IC_Visible = false, },
+						S2 = { INP_Default = 0, INPID_InputControl = "SliderControl", LINKID_DataType = "Number", LINKS_Name = "S2", IC_Visible = false, },
+						S3 = { INP_Default = 0, INPID_InputControl = "SliderControl", LINKID_DataType = "Number", LINKS_Name = "S3", IC_Visible = false, },
+						S4 = { INP_Default = 0, INPID_InputControl = "SliderControl", LINKID_DataType = "Number", LINKS_Name = "S4", IC_Visible = false, }
+					}
+				},
+				SweepA = TriangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 2048, },
+						MaskHeight = Input { Value = 2048, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Point1 = Input { Value = { 0.5, 0.5 }, },
+						Point2 = Input { Value = { 0.5, 2 }, },
+						Point3 = Input {
+							Value = { 0.5, 2 },
+							Expression = "Point(0.5 + 1.5*sin(ColorRect.S1), 0.5 + 1.5*cos(ColorRect.S1))",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -605, 22 } },
+				},
+				SweepB = TriangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "SweepA",
+							Source = "Mask",
+						},
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 2048, },
+						MaskHeight = Input { Value = 2048, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Point1 = Input { Value = { 0.5, 0.5 }, },
+						Point2 = Input { Value = { 2, 0.5 }, },
+						Point3 = Input {
+							Value = { 2, 0.5 },
+							Expression = "Point(0.5 + 1.5*sin(1.5707963268 + ColorRect.S2), 0.5 + 1.5*cos(1.5707963268 + ColorRect.S2))",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -495, 22 } },
+				},
+				SweepC = TriangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "SweepB",
+							Source = "Mask",
+						},
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 2048, },
+						MaskHeight = Input { Value = 2048, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Point1 = Input { Value = { 0.5, 0.5 }, },
+						Point2 = Input { Value = { 0.5, -1 }, },
+						Point3 = Input {
+							Value = { 0.5, -1 },
+							Expression = "Point(0.5 + 1.5*sin(3.1415926536 + ColorRect.S3), 0.5 + 1.5*cos(3.1415926536 + ColorRect.S3))",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -385, 22 } },
+				},
+				SweepD = TriangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "SweepC",
+							Source = "Mask",
+						},
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 2048, },
+						MaskHeight = Input { Value = 2048, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Point1 = Input { Value = { 0.5, 0.5 }, },
+						Point2 = Input { Value = { -1, 0.5 }, },
+						Point3 = Input {
+							Value = { -1, 0.5 },
+							Expression = "Point(0.5 + 1.5*sin(4.7123889804 + ColorRect.S4), 0.5 + 1.5*cos(4.7123889804 + ColorRect.S4))",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -275, 22 } },
+				},
+				BorderOval = EllipseMask {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "SweepD",
+							Source = "Mask",
+						},
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						PaintMode = Input { Value = FuID { "Multiply" }, },
+						Level = Input {
+							Value = 1,
+							Expression = "ColorRect.ShapeSel",
+						},
+						BorderWidth = Input {
+							Value = 0.006,
+							Expression = "ColorRect.Thick",
+						},
+						Solid = Input { Value = 0, },
+						MaskWidth = Input { Value = 2048, },
+						MaskHeight = Input { Value = 2048, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Center = Input { Value = { 0.5, 0.5 }, },
+						Width = Input {
+							Value = 0.35,
+							Expression = "ColorRect.ShapeW",
+						},
+						Height = Input {
+							Value = 0.35,
+							Expression = "ColorRect.ShapeH",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -165, 22 } },
+				},
+				ColorOval = Background {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "BorderOval",
+							Source = "Mask",
+						},
+						Width = Input { Value = 2048, },
+						Height = Input { Value = 2048, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input {
+							Value = 1,
+							Expression = "ColorRect.TopLeftRed",
+						},
+						TopLeftGreen = Input {
+							Value = 0,
+							Expression = "ColorRect.TopLeftGreen",
+						},
+						TopLeftBlue = Input {
+							Value = 0,
+							Expression = "ColorRect.TopLeftBlue",
+						},
+						TopLeftAlpha = Input {
+							Value = 1,
+							Expression = "ColorRect.TopLeftAlpha",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -55, 22 } },
+				},
+				ShapeMerge = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "ColorRect",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "ColorOval",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 165, -103 } },
+				},
+				DropShadow1 = ofx.com.blackmagicdesign.resolvefx.DropShadow {
+					CtrlWShown = false,
+					Inputs = {
+						Source = Input {
+							SourceOp = "ShapeMerge",
+							Source = "Output",
+						},
+						shadowStrength = Input { Value = 0.6, },
+						shadowAngle = Input { Value = -45, },
+						ShadowDistance = Input { Value = 0.01, },
+						shadowBlur = Input { Value = 0.4, },
+						shadowColorRed = Input { Value = 0, },
+						shadowColorGreen = Input { Value = 0, },
+						shadowColorBlue = Input { Value = 0, },
+						isLegacyComp = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						srcProcessingAlphaMode = Input { Value = 2, },
+						dstProcessingAlphaMode = Input { Value = 2, },
+						resolvefxVersion = Input { Value = "2.0", }
+					},
+					ViewInfo = OperatorInfo { Pos = { 275, -103 } },
+				},
+				FrameBG = Background {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0, },
+						TopLeftGreen = Input { Value = 0, },
+						TopLeftBlue = Input { Value = 0, },
+						TopLeftAlpha = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 275, 22 } },
+				},
+				FinalMerge = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "FrameBG",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "DropShadow1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 385, -103 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "Frame1"
+}

@@ -1,0 +1,528 @@
+{
+	Tools = ordered() {
+		Check11 = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "Check1",
+					Source = "Input1",
+					Default = 0,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Check1",
+					Source = "Input2",
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Check1",
+					Source = "Input3",
+					Page = "Checkmark Controls",
+					Default = 0,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Check1",
+					Source = "Input4",
+					Page = "Checkmark Controls",
+					Default = 0,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Check1",
+					Source = "Input5",
+					Page = "Checkmark Controls",
+					Default = 1,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Check1",
+					Source = "Input6",
+					Page = "Checkmark Controls",
+					Default = 0,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Check1",
+					Source = "Input7",
+					Page = "Checkmark Controls",
+					Default = 30,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Check1",
+					Source = "Input8",
+					Page = "Checkmark Controls",
+					Default = 0.95,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "Check1",
+					Source = "Input9",
+					Page = "Checkmark Controls",
+					Default = 0.15,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "Check1",
+					Source = "Input10",
+					Page = "Checkmark Controls",
+					Default = 0.15,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "Check1",
+					Source = "Input11",
+					Page = "Shadow",
+					Default = 0.45,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "Check1",
+					Source = "Input12",
+					Page = "Shadow",
+					Default = 45,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "Check1",
+					Source = "Input13",
+					Page = "Shadow",
+					Default = 0.025,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "Check1",
+					Source = "Input14",
+					Page = "Shadow",
+					Default = 0.38,
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Check1",
+					Source = "MainOutput1",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				Check1 = MacroOperator {
+					CtrlWZoom = false,
+					CustomData = { Path = { Map = { ["Setting:"] = "Templates:\\Edit\\Generators\\" } }, },
+					Inputs = ordered() {
+						Input1 = InstanceInput {
+							SourceOp = "Checkmark_Macro",
+							Source = "HideInputs",
+							Default = 0,
+						},
+						Input2 = InstanceInput {
+							SourceOp = "Checkmark_Macro",
+							Source = "Comments",
+						},
+						Input3 = InstanceInput {
+							SourceOp = "Checkmark_Macro",
+							Source = "PositionX",
+							Page = "Checkmark Controls",
+							Default = 0,
+						},
+						Input4 = InstanceInput {
+							SourceOp = "Checkmark_Macro",
+							Source = "PositionY",
+							Page = "Checkmark Controls",
+							Default = 0,
+						},
+						Input5 = InstanceInput {
+							SourceOp = "Checkmark_Macro",
+							Source = "CheckmarkScale",
+							Page = "Checkmark Controls",
+							Default = 1,
+						},
+						Input6 = InstanceInput {
+							SourceOp = "Checkmark_Macro",
+							Source = "CheckmarkRotation",
+							Page = "Checkmark Controls",
+							Default = 0,
+						},
+						Input7 = InstanceInput {
+							SourceOp = "Checkmark_Macro",
+							Source = "AnimationDuration",
+							Page = "Checkmark Controls",
+							Default = 30,
+						},
+						Input8 = InstanceInput {
+							SourceOp = "Checkmark_Macro",
+							Source = "ColorRed",
+							Page = "Checkmark Controls",
+							Default = 0.95,
+						},
+						Input9 = InstanceInput {
+							SourceOp = "Checkmark_Macro",
+							Source = "ColorGreen",
+							Page = "Checkmark Controls",
+							Default = 0.15,
+						},
+						Input10 = InstanceInput {
+							SourceOp = "Checkmark_Macro",
+							Source = "ColorBlue",
+							Page = "Checkmark Controls",
+							Default = 0.15,
+						},
+						Input11 = InstanceInput {
+							SourceOp = "Checkmark_Macro",
+							Source = "ShadowStrength",
+							Page = "Shadow",
+							Default = 0.45,
+						},
+						Input12 = InstanceInput {
+							SourceOp = "Checkmark_Macro",
+							Source = "ShadowAngle",
+							Page = "Shadow",
+							Default = 45,
+						},
+						Input13 = InstanceInput {
+							SourceOp = "Checkmark_Macro",
+							Source = "ShadowDistance",
+							Page = "Shadow",
+							Default = 0.025,
+						},
+						Input14 = InstanceInput {
+							SourceOp = "Checkmark_Macro",
+							Source = "ShadowBlur",
+							Page = "Shadow",
+							Default = 0.38,
+						}
+					},
+					Outputs = {
+						MainOutput1 = InstanceOutput {
+							SourceOp = "Checkmark_Macro",
+							Source = "Output",
+						}
+					},
+					ViewInfo = GroupInfo { Pos = { 220.667, 49.5 } },
+					Tools = ordered() {
+						Checkmark_Macro = MacroOperator {
+							CtrlWZoom = false,
+							CtrlWShown = false,
+							Inputs = ordered() {
+								PositionX = InstanceInput {
+									SourceOp = "CheckmarkPosition",
+									Source = "posX",
+									MinScale = -1,
+									MaxScale = 2,
+									Page = "Checkmark Controls",
+									Default = 0,
+								},
+								PositionY = InstanceInput {
+									SourceOp = "CheckmarkPosition",
+									Source = "posY",
+									MinScale = -1,
+									MaxScale = 2,
+									Page = "Checkmark Controls",
+									Default = 0,
+								},
+								CheckmarkScale = InstanceInput {
+									SourceOp = "CheckmarkPosition",
+									Source = "zoom",
+									Name = "Scale",
+									MinScale = 0.1,
+									MaxScale = 5,
+									Page = "Checkmark Controls",
+									Default = 1,
+								},
+								CheckmarkRotation = InstanceInput {
+									SourceOp = "CheckmarkPosition",
+									Source = "rotate",
+									Name = "Rotation",
+									Page = "Checkmark Controls",
+									Default = 0,
+								},
+								AnimationDuration = InstanceInput {
+									SourceOp = "StrokeCheck",
+									Source = "Duration",
+									Name = "Anim Duration (frames)",
+									MinScale = 5,
+									MaxScale = 200,
+									Page = "Checkmark Controls",
+									Default = 30,
+								},
+								ColorRed = InstanceInput {
+									SourceOp = "StrokeCheck",
+									Source = "PaintApplyColor.Red",
+									Name = "Color Red",
+									Page = "Checkmark Controls",
+									Default = 0.95,
+								},
+								ColorGreen = InstanceInput {
+									SourceOp = "StrokeCheck",
+									Source = "PaintApplyColor.Green",
+									Name = "Color Green",
+									Page = "Checkmark Controls",
+									Default = 0.15,
+								},
+								ColorBlue = InstanceInput {
+									SourceOp = "StrokeCheck",
+									Source = "PaintApplyColor.Blue",
+									Name = "Color Blue",
+									Page = "Checkmark Controls",
+									Default = 0.15,
+								},
+								ShadowStrength = InstanceInput {
+									SourceOp = "DropShadowCheck",
+									Source = "shadowStrength",
+									Page = "Shadow",
+									Default = 0.45,
+								},
+								ShadowAngle = InstanceInput {
+									SourceOp = "DropShadowCheck",
+									Source = "shadowAngle",
+									Name = "Shadow Angle",
+									MinScale = 0,
+									MaxScale = 360,
+									Page = "Shadow",
+									Default = 45,
+								},
+								ShadowDistance = InstanceInput {
+									SourceOp = "DropShadowCheck",
+									Source = "ShadowDistance",
+									Name = "Shadow Distance",
+									MaxScale = 0.2,
+									Page = "Shadow",
+									Default = 0.025,
+								},
+								ShadowBlur = InstanceInput {
+									SourceOp = "DropShadowCheck",
+									Source = "shadowBlur",
+									Name = "Shadow Blur",
+									Page = "Shadow",
+									Default = 0.38,
+								}
+							},
+							Outputs = {
+								Output = InstanceOutput {
+									SourceOp = "CheckmarkPosition",
+									Source = "Output",
+								}
+							},
+							ViewInfo = GroupInfo { Pos = { 0, 8.75758 } },
+							Tools = ordered() {
+								CheckmarkPosition = ofx.com.blackmagicdesign.resolvefx.Transform {
+									CtrlWZoom = false,
+									CtrlWShown = false,
+									Inputs = {
+										Source = Input {
+											SourceOp = "TransformCheck",
+											Source = "Output",
+										},
+										controlMode = Input { Value = FuID { "TransformControlsSliders" }, },
+										controlReset = Input { Value = 0, },
+										controlGroup = Input { Value = 1, },
+										controlVisibility = Input { Value = FuID { "Show" }, },
+										posX = Input { Value = 0, },
+										posY = Input { Value = 0, },
+										zoom = Input { Value = 1, },
+										rotate = Input { Value = 0, },
+										scaleX = Input { Value = 1, },
+										scaleY = Input { Value = 1, },
+										pitch = Input { Value = 0, },
+										yaw = Input { Value = 0, },
+										flipH = Input { Value = 0, },
+										flipV = Input { Value = 0, },
+										adjustGroup = Input { Value = 0, },
+										isCrop = Input { Value = 0, },
+										cropL = Input { Value = 0, },
+										cropR = Input { Value = 0, },
+										cropT = Input { Value = 0, },
+										cropB = Input { Value = 0, },
+										edgeSoftness = Input { Value = 0, },
+										edgeRounding = Input { Value = 0, },
+										animationGroup = Input { Value = 0, },
+										serializedWarpable = Input { Value = "", },
+										serializedPinnable = Input { Value = "", },
+										motionBlur = Input { Value = 0, },
+										advancedGroup = Input { Value = 0, },
+										edgeBehaviour = Input { Value = FuID { "Constant" }, },
+										CompositeType = Input { Value = FuID { "COMPOSITE_NORMAL" }, },
+										olayAntiAlias = Input { Value = 1, },
+										previewAlpha = Input { Value = 0, },
+										isLegacyCrop = Input { Value = 0, },
+										isLegacyAlphaHandling = Input { Value = 0, },
+										isEnforceBlanking = Input { Value = 0, },
+										blendGroup = Input { Value = 0, },
+										blendIn = Input { Value = 1, },
+										blend = Input { Value = 0, },
+										ignoreContentShape = Input { Value = 0, },
+										legacyIsProcessRGBOnly = Input { Value = 0, },
+										IsNoTemporalFramesReqd = Input { Value = 0, },
+										refreshTrigger = Input { Value = 1, },
+										srcProcessingAlphaMode = Input { Value = -1, },
+										dstProcessingAlphaMode = Input { Value = -1, },
+										resolvefxVersion = Input { Value = "1.4", }
+									},
+									ViewInfo = OperatorInfo { Pos = { 240, 8.54546 } },
+								},
+								TransformCheck = ofx.com.blackmagicdesign.resolvefx.Transform {
+									CtrlWZoom = false,
+									CtrlWShown = false,
+									Inputs = {
+										Source = Input {
+											SourceOp = "DropShadowCheck",
+											Source = "Output",
+										},
+										controlMode = Input { Value = FuID { "TransformControlsSliders" }, },
+										controlReset = Input { Value = 0, },
+										controlGroup = Input { Value = 1, },
+										controlVisibility = Input { Value = FuID { "Show" }, },
+										posX = Input { Value = 0, },
+										posY = Input { Value = 0, },
+										zoom = Input { Value = 1, },
+										rotate = Input { Value = 0, },
+										scaleX = Input { Value = 1, },
+										scaleY = Input { Value = 1, },
+										pitch = Input { Value = 0, },
+										yaw = Input { Value = 0, },
+										flipH = Input { Value = 0, },
+										flipV = Input { Value = 0, },
+										adjustGroup = Input { Value = 0, },
+										isCrop = Input { Value = 0, },
+										cropL = Input { Value = 0, },
+										cropR = Input { Value = 0, },
+										cropT = Input { Value = 0, },
+										cropB = Input { Value = 0, },
+										edgeSoftness = Input { Value = 0, },
+										edgeRounding = Input { Value = 0, },
+										animationGroup = Input { Value = 0, },
+										serializedWarpable = Input { Value = "", },
+										serializedPinnable = Input { Value = "", },
+										motionBlur = Input { Value = 0, },
+										advancedGroup = Input { Value = 0, },
+										edgeBehaviour = Input { Value = FuID { "Constant" }, },
+										CompositeType = Input { Value = FuID { "COMPOSITE_NORMAL" }, },
+										olayAntiAlias = Input { Value = 1, },
+										previewAlpha = Input { Value = 0, },
+										isLegacyCrop = Input { Value = 0, },
+										isLegacyAlphaHandling = Input { Value = 0, },
+										isEnforceBlanking = Input { Value = 0, },
+										blendGroup = Input { Value = 0, },
+										blendIn = Input { Value = 1, },
+										blend = Input { Value = 0, },
+										ignoreContentShape = Input { Value = 0, },
+										legacyIsProcessRGBOnly = Input { Value = 0, },
+										IsNoTemporalFramesReqd = Input { Value = 0, },
+										refreshTrigger = Input { Value = 1, },
+										srcProcessingAlphaMode = Input { Value = -1, },
+										dstProcessingAlphaMode = Input { Value = -1, },
+										resolvefxVersion = Input { Value = "1.4", }
+									},
+									ViewInfo = OperatorInfo { Pos = { 130, 8.54546 } },
+								},
+								DropShadowCheck = ofx.com.blackmagicdesign.resolvefx.DropShadow {
+									CtrlWShown = false,
+									Inputs = {
+										Source = Input {
+											SourceOp = "PaintCheck",
+											Source = "Output",
+										},
+										shadowStrength = Input { Value = 0.45, },
+										shadowAngle = Input { Value = 45, },
+										ShadowDistance = Input { Value = 0.025, },
+										shadowBlur = Input { Value = 0.38, },
+										shadowColorRed = Input { Value = 0, },
+										shadowColorGreen = Input { Value = 0, },
+										shadowColorBlue = Input { Value = 0, },
+										isLegacyComp = Input { Value = 0, },
+										blendGroup = Input { Value = 0, },
+										blendIn = Input { Value = 1, },
+										blend = Input { Value = 0, },
+										ignoreContentShape = Input { Value = 0, },
+										legacyIsProcessRGBOnly = Input { Value = 0, },
+										IsNoTemporalFramesReqd = Input { Value = 0, },
+										refreshTrigger = Input { Value = 1, },
+										srcProcessingAlphaMode = Input { Value = 2, },
+										dstProcessingAlphaMode = Input { Value = 2, },
+										resolvefxVersion = Input { Value = "2.0", }
+									},
+									ViewInfo = OperatorInfo { Pos = { 20, 8.54546 } },
+								},
+								PaintCheck = Paint {
+									CtrlWShown = false,
+									Inputs = {
+										Input = Input {
+											SourceOp = "BackgroundCheck",
+											Source = "Output",
+										},
+										Paint = Input {
+											SourceOp = "StrokeCheck",
+											Source = "Out",
+										}
+									},
+									ViewInfo = OperatorInfo { Pos = { -99.333, 9.75756 } },
+								},
+								StrokeCheck = Stroke {
+									Points = {
+										{ X = -0.085, Y = 0.02, Time = 1 },
+										{ X = -0.072, Y = 0.008, Time = 8, XSpeed = 0.00186, YSpeed = -0.00171 },
+										{ X = -0.061, Y = -0.005, Time = 14, XSpeed = 0.00183, YSpeed = -0.00217 },
+										{ X = -0.055, Y = -0.012, Time = 18, XSpeed = 0.0015, YSpeed = -0.00175 },
+										{ X = -0.052, Y = -0.014, Time = 20, XSpeed = 1.5, YSpeed = -1 },
+										{ X = -0.048, Y = -0.011, Time = 24, XSpeed = 0.001, YSpeed = 0.00075 },
+										{ X = -0.038, Y = 0.002, Time = 32, XSpeed = 0.00125, YSpeed = 0.00163 },
+										{ X = -0.022, Y = 0.025, Time = 44, XSpeed = 0.00133, YSpeed = 0.00192 },
+										{ X = -0.005, Y = 0.048, Time = 56, XSpeed = 0.00142, YSpeed = 0.00192 },
+										{ X = 0.012, Y = 0.068, Time = 68, XSpeed = 0.00142, YSpeed = 0.00167 },
+										{ X = 0.028, Y = 0.082, Time = 78, XSpeed = 0.0016, YSpeed = 0.0014 },
+										{ X = 0.042, Y = 0.091, Time = 86, XSpeed = 0.00175, YSpeed = 0.00113 },
+										{ X = 0.055, Y = 0.097, Time = 92, XSpeed = 0.00217, YSpeed = 0.001 },
+										{ X = 0.068, Y = 0.101, Time = 98, XSpeed = 0.00217, YSpeed = 0.00067 },
+										{ X = 0.078, Y = 0.103, Time = 100, XSpeed = 5, YSpeed = 0.999998 }
+									},
+									IsThreaded = false,
+									Brushes = { "CircleBrush" },
+									ApplyModes = { "PaintApplyColor" },
+									CtrlWZoom = false,
+									Inputs = {
+										BrushSize = Input {
+											Value = Number {
+												Value = 0.018
+											},
+										},
+										Softness = Input {
+											Value = Number {
+												Value = 0.15
+											},
+										},
+										BrushControls = Input { Value = 1, },
+										BrushShape = Input { Value = FuID { "CircleBrush" }, },
+										["PaintApplyColor.Red"] = Input { Value = 0.95, },
+										["PaintApplyColor.Green"] = Input { Value = 0.15, },
+										["PaintApplyColor.Blue"] = Input { Value = 0.15, },
+										StrokeControls = Input { Value = 1, },
+										StrokeAnimation = Input { Value = 2, },
+										Duration = Input { Value = 30, },
+										WriteOnEnd = Input {
+											SourceOp = "StrokeCheckEnd",
+											Source = "Value",
+										}
+									},
+								},
+								StrokeCheckEnd = BezierSpline {
+									SplineColor = { Red = 72, Green = 233, Blue = 54 },
+									CtrlWZoom = false,
+									KeyFrames = {
+										[0] = { 0, RH = { 3.33333333333333, 0.01 }, Flags = { Linear = true } },
+										[10] = { 0.03, LH = { 6.66666666666667, 0.02 }, RH = { 13.3333333333333, 0.0433333333333333 }, Flags = { Linear = true } },
+										[20] = { 0.07, LH = { 16.6666666666667, 0.0566666666666667 }, RH = { 23.3333333333333, 0.0866666666666667 }, Flags = { Linear = true } },
+										[30] = { 0.12, LH = { 26.6666666666667, 0.103333333333333 }, RH = { 33.3333333333333, 0.153333333333333 }, Flags = { Linear = true } },
+										[40] = { 0.22, LH = { 36.6666666666667, 0.186666666666667 }, RH = { 43.3333333333333, 0.273333333333333 }, Flags = { Linear = true } },
+										[50] = { 0.38, LH = { 46.6666666666667, 0.326666666666667 }, RH = { 53.3333333333333, 0.446666666666667 }, Flags = { Linear = true } },
+										[60] = { 0.58, LH = { 56.6666666666667, 0.513333333333333 }, RH = { 63.3333333333333, 0.646666666666667 }, Flags = { Linear = true } },
+										[70] = { 0.78, LH = { 66.6666666666667, 0.713333333333333 }, RH = { 73.3333333333333, 0.823333333333333 }, Flags = { Linear = true } },
+										[80] = { 0.91, LH = { 76.6666666666667, 0.866666666666667 }, RH = { 83.3333333333333, 0.933333333333333 }, Flags = { Linear = true } },
+										[90] = { 0.98, LH = { 86.6666666666667, 0.956666666666667 }, RH = { 93.3333333333333, 0.986666666666667 }, Flags = { Linear = true } },
+										[100] = { 1, LH = { 96.6666666666667, 0.993333333333333 }, Flags = { Linear = true } }
+									}
+								},
+								BackgroundCheck = Background {
+									CtrlWShown = false,
+									Inputs = {
+										Width = Input { Value = 1920, },
+										Height = Input { Value = 1080, },
+										["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+										TopLeftAlpha = Input { Value = 0, }
+									},
+									ViewInfo = OperatorInfo { Pos = { -240, 10.9697 } },
+								}
+							},
+						}
+					},
+				}
+			},
+		}
+	},
+	ActiveTool = "Check11"
+}

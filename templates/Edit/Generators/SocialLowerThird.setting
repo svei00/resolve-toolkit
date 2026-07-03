@@ -1,0 +1,1015 @@
+{
+	Tools = ordered() {
+		SocialLowerThird = MacroOperator {
+			CtrlWZoom = false,
+			Inputs = ordered() {
+				-- ===== PLATFORM / LOGO =====
+				Input29 = InstanceInput {
+					SourceOp = "LogoXF",
+					Source = "Platform",
+					Name = "Platform",
+					Page = "Controls",
+					Default = 0,
+				},
+				Input30 = InstanceInput {
+					SourceOp = "LogoXF",
+					Source = "Size",
+					Name = "Logo Size",
+					Page = "Controls",
+					Default = 0.2,
+				},
+				Input31 = InstanceInput {
+					SourceOp = "LogoXF",
+					Source = "Center",
+					Name = "Logo Position",
+					Page = "Controls",
+				},
+				-- ===== POSITION / SCALE / ROTATION =====
+				Input1 = InstanceInput {
+					SourceOp = "MasterXF",
+					Source = "Center",
+					Name = "Position",
+					Page = "Controls",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "MasterXF",
+					Source = "Size",
+					Name = "Scale",
+					Page = "Controls",
+					Default = 1,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "MasterXF",
+					Source = "Angle",
+					Name = "Rotation",
+					Page = "Controls",
+					Default = 0,
+				},
+				-- ===== TEXT =====
+				Input4 = InstanceInput {
+					SourceOp = "Text1",
+					Source = "StyledText",
+					Name = "Line 1 (CTA)",
+					Page = "Controls",
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Text2",
+					Source = "StyledText",
+					Name = "Line 2 (Handle)",
+					Page = "Controls",
+				},
+				Input38 = InstanceInput {
+					SourceOp = "TextXF",
+					Source = "Center",
+					Name = "Text Position",
+					Page = "Controls",
+				},
+				Input39 = InstanceInput {
+					SourceOp = "TextXF",
+					Source = "Size",
+					Name = "Text Size",
+					Page = "Controls",
+					Default = 1,
+				},
+				-- ===== TEXT COLOR (swatch) =====
+				Input6 = InstanceInput {
+					SourceOp = "Text1",
+					Source = "Red1",
+					Name = "Text Color",
+					ControlGroup = 40,
+					Page = "Controls",
+					Default = 0.945098,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Text1",
+					Source = "Green1",
+					ControlGroup = 40,
+					Page = "Controls",
+					Default = 0.921569,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Text1",
+					Source = "Blue1",
+					ControlGroup = 40,
+					Page = "Controls",
+					Default = 0.874510,
+				},
+				-- ===== BAR COLOR (swatch incl. Glass Opacity = Alpha) =====
+				Input9 = InstanceInput {
+					SourceOp = "BarFillBG",
+					Source = "TopLeftRed",
+					Name = "Bar Color",
+					ControlGroup = 10,
+					Page = "Controls",
+					Default = 0.078,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "BarFillBG",
+					Source = "TopLeftGreen",
+					ControlGroup = 10,
+					Page = "Controls",
+					Default = 0.078,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "BarFillBG",
+					Source = "TopLeftBlue",
+					ControlGroup = 10,
+					Page = "Controls",
+					Default = 0.094,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "BarFillBG",
+					Source = "TopLeftAlpha",
+					Name = "Glass Opacity",
+					ControlGroup = 10,
+					Page = "Controls",
+					Default = 0.85,
+				},
+				-- ===== BORDER COLOR (swatch) =====
+				Input13 = InstanceInput {
+					SourceOp = "BorderBG",
+					Source = "TopLeftRed",
+					Name = "Border Color",
+					ControlGroup = 20,
+					Page = "Controls",
+					Default = 0.945098,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "BorderBG",
+					Source = "TopLeftGreen",
+					ControlGroup = 20,
+					Page = "Controls",
+					Default = 0.921569,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "BorderBG",
+					Source = "TopLeftBlue",
+					ControlGroup = 20,
+					Page = "Controls",
+					Default = 0.874510,
+				},
+				-- ===== BORDER THICKNESS =====
+				Input16 = InstanceInput {
+					SourceOp = "BorderMask",
+					Source = "BorderWidth",
+					Name = "Border Thickness",
+					Page = "Controls",
+					Default = 0.006,
+				},
+				-- ===== PIPE / ACCENT COLOR (swatch) =====
+				Input17 = InstanceInput {
+					SourceOp = "PipeBG",
+					Source = "TopLeftRed",
+					Name = "Accent Line Color",
+					ControlGroup = 30,
+					Page = "Controls",
+					Default = 0.90,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "PipeBG",
+					Source = "TopLeftGreen",
+					ControlGroup = 30,
+					Page = "Controls",
+					Default = 0.20,
+				},
+				Input19 = InstanceInput {
+					SourceOp = "PipeBG",
+					Source = "TopLeftBlue",
+					ControlGroup = 30,
+					Page = "Controls",
+					Default = 0.30,
+				},
+				-- ===== CIRCLE (disc) COLOR (swatch) =====
+				Input20 = InstanceInput {
+					SourceOp = "DiscBG",
+					Source = "TopLeftRed",
+					Name = "Circle Color",
+					ControlGroup = 50,
+					Page = "Controls",
+					Default = 1,
+				},
+				Input21 = InstanceInput {
+					SourceOp = "DiscBG",
+					Source = "TopLeftGreen",
+					ControlGroup = 50,
+					Page = "Controls",
+					Default = 1,
+				},
+				Input22 = InstanceInput {
+					SourceOp = "DiscBG",
+					Source = "TopLeftBlue",
+					ControlGroup = 50,
+					Page = "Controls",
+					Default = 1,
+				},
+				Input23 = InstanceInput {
+					SourceOp = "DiscBG",
+					Source = "TopLeftAlpha",
+					Name = "Circle Glass Opacity",
+					ControlGroup = 50,
+					Page = "Controls",
+					Default = 1,
+				},
+				-- ===== SIZE CONTROLS =====
+				Input32 = InstanceInput {
+					SourceOp = "DiscMask",
+					Source = "Width",
+					Name = "Circle Width",
+					Page = "Controls",
+					Default = 0.085,
+				},
+				Input33 = InstanceInput {
+					SourceOp = "DiscMask",
+					Source = "Height",
+					Name = "Circle Height",
+					Page = "Controls",
+					Default = 0.085,
+				},
+				Input34 = InstanceInput {
+					SourceOp = "BarFillMask",
+					Source = "Height",
+					Name = "Bar Height",
+					Page = "Controls",
+					Default = 0.10,
+				},
+				Input37 = InstanceInput {
+					SourceOp = "BarFillMask",
+					Source = "CornerRadius",
+					Name = "Corner Radius",
+					Page = "Controls",
+					Default = 0.05,
+				},
+				-- ===== PIPE THICKNESS =====
+				Input28 = InstanceInput {
+					SourceOp = "PipeMask",
+					Source = "Width",
+					Name = "Pipe Thickness",
+					Page = "Controls",
+					Default = 0.004,
+				},
+				Input35 = InstanceInput {
+					SourceOp = "PipeMask",
+					Source = "PipeLength",
+					Name = "Pipe Height",
+					Page = "Controls",
+					Default = 0.08,
+				},
+				Input36 = InstanceInput {
+					SourceOp = "PipeXF",
+					Source = "Center",
+					Name = "Pipe Position",
+					Page = "Controls",
+				},
+				-- ===== SHADOW =====
+				Input24 = InstanceInput {
+					SourceOp = "BarShadow",
+					Source = "shadowStrength",
+					Name = "Shadow Strength",
+					Page = "Shadow",
+					Default = 0.9,
+				},
+				Input25 = InstanceInput {
+					SourceOp = "BarShadow",
+					Source = "shadowBlur",
+					Name = "Shadow Blur",
+					Page = "Shadow",
+					Default = 0.5,
+				},
+				Input26 = InstanceInput {
+					SourceOp = "BarShadow",
+					Source = "ShadowDistance",
+					Name = "Shadow Distance",
+					Page = "Shadow",
+					Default = 0.04,
+				},
+				Input27 = InstanceInput {
+					SourceOp = "BarShadow",
+					Source = "shadowAngle",
+					Name = "Shadow Angle",
+					Page = "Shadow",
+					Default = 315,
+				},
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "MasterXF",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				-- ================= ANIMATION SPLINES =================
+				CircleSizeSpline = BezierSpline {
+					SplineColor = { Red = 255, Green = 128, Blue = 0 },
+					KeyFrames = {
+						[0] = { 0, RH = { 3, 0 }, Flags = { Linear = true } },
+						[10] = { 1.15, LH = { 7, 0.76 }, RH = { 12, 1.07 }, Flags = { Linear = true } },
+						[16] = { 0.90, LH = { 14, 1.0 }, RH = { 18, 0.95 }, Flags = { Linear = true } },
+						[22] = { 1.06, LH = { 20, 0.98 }, RH = { 24, 1.04 }, Flags = { Linear = true } },
+						[28] = { 1.0, LH = { 26, 1.02 }, RH = { 60, 1.0 }, Flags = { Linear = true } },
+						[110] = { 1.0, LH = { 80, 1.0 }, RH = { 114, 0.6 }, Flags = { Linear = true } },
+						[120] = { 0, LH = { 116, 0.4 }, Flags = { Linear = true } }
+					}
+				},
+				BarWidthSpline = BezierSpline {
+					SplineColor = { Red = 0, Green = 200, Blue = 200 },
+					KeyFrames = {
+						[0] = { 0, RH = { 4, 0 }, Flags = { Linear = true } },
+						[12] = { 0, LH = { 8, 0 }, RH = { 22, 0.16 }, Flags = { Linear = true } },
+						[42] = { 0.5, LH = { 32, 0.34 }, RH = { 60, 0.5 }, Flags = { Linear = true } },
+						[90] = { 0.5, LH = { 70, 0.5 }, RH = { 96, 0.33 }, Flags = { Linear = true } },
+						[108] = { 0, LH = { 102, 0.16 }, RH = { 114, 0 }, Flags = { Linear = true } },
+						[120] = { 0, LH = { 116, 0 }, Flags = { Linear = true } }
+					}
+				},
+				PipeHeightSpline = BezierSpline {
+					SplineColor = { Red = 255, Green = 0, Blue = 255 },
+					KeyFrames = {
+						[0] = { 0, RH = { 4, 0 }, Flags = { Linear = true } },
+						[12] = { 0, LH = { 8, 0 }, RH = { 22, 0.66 }, Flags = { Linear = true } },
+						[42] = { 1.0, LH = { 32, 0.66 }, RH = { 60, 1.0 }, Flags = { Linear = true } },
+						[90] = { 1.0, LH = { 70, 1.0 }, RH = { 96, 0.66 }, Flags = { Linear = true } },
+						[108] = { 0, LH = { 102, 0.5 }, RH = { 114, 0 }, Flags = { Linear = true } },
+						[120] = { 0, LH = { 116, 0 }, Flags = { Linear = true } }
+					}
+				},
+				TextBlendSpline = BezierSpline {
+					SplineColor = { Red = 220, Green = 220, Blue = 0 },
+					KeyFrames = {
+						[0] = { 0, RH = { 12, 0 }, Flags = { Linear = true } },
+						[38] = { 0, LH = { 25, 0 }, RH = { 48, 0.5 }, Flags = { Linear = true } },
+						[58] = { 1, LH = { 48, 0.5 }, RH = { 70, 1 }, Flags = { Linear = true } },
+						[90] = { 1, LH = { 78, 1 }, RH = { 96, 0.5 }, Flags = { Linear = true } },
+						[104] = { 0, LH = { 98, 0.5 }, RH = { 112, 0 }, Flags = { Linear = true } },
+						[120] = { 0, LH = { 116, 0 }, Flags = { Linear = true } }
+					}
+				},
+
+				-- ================= CIRCLE (disc + logo) =================
+				DiscBG = Background {
+					CtrlWShown = false,
+					Inputs = {
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 1, },
+						TopLeftGreen = Input { Value = 1, },
+						TopLeftBlue = Input { Value = 1, },
+						TopLeftAlpha = Input { Value = 1, },
+						EffectMask = Input {
+							SourceOp = "DiscMask",
+							Source = "Mask",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -440, 0 } },
+				},
+				DiscMask = EllipseMask {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Expression = "comp:GetPrefs(\"Comp.FrameFormat.Width\")", },
+						MaskHeight = Input { Expression = "comp:GetPrefs(\"Comp.FrameFormat.Height\")", },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Center = Input { Value = { 0.16, 0.18 }, },
+						Width = Input { Value = 0.085, },
+						Height = Input { Value = 0.085, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -550, 0 } },
+				},
+				LogoBG = Background {
+					CtrlWShown = false,
+					Inputs = {
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftAlpha = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -880, 60 } },
+				},
+				-- ===== LOGO LOADERS (absolute paths to NextCloud brand icons) =====
+				Loader_IG = Loader {
+					Clips = { Clip { ID = "Clip1", Filename = "D:\\NextCloud\\svei\\Excel\\Proyecto Excel Soluciones\\Blog\\imagenes\\brand icons\\instagram.png", FormatID = "PNGFormat", StartFrame = -1, LengthSetManually = true, TrimIn = 0, TrimOut = 0, ExtendFirst = 0, ExtendLast = 0, Loop = 0, AspectMode = 0, Depth = 0, TimeCode = 0, GlobalStart = 0, GlobalEnd = 0 } },
+					Inputs = { ["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, }, ["Clip1.PNGFormat.PostMultiply"] = Input { Value = 1, }, },
+					ViewInfo = OperatorInfo { Pos = { -990, 120 } },
+				},
+				Loader_TT = Loader {
+					Clips = { Clip { ID = "Clip1", Filename = "D:\\NextCloud\\svei\\Excel\\Proyecto Excel Soluciones\\Blog\\imagenes\\brand icons\\tiktok.png", FormatID = "PNGFormat", StartFrame = -1, LengthSetManually = true, TrimIn = 0, TrimOut = 0, ExtendFirst = 0, ExtendLast = 0, Loop = 0, AspectMode = 0, Depth = 0, TimeCode = 0, GlobalStart = 0, GlobalEnd = 0 } },
+					Inputs = { ["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, }, ["Clip1.PNGFormat.PostMultiply"] = Input { Value = 1, }, },
+					ViewInfo = OperatorInfo { Pos = { -990, 160 } },
+				},
+				Loader_X = Loader {
+					Clips = { Clip { ID = "Clip1", Filename = "D:\\NextCloud\\svei\\Excel\\Proyecto Excel Soluciones\\Blog\\imagenes\\brand icons\\x.png", FormatID = "PNGFormat", StartFrame = -1, LengthSetManually = true, TrimIn = 0, TrimOut = 0, ExtendFirst = 0, ExtendLast = 0, Loop = 0, AspectMode = 0, Depth = 0, TimeCode = 0, GlobalStart = 0, GlobalEnd = 0 } },
+					Inputs = { ["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, }, ["Clip1.PNGFormat.PostMultiply"] = Input { Value = 1, }, },
+					ViewInfo = OperatorInfo { Pos = { -990, 200 } },
+				},
+				Loader_YT = Loader {
+					Clips = { Clip { ID = "Clip1", Filename = "D:\\NextCloud\\svei\\Excel\\Proyecto Excel Soluciones\\Blog\\imagenes\\brand icons\\youtube.png", FormatID = "PNGFormat", StartFrame = -1, LengthSetManually = true, TrimIn = 0, TrimOut = 0, ExtendFirst = 0, ExtendLast = 0, Loop = 0, AspectMode = 0, Depth = 0, TimeCode = 0, GlobalStart = 0, GlobalEnd = 0 } },
+					Inputs = { ["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, }, ["Clip1.PNGFormat.PostMultiply"] = Input { Value = 1, }, },
+					ViewInfo = OperatorInfo { Pos = { -990, 240 } },
+				},
+				Loader_FB = Loader {
+					Clips = { Clip { ID = "Clip1", Filename = "D:\\NextCloud\\svei\\Excel\\Proyecto Excel Soluciones\\Blog\\imagenes\\brand icons\\facebook.png", FormatID = "PNGFormat", StartFrame = -1, LengthSetManually = true, TrimIn = 0, TrimOut = 0, ExtendFirst = 0, ExtendLast = 0, Loop = 0, AspectMode = 0, Depth = 0, TimeCode = 0, GlobalStart = 0, GlobalEnd = 0 } },
+					Inputs = { ["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, }, ["Clip1.PNGFormat.PostMultiply"] = Input { Value = 1, }, },
+					ViewInfo = OperatorInfo { Pos = { -990, 280 } },
+				},
+				Loader_LI = Loader {
+					Clips = { Clip { ID = "Clip1", Filename = "D:\\NextCloud\\svei\\Excel\\Proyecto Excel Soluciones\\Blog\\imagenes\\brand icons\\linkedin.png", FormatID = "PNGFormat", StartFrame = -1, LengthSetManually = true, TrimIn = 0, TrimOut = 0, ExtendFirst = 0, ExtendLast = 0, Loop = 0, AspectMode = 0, Depth = 0, TimeCode = 0, GlobalStart = 0, GlobalEnd = 0 } },
+					Inputs = { ["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, }, ["Clip1.PNGFormat.PostMultiply"] = Input { Value = 1, }, },
+					ViewInfo = OperatorInfo { Pos = { -990, 320 } },
+				},
+				Loader_TH = Loader {
+					Clips = { Clip { ID = "Clip1", Filename = "D:\\NextCloud\\svei\\Excel\\Proyecto Excel Soluciones\\Blog\\imagenes\\brand icons\\threads.png", FormatID = "PNGFormat", StartFrame = -1, LengthSetManually = true, TrimIn = 0, TrimOut = 0, ExtendFirst = 0, ExtendLast = 0, Loop = 0, AspectMode = 0, Depth = 0, TimeCode = 0, GlobalStart = 0, GlobalEnd = 0 } },
+					Inputs = { ["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, }, ["Clip1.PNGFormat.PostMultiply"] = Input { Value = 1, }, },
+					ViewInfo = OperatorInfo { Pos = { -990, 360 } },
+				},
+				Loader_RU = Loader {
+					Clips = { Clip { ID = "Clip1", Filename = "D:\\NextCloud\\svei\\Excel\\Proyecto Excel Soluciones\\Blog\\imagenes\\brand icons\\rumble.png", FormatID = "PNGFormat", StartFrame = -1, LengthSetManually = true, TrimIn = 0, TrimOut = 0, ExtendFirst = 0, ExtendLast = 0, Loop = 0, AspectMode = 0, Depth = 0, TimeCode = 0, GlobalStart = 0, GlobalEnd = 0 } },
+					Inputs = { ["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, }, ["Clip1.PNGFormat.PostMultiply"] = Input { Value = 1, }, },
+					ViewInfo = OperatorInfo { Pos = { -990, 400 } },
+				},
+				-- ===== LOGO SELECTION CHAIN (only the picked one has Blend=1) =====
+				LogoM_IG = Merge {
+					Inputs = {
+						Background = Input { SourceOp = "LogoBG", Source = "Output", },
+						Foreground = Input { SourceOp = "Loader_IG", Source = "Output", },
+						Blend = Input { Expression = "iif(LogoXF.Platform == 0, 1, 0)", },
+					},
+					ViewInfo = OperatorInfo { Pos = { -770, 120 } },
+				},
+				LogoM_TT = Merge {
+					Inputs = {
+						Background = Input { SourceOp = "LogoM_IG", Source = "Output", },
+						Foreground = Input { SourceOp = "Loader_TT", Source = "Output", },
+						Blend = Input { Expression = "iif(LogoXF.Platform == 1, 1, 0)", },
+					},
+					ViewInfo = OperatorInfo { Pos = { -700, 120 } },
+				},
+				LogoM_X = Merge {
+					Inputs = {
+						Background = Input { SourceOp = "LogoM_TT", Source = "Output", },
+						Foreground = Input { SourceOp = "Loader_X", Source = "Output", },
+						Blend = Input { Expression = "iif(LogoXF.Platform == 2, 1, 0)", },
+					},
+					ViewInfo = OperatorInfo { Pos = { -630, 120 } },
+				},
+				LogoM_YT = Merge {
+					Inputs = {
+						Background = Input { SourceOp = "LogoM_X", Source = "Output", },
+						Foreground = Input { SourceOp = "Loader_YT", Source = "Output", },
+						Blend = Input { Expression = "iif(LogoXF.Platform == 3, 1, 0)", },
+					},
+					ViewInfo = OperatorInfo { Pos = { -560, 120 } },
+				},
+				LogoM_FB = Merge {
+					Inputs = {
+						Background = Input { SourceOp = "LogoM_YT", Source = "Output", },
+						Foreground = Input { SourceOp = "Loader_FB", Source = "Output", },
+						Blend = Input { Expression = "iif(LogoXF.Platform == 4, 1, 0)", },
+					},
+					ViewInfo = OperatorInfo { Pos = { -490, 120 } },
+				},
+				LogoM_LI = Merge {
+					Inputs = {
+						Background = Input { SourceOp = "LogoM_FB", Source = "Output", },
+						Foreground = Input { SourceOp = "Loader_LI", Source = "Output", },
+						Blend = Input { Expression = "iif(LogoXF.Platform == 5, 1, 0)", },
+					},
+					ViewInfo = OperatorInfo { Pos = { -420, 120 } },
+				},
+				LogoM_TH = Merge {
+					Inputs = {
+						Background = Input { SourceOp = "LogoM_LI", Source = "Output", },
+						Foreground = Input { SourceOp = "Loader_TH", Source = "Output", },
+						Blend = Input { Expression = "iif(LogoXF.Platform == 6, 1, 0)", },
+					},
+					ViewInfo = OperatorInfo { Pos = { -350, 120 } },
+				},
+				LogoM_RU = Merge {
+					Inputs = {
+						Background = Input { SourceOp = "LogoM_TH", Source = "Output", },
+						Foreground = Input { SourceOp = "Loader_RU", Source = "Output", },
+						Blend = Input { Expression = "iif(LogoXF.Platform == 7, 1, 0)", },
+					},
+					ViewInfo = OperatorInfo { Pos = { -280, 120 } },
+				},
+				-- ===== SHARED LOGO TRANSFORM (holds the Platform dropdown) =====
+				LogoXF = Transform {
+					CtrlWShown = false,
+					Inputs = {
+						Input = Input { SourceOp = "LogoM_RU", Source = "Output", },
+						Center = Input { Value = { 0.16, 0.18 }, },
+						Size = Input { Value = 0.16, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -200, 120 } },
+					UserControls = ordered() {
+						Platform = {
+							INPID_InputControl = "ComboControl",
+							LINKS_Name = "Platform",
+							LINKID_DataType = "Number",
+							INP_Integer = true,
+							INP_Default = 0,
+							{ CCS_AddString = "Instagram" },
+							{ CCS_AddString = "TikTok" },
+							{ CCS_AddString = "X (Twitter)" },
+							{ CCS_AddString = "YouTube" },
+							{ CCS_AddString = "Facebook" },
+							{ CCS_AddString = "LinkedIn" },
+							{ CCS_AddString = "Threads" },
+							{ CCS_AddString = "Rumble" },
+						}
+					}
+				},
+				-- Hard-clip the logo to the circle (transparent base + circle mask) so it never overflows
+				LogoClipBG = Background {
+					CtrlWShown = false,
+					Inputs = {
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftAlpha = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -160, 60 } },
+				},
+				LogoClip = Merge {
+					Inputs = {
+						Background = Input { SourceOp = "LogoClipBG", Source = "Output", },
+						Foreground = Input { SourceOp = "LogoXF", Source = "Output", },
+						EffectMask = Input { SourceOp = "DiscMask", Source = "Mask", },
+					},
+					ViewInfo = OperatorInfo { Pos = { -130, 120 } },
+				},
+				MergeDisc = Merge {
+					Inputs = {
+						Background = Input { SourceOp = "DiscBG", Source = "Output", },
+						Foreground = Input { SourceOp = "LogoClip", Source = "Output", },
+					},
+					ViewInfo = OperatorInfo { Pos = { -100, 0 } },
+				},
+				-- ===== CIRCLE BORDER (ring; shares Border Color + Border Thickness with the bar) =====
+				DiscBorderBG = Background {
+					CtrlWShown = false,
+					Inputs = {
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Expression = "BorderBG.TopLeftRed", },
+						TopLeftGreen = Input { Expression = "BorderBG.TopLeftGreen", },
+						TopLeftBlue = Input { Expression = "BorderBG.TopLeftBlue", },
+						TopLeftAlpha = Input { Value = 1, },
+						EffectMask = Input {
+							SourceOp = "DiscBorderMask",
+							Source = "Mask",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -100, 60 } },
+				},
+				DiscBorderMask = EllipseMask {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Expression = "comp:GetPrefs(\"Comp.FrameFormat.Width\")", },
+						MaskHeight = Input { Expression = "comp:GetPrefs(\"Comp.FrameFormat.Height\")", },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Center = Input { Value = { 0.16, 0.18 }, },
+						Width = Input { Expression = "DiscMask.Width", },
+						Height = Input { Expression = "DiscMask.Height", },
+						Solid = Input { Value = 0, },
+						BorderWidth = Input { Expression = "BorderMask.BorderWidth", },
+					},
+					ViewInfo = OperatorInfo { Pos = { -210, 60 } },
+				},
+				MergeDiscBorder = Merge {
+					Inputs = {
+						Background = Input { SourceOp = "MergeDisc", Source = "Output", },
+						Foreground = Input { SourceOp = "DiscBorderBG", Source = "Output", },
+					},
+					ViewInfo = OperatorInfo { Pos = { -40, 0 } },
+				},
+				CircleXF = Transform {
+					CtrlWShown = false,
+					Inputs = {
+						Input = Input { SourceOp = "MergeDiscBorder", Source = "Output", },
+						Center = Input { Value = { 0.5, 0.5 }, },
+						Pivot = Input { Value = { 0.16, 0.18 }, },
+						Size = Input { SourceOp = "CircleSizeSpline", Source = "Value", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 0, 0 } },
+				},
+				CircleShadow = ofx.com.blackmagicdesign.resolvefx.DropShadow {
+					CtrlWShown = false,
+					Inputs = {
+						Source = Input { SourceOp = "CircleXF", Source = "Output", },
+						shadowStrength = Input { Expression = "BarShadow.shadowStrength", },
+						shadowBlur = Input { Expression = "BarShadow.shadowBlur", },
+						ShadowDistance = Input { Expression = "BarShadow.ShadowDistance", },
+						shadowAngle = Input { Expression = "BarShadow.shadowAngle", },
+						shadowColorRed = Input { Value = 0, },
+						shadowColorGreen = Input { Value = 0, },
+						shadowColorBlue = Input { Value = 0, },
+						isLegacyComp = Input { Value = 0, },
+						srcProcessingAlphaMode = Input { Value = 2, },
+						dstProcessingAlphaMode = Input { Value = 2, },
+						resolvefxVersion = Input { Value = "2.0", }
+					},
+					ViewInfo = OperatorInfo { Pos = { 110, 0 } },
+				},
+
+				-- ================= BAR (fill + border) + SHADOW =================
+				BarFillBG = Background {
+					CtrlWShown = false,
+					Inputs = {
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0.078, },
+						TopLeftGreen = Input { Value = 0.078, },
+						TopLeftBlue = Input { Value = 0.094, },
+						TopLeftAlpha = Input { Value = 0.85, },
+						EffectMask = Input {
+							SourceOp = "BarKnockMask",
+							Source = "Mask",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -440, 165 } },
+				},
+				BarFillMask = RectangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Expression = "comp:GetPrefs(\"Comp.FrameFormat.Width\")", },
+						MaskHeight = Input { Expression = "comp:GetPrefs(\"Comp.FrameFormat.Height\")", },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Center = Input { Expression = "Point(0.16 + Width/2, 0.18)", },
+						Width = Input { SourceOp = "BarWidthSpline", Source = "Value", },
+						Height = Input { Value = 0.10, },
+						CornerRadius = Input { Value = 0.05, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -550, 165 } },
+				},
+				-- Subtract the circle from the bar fill (so a glass circle doesn't reveal the bar behind it)
+				BarKnockMask = EllipseMask {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input { SourceOp = "BarFillMask", Source = "Mask", },
+						PaintMode = Input { Value = FuID { "Subtract" }, },
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Expression = "comp:GetPrefs(\"Comp.FrameFormat.Width\")", },
+						MaskHeight = Input { Expression = "comp:GetPrefs(\"Comp.FrameFormat.Height\")", },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Center = Input { Value = { 0.16, 0.18 }, },
+						Width = Input { Expression = "DiscMask.Width", },
+						Height = Input { Expression = "DiscMask.Height", },
+					},
+					ViewInfo = OperatorInfo { Pos = { -440, 110 } },
+				},
+				BorderBG = Background {
+					CtrlWShown = false,
+					Inputs = {
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0.945098, },
+						TopLeftGreen = Input { Value = 0.921569, },
+						TopLeftBlue = Input { Value = 0.874510, },
+						TopLeftAlpha = Input { Value = 1, },
+						EffectMask = Input {
+							SourceOp = "BorderMask",
+							Source = "Mask",
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -440, 230 } },
+				},
+				BorderMask = RectangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Expression = "comp:GetPrefs(\"Comp.FrameFormat.Width\")", },
+						MaskHeight = Input { Expression = "comp:GetPrefs(\"Comp.FrameFormat.Height\")", },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Center = Input { Expression = "Point(0.16 + Width/2, 0.18)", },
+						Width = Input { SourceOp = "BarWidthSpline", Source = "Value", },
+						Height = Input { Expression = "BarFillMask.Height", },
+						CornerRadius = Input { Expression = "BarFillMask.CornerRadius", },
+						Solid = Input { Value = 0, },
+						BorderWidth = Input { Value = 0.006, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -550, 230 } },
+				},
+				MergeBar = Merge {
+					Inputs = {
+						Background = Input { SourceOp = "BarFillBG", Source = "Output", },
+						Foreground = Input { SourceOp = "BorderBG", Source = "Output", },
+					},
+					ViewInfo = OperatorInfo { Pos = { -330, 165 } },
+				},
+				BarShadow = ofx.com.blackmagicdesign.resolvefx.DropShadow {
+					CtrlWShown = false,
+					Inputs = {
+						Source = Input { SourceOp = "MergeBar", Source = "Output", },
+						shadowStrength = Input { Value = 0.9, },
+						shadowBlur = Input { Value = 0.5, },
+						ShadowDistance = Input { Value = 0.04, },
+						shadowAngle = Input { Value = 315, },
+						shadowColorRed = Input { Value = 0, },
+						shadowColorGreen = Input { Value = 0, },
+						shadowColorBlue = Input { Value = 0, },
+						isLegacyComp = Input { Value = 0, },
+						srcProcessingAlphaMode = Input { Value = 2, },
+						dstProcessingAlphaMode = Input { Value = 2, },
+						resolvefxVersion = Input { Value = "2.0", }
+					},
+					ViewInfo = OperatorInfo { Pos = { -220, 165 } },
+				},
+
+				-- ================= PIPE (vertical accent line) =================
+				-- Accent base color (fallback / "Accent Line Color" control)
+				PipeBG = Background {
+					CtrlWShown = false,
+					Inputs = {
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0.90, },
+						TopLeftGreen = Input { Value = 0.20, },
+						TopLeftBlue = Input { Value = 0.30, },
+						TopLeftAlpha = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -700, 330 } },
+				},
+				-- Instagram: 5-stop gradient (yellow -> orange -> magenta -> purple -> blue)
+				PipeIG = Background {
+					CtrlWShown = false,
+					Inputs = {
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Type = Input { Value = FuID { "Gradient" }, },
+						Start = Input { Value = { 0.5, 0.13 }, },
+						End = Input { Value = { 0.5, 0.22 }, },
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 0.988, 0.812, 0.275, 1 },
+									[0.25] = { 0.980, 0.494, 0.118, 1 },
+									[0.5] = { 0.839, 0.161, 0.463, 1 },
+									[0.75] = { 0.588, 0.184, 0.749, 1 },
+									[1] = { 0.310, 0.357, 0.835, 1 }
+								}
+							},
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -700, 370 } },
+				},
+				-- TikTok: 2-stop gradient (cyan -> red/magenta)
+				PipeTT = Background {
+					CtrlWShown = false,
+					Inputs = {
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Type = Input { Value = FuID { "Gradient" }, },
+						Start = Input { Value = { 0.5, 0.13 }, },
+						End = Input { Value = { 0.5, 0.22 }, },
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 0.145, 0.957, 0.933, 1 },
+									[1] = { 0.996, 0.173, 0.333, 1 }
+								}
+							},
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -700, 410 } },
+				},
+				-- Solid brand colors
+				PipeX = Background {
+					CtrlWShown = false,
+					Inputs = {
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 1, }, TopLeftGreen = Input { Value = 1, }, TopLeftBlue = Input { Value = 1, }, TopLeftAlpha = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -700, 450 } },
+				},
+				PipeYT = Background {
+					CtrlWShown = false,
+					Inputs = {
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 1, }, TopLeftGreen = Input { Value = 0, }, TopLeftBlue = Input { Value = 0, }, TopLeftAlpha = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -700, 490 } },
+				},
+				PipeFB = Background {
+					CtrlWShown = false,
+					Inputs = {
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0.094, }, TopLeftGreen = Input { Value = 0.467, }, TopLeftBlue = Input { Value = 0.949, }, TopLeftAlpha = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -700, 530 } },
+				},
+				PipeLI = Background {
+					CtrlWShown = false,
+					Inputs = {
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0.039, }, TopLeftGreen = Input { Value = 0.400, }, TopLeftBlue = Input { Value = 0.761, }, TopLeftAlpha = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -700, 570 } },
+				},
+				PipeTH = Background {
+					CtrlWShown = false,
+					Inputs = {
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 1, }, TopLeftGreen = Input { Value = 1, }, TopLeftBlue = Input { Value = 1, }, TopLeftAlpha = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -700, 610 } },
+				},
+				PipeRU = Background {
+					CtrlWShown = false,
+					Inputs = {
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0.522, }, TopLeftGreen = Input { Value = 0.733, }, TopLeftBlue = Input { Value = 0.278, }, TopLeftAlpha = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -700, 650 } },
+				},
+				-- Selection: only the chosen platform's color/gradient has Blend=1
+				PipeSel0 = Merge { Inputs = { Background = Input { SourceOp = "PipeBG", Source = "Output", }, Foreground = Input { SourceOp = "PipeIG", Source = "Output", }, Blend = Input { Expression = "iif(LogoXF.Platform == 0, 1, 0)", }, }, ViewInfo = OperatorInfo { Pos = { -610, 350 } }, },
+				PipeSel1 = Merge { Inputs = { Background = Input { SourceOp = "PipeSel0", Source = "Output", }, Foreground = Input { SourceOp = "PipeTT", Source = "Output", }, Blend = Input { Expression = "iif(LogoXF.Platform == 1, 1, 0)", }, }, ViewInfo = OperatorInfo { Pos = { -570, 350 } }, },
+				PipeSel2 = Merge { Inputs = { Background = Input { SourceOp = "PipeSel1", Source = "Output", }, Foreground = Input { SourceOp = "PipeX", Source = "Output", }, Blend = Input { Expression = "iif(LogoXF.Platform == 2, 1, 0)", }, }, ViewInfo = OperatorInfo { Pos = { -530, 350 } }, },
+				PipeSel3 = Merge { Inputs = { Background = Input { SourceOp = "PipeSel2", Source = "Output", }, Foreground = Input { SourceOp = "PipeYT", Source = "Output", }, Blend = Input { Expression = "iif(LogoXF.Platform == 3, 1, 0)", }, }, ViewInfo = OperatorInfo { Pos = { -490, 350 } }, },
+				PipeSel4 = Merge { Inputs = { Background = Input { SourceOp = "PipeSel3", Source = "Output", }, Foreground = Input { SourceOp = "PipeFB", Source = "Output", }, Blend = Input { Expression = "iif(LogoXF.Platform == 4, 1, 0)", }, }, ViewInfo = OperatorInfo { Pos = { -450, 350 } }, },
+				PipeSel5 = Merge { Inputs = { Background = Input { SourceOp = "PipeSel4", Source = "Output", }, Foreground = Input { SourceOp = "PipeLI", Source = "Output", }, Blend = Input { Expression = "iif(LogoXF.Platform == 5, 1, 0)", }, }, ViewInfo = OperatorInfo { Pos = { -410, 350 } }, },
+				PipeSel6 = Merge { Inputs = { Background = Input { SourceOp = "PipeSel5", Source = "Output", }, Foreground = Input { SourceOp = "PipeTH", Source = "Output", }, Blend = Input { Expression = "iif(LogoXF.Platform == 6, 1, 0)", }, }, ViewInfo = OperatorInfo { Pos = { -370, 350 } }, },
+				PipeColor = Merge {
+					Inputs = {
+						Background = Input { SourceOp = "PipeSel6", Source = "Output", },
+						Foreground = Input { SourceOp = "PipeRU", Source = "Output", },
+						Blend = Input { Expression = "iif(LogoXF.Platform == 7, 1, 0)", },
+					},
+					ViewInfo = OperatorInfo { Pos = { -330, 350 } },
+				},
+				-- Transparent base so the mask HARD-CLIPS the full-frame color to the pipe strip
+				PipeClipBG = Background {
+					CtrlWShown = false,
+					Inputs = {
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftAlpha = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -330, 290 } },
+				},
+				PipeClip = Merge {
+					Inputs = {
+						Background = Input { SourceOp = "PipeClipBG", Source = "Output", },
+						Foreground = Input { SourceOp = "PipeColor", Source = "Output", },
+						EffectMask = Input { SourceOp = "PipeMask", Source = "Mask", },
+					},
+					ViewInfo = OperatorInfo { Pos = { -290, 350 } },
+				},
+				-- Move the masked pipe freely (Pipe Position). Neutral = 0.5,0.5
+				PipeXF = Transform {
+					CtrlWShown = false,
+					Inputs = {
+						Input = Input { SourceOp = "PipeClip", Source = "Output", },
+						Center = Input { Value = { 0.5, 0.5 }, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -250, 350 } },
+				},
+				PipeMask = RectangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Expression = "comp:GetPrefs(\"Comp.FrameFormat.Width\")", },
+						MaskHeight = Input { Expression = "comp:GetPrefs(\"Comp.FrameFormat.Height\")", },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Center = Input { Expression = "Point(0.225, 0.13 + Height/2)", },
+						Width = Input { Value = 0.004, },
+						RevealAmount = Input { SourceOp = "PipeHeightSpline", Source = "Value", },
+						PipeLength = Input { Value = 0.08, },
+						Height = Input { Expression = "RevealAmount * PipeLength", },
+					},
+					ViewInfo = OperatorInfo { Pos = { -550, 330 } },
+					UserControls = ordered() {
+						RevealAmount = {
+							INPID_InputControl = "SliderControl",
+							LINKID_DataType = "Number",
+							LINKS_Name = "RevealAmount",
+							INP_Default = 0,
+							INP_MinScale = 0,
+							INP_MaxScale = 1,
+						},
+						PipeLength = {
+							INPID_InputControl = "SliderControl",
+							LINKID_DataType = "Number",
+							LINKS_Name = "Pipe Height",
+							INP_Default = 0.08,
+							INP_MinScale = 0,
+							INP_MaxScale = 0.5,
+						}
+					}
+				},
+
+				-- ================= TEXT =================
+				Text1 = TextPlus {
+					CtrlWShown = false,
+					Inputs = {
+						GlobalOut = Input { Value = 20000, },
+						Width = Input { Expression = "comp:GetPrefs(\"Comp.FrameFormat.Width\")", },
+						Height = Input { Expression = "comp:GetPrefs(\"Comp.FrameFormat.Height\")", },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Center = Input { Value = { 0.245, 0.205 }, },
+						StyledText = Input {
+							Value = StyledText { Array = {}, Value = "Follow Me" },
+						},
+						Font = Input { Value = "Open Sans", },
+						Style = Input { Value = "Regular", },
+						Size = Input { Value = 0.026, },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalLeftCenterRight = Input { Value = -1, },
+						HorizontalJustificationNew = Input { Value = 3, },
+						Red1 = Input { Value = 0.945098, },
+						Green1 = Input { Value = 0.921569, },
+						Blue1 = Input { Value = 0.874510, },
+					},
+					ViewInfo = OperatorInfo { Pos = { -440, 440 } },
+				},
+				Text2 = TextPlus {
+					CtrlWShown = false,
+					Inputs = {
+						GlobalOut = Input { Value = 20000, },
+						Width = Input { Expression = "comp:GetPrefs(\"Comp.FrameFormat.Width\")", },
+						Height = Input { Expression = "comp:GetPrefs(\"Comp.FrameFormat.Height\")", },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Center = Input { Value = { 0.245, 0.155 }, },
+						StyledText = Input {
+							Value = StyledText { Array = {}, Value = "@handle" },
+						},
+						Font = Input { Value = "Open Sans", },
+						Style = Input { Value = "Bold", },
+						Size = Input { Value = 0.042, },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalLeftCenterRight = Input { Value = -1, },
+						HorizontalJustificationNew = Input { Value = 3, },
+						Red1 = Input { Expression = "Text1.Red1", },
+						Green1 = Input { Expression = "Text1.Green1", },
+						Blue1 = Input { Expression = "Text1.Blue1", },
+					},
+					ViewInfo = OperatorInfo { Pos = { -440, 500 } },
+				},
+
+				-- ================= COMPOSITE =================
+				MergePipe = Merge {
+					Inputs = {
+						Background = Input { SourceOp = "BarShadow", Source = "Output", },
+						Foreground = Input { SourceOp = "PipeXF", Source = "Output", },
+					},
+					ViewInfo = OperatorInfo { Pos = { -110, 165 } },
+				},
+				-- Combine both text lines, then one shared Transform to move/scale them together
+				MergeTextPair = Merge {
+					Inputs = {
+						Background = Input { SourceOp = "Text1", Source = "Output", },
+						Foreground = Input { SourceOp = "Text2", Source = "Output", },
+					},
+					ViewInfo = OperatorInfo { Pos = { -60, 470 } },
+				},
+				TextXF = Transform {
+					CtrlWShown = false,
+					Inputs = {
+						Input = Input { SourceOp = "MergeTextPair", Source = "Output", },
+						Center = Input { Value = { 0.5, 0.5 }, },
+						Size = Input { Value = 1, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 20, 470 } },
+				},
+				MergeText = Merge {
+					Inputs = {
+						Background = Input { SourceOp = "MergePipe", Source = "Output", },
+						Foreground = Input { SourceOp = "TextXF", Source = "Output", },
+						Blend = Input { SourceOp = "TextBlendSpline", Source = "Value", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 0, 165 } },
+				},
+				MergeCircle = Merge {
+					Inputs = {
+						Background = Input { SourceOp = "MergeText", Source = "Output", },
+						Foreground = Input { SourceOp = "CircleShadow", Source = "Output", },
+					},
+					ViewInfo = OperatorInfo { Pos = { 220, 80 } },
+				},
+				MasterXF = Transform {
+					CtrlWShown = false,
+					Inputs = {
+						Input = Input { SourceOp = "MergeCircle", Source = "Output", },
+						Center = Input { Value = { 0.5, 0.5 }, },
+						Size = Input { Value = 1, },
+						Angle = Input { Value = 0, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 330, 80 } },
+				},
+			},
+		}
+	},
+	ActiveTool = "SocialLowerThird"
+}

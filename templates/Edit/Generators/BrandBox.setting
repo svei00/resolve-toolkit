@@ -1,0 +1,526 @@
+{
+	Tools = ordered() {
+		BrandBox = MacroOperator {
+			CtrlWZoom = false,
+			Inputs = ordered() {
+				Position = InstanceInput {
+					SourceOp = "FinalMerge",
+					Source = "Center",
+					Name = "Position",
+					Page = "Controls",
+				},
+				Scale = InstanceInput {
+					SourceOp = "FinalMerge",
+					Source = "Size",
+					Name = "Scale",
+					MinScale = 0.1,
+					MaxScale = 4,
+					Page = "Controls",
+					Default = 1,
+				},
+				Rotation = InstanceInput {
+					SourceOp = "FinalMerge",
+					Source = "Angle",
+					Name = "Rotation",
+					Page = "Controls",
+					Default = 0,
+				},
+				BoxTextIn = InstanceInput {
+					SourceOp = "BoxText",
+					Source = "StyledText",
+					Name = "Text",
+					Page = "Controls",
+				},
+				FontName = InstanceInput { SourceOp = "BoxText", Source = "Font", Name = "Font", Page = "Controls", },
+				FontStyle = InstanceInput { SourceOp = "BoxText", Source = "Style", Name = "Font Style", Page = "Controls", },
+				TextSize = InstanceInput {
+					SourceOp = "BoxText",
+					Source = "Size",
+					Name = "Text Size",
+					MinScale = 0.01,
+					MaxScale = 0.2,
+					Page = "Controls",
+					Default = 0.06,
+				},
+				BoxWidth = InstanceInput {
+					SourceOp = "PanelMask",
+					Source = "Width",
+					Name = "Box Width",
+					MinScale = 0.05,
+					MaxScale = 1,
+					Page = "Controls",
+					Default = 0.5,
+				},
+				BoxHeight = InstanceInput {
+					SourceOp = "PanelMask",
+					Source = "Height",
+					Name = "Box Height",
+					MinScale = 0.05,
+					MaxScale = 1,
+					Page = "Controls",
+					Default = 0.18,
+				},
+				CornerRadius = InstanceInput {
+					SourceOp = "PanelMask",
+					Source = "CornerRadius",
+					Name = "Corner Radius",
+					Page = "Controls",
+					Default = 0.4,
+				},
+				BoxPreset = InstanceInput { SourceOp = "PanelFill", Source = "BoxPreset", Name = "Box Color", Page = "Controls", Default = 1, },
+				CustomBoxColorR = InstanceInput { SourceOp = "CustomBoxColorBG", Source = "TopLeftRed", Name = "Custom Box Color", ControlGroup = 1, Page = "Controls", Default = 0.19216, },
+				CustomBoxColorG = InstanceInput { SourceOp = "CustomBoxColorBG", Source = "TopLeftGreen", ControlGroup = 1, Default = 0.50980, },
+				CustomBoxColorB = InstanceInput { SourceOp = "CustomBoxColorBG", Source = "TopLeftBlue", ControlGroup = 1, Default = 0.87451, },
+				CustomBoxColorA = InstanceInput { SourceOp = "CustomBoxColorBG", Source = "TopLeftAlpha", ControlGroup = 1, Default = 0.8, },
+				BoxOpacity = InstanceInput {
+					SourceOp = "PanelFill",
+					Source = "BoxOpacity",
+					Name = "Box Opacity",
+					Page = "Controls",
+					Default = 0.8,
+				},
+				TextPreset = InstanceInput { SourceOp = "BoxText", Source = "TextPreset", Name = "Text Color", Page = "Controls", Default = 9, },
+				CustomTextColorR = InstanceInput { SourceOp = "CustomTextColorBG", Source = "TopLeftRed", Name = "Custom Text Color", ControlGroup = 2, Page = "Controls", Default = 0.94510, },
+				CustomTextColorG = InstanceInput { SourceOp = "CustomTextColorBG", Source = "TopLeftGreen", ControlGroup = 2, Default = 0.92157, },
+				CustomTextColorB = InstanceInput { SourceOp = "CustomTextColorBG", Source = "TopLeftBlue", ControlGroup = 2, Default = 0.87451, },
+				CustomTextColorA = InstanceInput { SourceOp = "CustomTextColorBG", Source = "TopLeftAlpha", ControlGroup = 2, Default = 1, },
+				OutlineWidth = InstanceInput { SourceOp = "BoxText", Source = "Thickness2", Name = "Outline Width", MinScale = 0, MaxScale = 0.2, Page = "Controls", Default = 0.05, },
+				OutlineColorR = InstanceInput { SourceOp = "BoxText", Source = "Red2", Name = "Outline Color", ControlGroup = 4, Page = "Controls", Default = 0, },
+				OutlineColorG = InstanceInput { SourceOp = "BoxText", Source = "Green2", ControlGroup = 4, Default = 0, },
+				OutlineColorB = InstanceInput { SourceOp = "BoxText", Source = "Blue2", ControlGroup = 4, Default = 0, },
+				TextAlign = InstanceInput { SourceOp = "BoxText", Source = "TextAlign", Name = "Text Align", Page = "Controls", Default = 1, },
+				BoxEntrance = InstanceInput {
+					SourceOp = "EntranceXF",
+					Source = "EntranceStyle",
+					Name = "Box Entrance",
+					Page = "Controls",
+					Default = 0,
+				},
+				BoxSpeed = InstanceInput {
+					SourceOp = "EntranceXF",
+					Source = "BoxSpeed",
+					Name = "Box Speed (Frames)",
+					Page = "Controls",
+					Default = 15,
+				},
+				TextReveal = InstanceInput {
+					SourceOp = "TextRevealMask",
+					Source = "TextStyle",
+					Name = "Text Reveal",
+					Page = "Controls",
+					Default = 0,
+				},
+				TextSpeed = InstanceInput {
+					SourceOp = "TextRevealMask",
+					Source = "TextSpeed",
+					Name = "Text Speed (Frames)",
+					Page = "Controls",
+					Default = 18,
+				},
+				TextExitIn = InstanceInput { SourceOp = "TextRevealMask", Source = "TextExit", Name = "Text Exit", Page = "Controls", Default = 0, },
+				OutroSpeed = InstanceInput {
+					SourceOp = "FinalMerge",
+					Source = "OutroSpeed",
+					Name = "Outro Speed (Frames)",
+					Page = "Controls",
+					Default = 12,
+				},
+				BoxExitIn = InstanceInput { SourceOp = "FinalMerge", Source = "BoxExit", Name = "Box Exit", Page = "Controls", Default = 0, },
+				BorderWidth = InstanceInput {
+					SourceOp = "BorderMask",
+					Source = "BorderWidth",
+					Name = "Border Width",
+					MinScale = 0,
+					MaxScale = 0.03,
+					Page = "Controls",
+					Default = 0.002,
+				},
+				BorderColorR = InstanceInput {
+					SourceOp = "BorderBG",
+					Source = "TopLeftRed",
+					Name = "Border Color",
+					ControlGroup = 3,
+					Page = "Controls",
+					Default = 0.70196,
+				},
+				BorderColorG = InstanceInput {
+					SourceOp = "BorderBG",
+					Source = "TopLeftGreen",
+					ControlGroup = 3,
+					Default = 0.55686,
+				},
+				BorderColorB = InstanceInput {
+					SourceOp = "BorderBG",
+					Source = "TopLeftBlue",
+					ControlGroup = 3,
+					Default = 0.36471,
+				},
+				ShadowStrength = InstanceInput {
+					SourceOp = "DropShadow1",
+					Source = "shadowStrength",
+					Name = "Shadow Opacity",
+					Page = "Shadow",
+					Default = 0.4,
+				},
+				ShadowAngle = InstanceInput {
+					SourceOp = "DropShadow1",
+					Source = "shadowAngle",
+					Name = "Shadow Angle",
+					Page = "Shadow",
+					Default = 315,
+				},
+				ShadowDistance = InstanceInput {
+					SourceOp = "DropShadow1",
+					Source = "ShadowDistance",
+					Name = "Shadow Distance",
+					MaxScale = 0.2000000029802,
+					Page = "Shadow",
+					Default = 0.012,
+				},
+				ShadowBlur = InstanceInput {
+					SourceOp = "DropShadow1",
+					Source = "shadowBlur",
+					Name = "Shadow Softness",
+					Page = "Shadow",
+					Default = 0.4,
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "FinalMerge",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				PanelMask = RectangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						CornerRadius = Input { Value = 0.4, },
+						Width = Input { Value = 0.5, },
+						Height = Input { Value = 0.18, },
+						Center = Input { Value = { 0.5, 0.5 }, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -550, -50 } },
+				},
+				CustomBoxColorBG = Background {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0.19216, },
+						TopLeftGreen = Input { Value = 0.50980, },
+						TopLeftBlue = Input { Value = 0.87451, },
+						TopLeftAlpha = Input { Value = 0.8, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -660, 50 } },
+				},
+				CustomTextColorBG = Background {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0.94510, },
+						TopLeftGreen = Input { Value = 0.92157, },
+						TopLeftBlue = Input { Value = 0.87451, },
+						TopLeftAlpha = Input { Value = 1, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -660, 120 } },
+				},
+				PanelFill = Background {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "PanelMask",
+							Source = "Mask",
+						},
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Expression = "iif(BoxPreset<0.5, CustomBoxColorBG.TopLeftRed, iif(BoxPreset<1.5, 0.19216, iif(BoxPreset<2.5, 0.12941, iif(BoxPreset<3.5, 0.82353, iif(BoxPreset<4.5, 0.48235, iif(BoxPreset<5.5, 0.38431, iif(BoxPreset<6.5, 0.83137, iif(BoxPreset<7.5, 0.15686, iif(BoxPreset<8.5, 0.70196, iif(BoxPreset<9.5, 0.94510, iif(BoxPreset<10.5, 0.43137, 0.03922)))))))))))", },
+						TopLeftGreen = Input { Expression = "iif(BoxPreset<0.5, CustomBoxColorBG.TopLeftGreen, iif(BoxPreset<1.5, 0.50980, iif(BoxPreset<2.5, 0.72157, iif(BoxPreset<3.5, 0.41176, iif(BoxPreset<4.5, 0.12157, iif(BoxPreset<5.5, 0.06667, iif(BoxPreset<6.5, 0.75686, iif(BoxPreset<7.5, 0.36078, iif(BoxPreset<8.5, 0.55686, iif(BoxPreset<9.5, 0.92157, iif(BoxPreset<10.5, 0.39216, 0.03922)))))))))))", },
+						TopLeftBlue = Input { Expression = "iif(BoxPreset<0.5, CustomBoxColorBG.TopLeftBlue, iif(BoxPreset<1.5, 0.87451, iif(BoxPreset<2.5, 0.40784, iif(BoxPreset<3.5, 0.11765, iif(BoxPreset<4.5, 0.63529, iif(BoxPreset<5.5, 0.19608, iif(BoxPreset<6.5, 0.61176, iif(BoxPreset<7.5, 0.30196, iif(BoxPreset<8.5, 0.36471, iif(BoxPreset<9.5, 0.87451, iif(BoxPreset<10.5, 0.31373, 0.03922)))))))))))", },
+						TopLeftAlpha = Input { Expression = "iif(BoxPreset<0.5, CustomBoxColorBG.TopLeftAlpha, BoxOpacity)" }
+					},
+					ViewInfo = OperatorInfo { Pos = { -440, -50 } },
+					UserControls = ordered() {
+						BoxPreset = { LINKS_Name = "Box Color", LINKID_DataType = "Number", INPID_InputControl = "ComboControl", INP_Integer = true, INP_Default = 1, { CCS_AddString = "Custom" }, { CCS_AddString = "Azul" }, { CCS_AddString = "Verde" }, { CCS_AddString = "Naranja" }, { CCS_AddString = "Purpura" }, { CCS_AddString = "Red" }, { CCS_AddString = "Gold" }, { CCS_AddString = "Verde Osc" }, { CCS_AddString = "Strong" }, { CCS_AddString = "Light" }, { CCS_AddString = "Cafe" }, { CCS_AddString = "Black" }, ICS_ControlPage = "Controls", },
+						BoxOpacity = { INP_Default = 0.8, INP_MinScale = 0, INP_MaxScale = 1, INPID_InputControl = "SliderControl", LINKID_DataType = "Number", LINKS_Name = "Box Opacity", ICS_ControlPage = "Controls", }
+					}
+				},
+				BorderMask = RectangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Solid = Input { Value = 0, },
+						BorderWidth = Input { Value = 0.002, },
+						CornerRadius = Input { Expression = "PanelMask.CornerRadius", },
+						Width = Input { Expression = "PanelMask.Width", },
+						Height = Input { Expression = "PanelMask.Height", },
+						Center = Input { Expression = "PanelMask.Center", }
+					},
+					ViewInfo = OperatorInfo { Pos = { -550, 50 } },
+				},
+				BorderBG = Background {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "BorderMask",
+							Source = "Mask",
+						},
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0.70196, },
+						TopLeftGreen = Input { Value = 0.55686, },
+						TopLeftBlue = Input { Value = 0.36471, },
+						TopLeftAlpha = Input { Value = 0.6, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -440, 50 } },
+				},
+				BoxAssembled = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "PanelFill",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "BorderBG",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -330, -50 } },
+				},
+				DropShadow1 = ofx.com.blackmagicdesign.resolvefx.DropShadow {
+					CtrlWShown = false,
+					Inputs = {
+						Source = Input {
+							SourceOp = "BoxAssembled",
+							Source = "Output",
+						},
+						shadowStrength = Input { Value = 0.4, },
+						shadowAngle = Input { Value = 315, },
+						ShadowDistance = Input { Value = 0.012, },
+						shadowBlur = Input { Value = 0.4, },
+						shadowColorRed = Input { Value = 0, },
+						shadowColorGreen = Input { Value = 0, },
+						shadowColorBlue = Input { Value = 0, },
+						isLegacyComp = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						srcProcessingAlphaMode = Input { Value = 2, },
+						dstProcessingAlphaMode = Input { Value = 2, },
+						resolvefxVersion = Input { Value = "2.0", }
+					},
+					ViewInfo = OperatorInfo { Pos = { -220, -50 } },
+				},
+				EntranceXF = Transform {
+					CtrlWShown = false,
+					Inputs = {
+						Center = Input {
+							Expression = "Point(0.5, 0.5 - iif(abs(EntranceStyle-2)<0.5, (1 - (min(1, time/max(BoxSpeed,1))*min(1, time/max(BoxSpeed,1))*(3 - 2*min(1, time/max(BoxSpeed,1)))))*0.12, 0))",
+						},
+						Size = Input {
+							Expression = "iif(abs(EntranceStyle-1)<0.5, 0.8 + 0.2*(min(1, time/max(BoxSpeed,1))*min(1, time/max(BoxSpeed,1))*(3 - 2*min(1, time/max(BoxSpeed,1)))), 1)",
+						},
+						Input = Input {
+							SourceOp = "DropShadow1",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -110, -50 } },
+					UserControls = ordered() {
+						EntranceStyle = { LINKS_Name = "Box Entrance", LINKID_DataType = "Number", INPID_InputControl = "ComboControl", INP_Integer = true, INP_Default = 0, { CCS_AddString = "Fade In" }, { CCS_AddString = "Scale Up" }, { CCS_AddString = "Slide Up" }, { CCS_AddString = "Static" }, ICS_ControlPage = "Controls", },
+						BoxSpeed = { INP_Default = 15, INP_Integer = true, INPID_InputControl = "SliderControl", INP_MinScale = 1, INP_MaxScale = 60, INP_MinAllowed = 1, INP_MaxAllowed = 240, LINKID_DataType = "Number", LINKS_Name = "Box Speed (Frames)", ICS_ControlPage = "Controls", }
+					}
+				},
+				TransparentBG = Background {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0, },
+						TopLeftGreen = Input { Value = 0, },
+						TopLeftBlue = Input { Value = 0, },
+						TopLeftAlpha = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -110, 75 } },
+				},
+				BoxFaded = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "TransparentBG",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "EntranceXF",
+							Source = "Output",
+						},
+						Blend = Input { Expression = "iif(EntranceXF.EntranceStyle>2.5, 1, min(1, time/max(EntranceXF.BoxSpeed,1))*min(1, time/max(EntranceXF.BoxSpeed,1))*(3 - 2*min(1, time/max(EntranceXF.BoxSpeed,1))))",
+						},
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 0, -50 } },
+				},
+				BoxText = TextPlus {
+					CtrlWShown = false,
+					Inputs = {
+						GlobalOut = Input { Value = 20000, },
+						SelectElement = Input { Value = 1, },
+						Select = Input { Value = 1, },
+						AdvancedFontControls = Input { Value = 1, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Center = Input { Expression = "Point(iif(TextAlign<0.5, 0.5-PanelMask.Width/2+0.03, iif(TextAlign<1.5, 0.5, 0.5+PanelMask.Width/2-0.03)), 0.5)", },
+						StyledText = Input { Value = "=ROW()", },
+						Font = Input { Value = "Open Sans", },
+						Style = Input { Value = "Bold", },
+						Size = Input { Value = 0.06, },
+						Start = Input { Value = 0, },
+						End = Input { Expression = "iif(TextRevealMask.TextStyle<0.5, min((min(1,max(0,(time-EntranceXF.BoxSpeed))/max(TextRevealMask.TextSpeed,1))*min(1,max(0,(time-EntranceXF.BoxSpeed))/max(TextRevealMask.TextSpeed,1))*(3-2*min(1,max(0,(time-EntranceXF.BoxSpeed))/max(TextRevealMask.TextSpeed,1)))),iif(TextRevealMask.TextExit>0.5, 1, (min(1,max(0,(comp.RenderEnd-time))/max(TextRevealMask.TextSpeed,1))*min(1,max(0,(comp.RenderEnd-time))/max(TextRevealMask.TextSpeed,1))*(3-2*min(1,max(0,(comp.RenderEnd-time))/max(TextRevealMask.TextSpeed,1)))))), 1)", },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalJustificationNew = Input { Value = 3, },
+						Enabled2 = Input { Value = 1, },
+						Name2 = Input { Value = "Outline", },
+						Level2 = Input { Value = 1, },
+						Softness2 = Input { Value = 1, },
+						Thickness2 = Input { Value = 0.05, },
+						Red2 = Input { Value = 0, },
+						Green2 = Input { Value = 0, },
+						Blue2 = Input { Value = 0, },
+						HorizontalLeftCenterRight = Input { Expression = "iif(TextAlign<0.5, -1, iif(TextAlign<1.5, 0, 1))", },
+						Red1 = Input { Expression = "iif(TextPreset<0.5, CustomTextColorBG.TopLeftRed, iif(TextPreset<1.5, 0.19216, iif(TextPreset<2.5, 0.12941, iif(TextPreset<3.5, 0.82353, iif(TextPreset<4.5, 0.48235, iif(TextPreset<5.5, 0.38431, iif(TextPreset<6.5, 0.83137, iif(TextPreset<7.5, 0.15686, iif(TextPreset<8.5, 0.70196, iif(TextPreset<9.5, 0.94510, iif(TextPreset<10.5, 0.43137, 0.03922)))))))))))", },
+						Green1 = Input { Expression = "iif(TextPreset<0.5, CustomTextColorBG.TopLeftGreen, iif(TextPreset<1.5, 0.50980, iif(TextPreset<2.5, 0.72157, iif(TextPreset<3.5, 0.41176, iif(TextPreset<4.5, 0.12157, iif(TextPreset<5.5, 0.06667, iif(TextPreset<6.5, 0.75686, iif(TextPreset<7.5, 0.36078, iif(TextPreset<8.5, 0.55686, iif(TextPreset<9.5, 0.92157, iif(TextPreset<10.5, 0.39216, 0.03922)))))))))))", },
+						Blue1 = Input { Expression = "iif(TextPreset<0.5, CustomTextColorBG.TopLeftBlue, iif(TextPreset<1.5, 0.87451, iif(TextPreset<2.5, 0.40784, iif(TextPreset<3.5, 0.11765, iif(TextPreset<4.5, 0.63529, iif(TextPreset<5.5, 0.19608, iif(TextPreset<6.5, 0.61176, iif(TextPreset<7.5, 0.30196, iif(TextPreset<8.5, 0.36471, iif(TextPreset<9.5, 0.87451, iif(TextPreset<10.5, 0.31373, 0.03922)))))))))))", },
+						Alpha1 = Input { Expression = "iif(TextPreset<0.5, CustomTextColorBG.TopLeftAlpha, 1)" }
+					},
+					ViewInfo = OperatorInfo { Pos = { 0, 75 } },
+					UserControls = ordered() {
+						TextPreset = { LINKS_Name = "Text Color", LINKID_DataType = "Number", INPID_InputControl = "ComboControl", INP_Integer = true, INP_Default = 9, { CCS_AddString = "Custom" }, { CCS_AddString = "Azul" }, { CCS_AddString = "Verde" }, { CCS_AddString = "Naranja" }, { CCS_AddString = "Purpura" }, { CCS_AddString = "Red" }, { CCS_AddString = "Gold" }, { CCS_AddString = "Verde Osc" }, { CCS_AddString = "Strong" }, { CCS_AddString = "Light" }, { CCS_AddString = "Cafe" }, { CCS_AddString = "Black" }, ICS_ControlPage = "Controls", },
+						TextAlign = { LINKS_Name = "Text Align", LINKID_DataType = "Number", INPID_InputControl = "ComboControl", INP_Integer = true, INP_Default = 1, { CCS_AddString = "Left" }, { CCS_AddString = "Center" }, { CCS_AddString = "Right" }, ICS_ControlPage = "Controls", }
+					}
+				},
+				TextRevealMask = RectangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 1920, },
+						MaskHeight = Input { Value = 1080, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						SoftEdge = Input { Value = 0.02, },
+						Height = Input { Value = 0.5, },
+						Width = Input {
+							Value = 2,
+							Expression = "iif(abs(TextStyle)<0.5, 0.7*(min(1, time/max(TextSpeed,1))*min(1, time/max(TextSpeed,1))*(3 - 2*min(1, time/max(TextSpeed,1)))), 2)",
+						},
+						Center = Input {
+							Expression = "Point(iif(abs(TextStyle)<0.5, 0.15 + 0.35*(min(1, time/max(TextSpeed,1))*min(1, time/max(TextSpeed,1))*(3 - 2*min(1, time/max(TextSpeed,1)))), 0.5), 0.5)",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 0, 150 } },
+					UserControls = ordered() {
+						TextStyle = { LINKS_Name = "Text Reveal", LINKID_DataType = "Number", INPID_InputControl = "ComboControl", INP_Integer = true, INP_Default = 0, { CCS_AddString = "Write On" }, { CCS_AddString = "Fade In" }, { CCS_AddString = "Instant" }, { CCS_AddString = "Static" }, ICS_ControlPage = "Controls", },
+						TextSpeed = { INP_Default = 18, INP_Integer = true, INPID_InputControl = "SliderControl", INP_MinScale = 1, INP_MaxScale = 60, INP_MinAllowed = 1, INP_MaxAllowed = 240, LINKID_DataType = "Number", LINKS_Name = "Text Speed (Frames)", ICS_ControlPage = "Controls", }, TextExit = { LINKS_Name = "Text Exit", LINKID_DataType = "Number", INPID_InputControl = "ComboControl", INP_Integer = true, INP_Default = 0, { CCS_AddString = "On" }, { CCS_AddString = "Off (Hold)" }, ICS_ControlPage = "Controls", }
+					}
+				},
+				FinalBadge = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "BoxFaded",
+							Source = "Output",
+						},
+						Foreground = Input { SourceOp = "TextShadow", Source = "Output", },
+						Blend = Input {
+							Expression = "iif(abs(TextRevealMask.TextStyle-1)<0.5, min(1, max(0,(time-EntranceXF.BoxSpeed))/max(TextRevealMask.TextSpeed,1))*min(1, max(0,(time-EntranceXF.BoxSpeed))/max(TextRevealMask.TextSpeed,1))*(3 - 2*min(1, max(0,(time-EntranceXF.BoxSpeed))/max(TextRevealMask.TextSpeed,1))), 1)",
+						},
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 110, -50 } },
+				},
+				FrameBG = Background {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0, },
+						TopLeftGreen = Input { Value = 0, },
+						TopLeftBlue = Input { Value = 0, },
+						TopLeftAlpha = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 110, 75 } },
+				},
+				TextShadow = ofx.com.blackmagicdesign.resolvefx.DropShadow {
+					CtrlWShown = false,
+					Inputs = {
+						Source = Input { SourceOp = "BoxText", Source = "Output", },
+						shadowStrength = Input { Expression = "DropShadow1.shadowStrength", },
+						shadowAngle = Input { Expression = "DropShadow1.shadowAngle", },
+						ShadowDistance = Input { Expression = "DropShadow1.ShadowDistance", },
+						shadowBlur = Input { Expression = "DropShadow1.shadowBlur", },
+						shadowColorRed = Input { Value = 0, },
+						shadowColorGreen = Input { Value = 0, },
+						shadowColorBlue = Input { Value = 0, },
+						isLegacyComp = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						srcProcessingAlphaMode = Input { Value = 2, },
+						dstProcessingAlphaMode = Input { Value = 2, },
+						resolvefxVersion = Input { Value = "2.0", }
+					},
+					ViewInfo = OperatorInfo { Pos = { 55, 75 } },
+				},
+				FinalMerge = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "FrameBG",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "FinalBadge",
+							Source = "Output",
+						},
+						Blend = Input { Expression = "iif(BoxExit>0.5, 1, min(1,max(0,(comp.RenderEnd-time)/max(OutroSpeed,1)))*min(1,max(0,(comp.RenderEnd-time)/max(OutroSpeed,1)))*(3-2*min(1,max(0,(comp.RenderEnd-time)/max(OutroSpeed,1)))))",
+						},
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 220, -50 } },
+					UserControls = ordered() {
+						OutroSpeed = { INP_Default = 12, INP_Integer = true, INPID_InputControl = "SliderControl", INP_MinScale = 1, INP_MaxScale = 60, INP_MinAllowed = 1, INP_MaxAllowed = 240, LINKID_DataType = "Number", LINKS_Name = "Outro Speed (Frames)", ICS_ControlPage = "Controls", }, BoxExit = { LINKS_Name = "Box Exit", LINKID_DataType = "Number", INPID_InputControl = "ComboControl", INP_Integer = true, INP_Default = 0, { CCS_AddString = "On (Fade Out)" }, { CCS_AddString = "Off (Hold)" }, ICS_ControlPage = "Controls", }
+					}
+				}
+			},
+		}
+	},
+	ActiveTool = "BrandBox"
+}

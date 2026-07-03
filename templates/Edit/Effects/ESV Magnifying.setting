@@ -1,0 +1,533 @@
+{
+	Tools = ordered() {
+		MacroTool1 = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "ExcelMagnifier",
+					Source = "Input1",
+					Page = "Magnifier",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "ExcelMagnifier",
+					Source = "Input2",
+					Page = "Magnifier",
+					Default = 0.3,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "ExcelMagnifier",
+					Source = "Input3",
+					Page = "Magnifier",
+					Default = 0.3,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "ExcelMagnifier",
+					Source = "Input4",
+					Page = "Magnifier",
+					Default = 1,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "ExcelMagnifier",
+					Source = "Input5",
+					Page = "Magnifier",
+					Default = 2,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "ExcelMagnifier",
+					Source = "Input18",
+					Page = "Magnifier",
+					Default = 15,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "ExcelMagnifier",
+					Source = "Input6",
+					Page = "Magnifier",
+					Default = 1,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "ExcelMagnifier",
+					Source = "Input7",
+					Page = "Magnifier",
+					Default = 2,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "ExcelMagnifier",
+					Source = "Input8",
+					Page = "Magnifier",
+					Default = 0,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "ExcelMagnifier",
+					Source = "Input9",
+					Page = "Magnifier",
+					Default = 0.01,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "ExcelMagnifier",
+					Source = "Input10",
+					ControlGroup = 11,
+					Page = "Magnifier",
+					Default = 0.192156862745,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "ExcelMagnifier",
+					Source = "Input11",
+					ControlGroup = 11,
+					Default = 0.509803921568,
+				},
+				Input13 = InstanceInput {
+					SourceOp = "ExcelMagnifier",
+					Source = "Input12",
+					ControlGroup = 11,
+					Default = 0.874509803921,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "ExcelMagnifier",
+					Source = "Input13",
+					ControlGroup = 11,
+					Default = 1,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "ExcelMagnifier",
+					Source = "Input14",
+					Page = "Shadow",
+					Default = 0.6,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "ExcelMagnifier",
+					Source = "Input15",
+					Page = "Shadow",
+					Default = 0.4,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "ExcelMagnifier",
+					Source = "Input16",
+					Page = "Shadow",
+					Default = 45,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "ExcelMagnifier",
+					Source = "Input17",
+					MaxScale = 0.2000000029802,
+					Page = "Shadow",
+					Default = 0.02,
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "ExcelMagnifier",
+					Source = "MainOutput",
+				},
+				Output1 = InstanceOutput {
+					SourceOp = "Left",
+					Source = "Data",
+				},
+				Output2 = InstanceOutput {
+					SourceOp = "Right",
+					Source = "Data",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				ExcelMagnifier = MacroOperator {
+					CtrlWZoom = false,
+					Inputs = ordered() {
+						Input1 = InstanceInput {
+							SourceOp = "MagMask",
+							Source = "LoupeCenter",
+							Name = "Position",
+							Page = "Magnifier",
+						},
+						Input2 = InstanceInput {
+							SourceOp = "MagMask",
+							Source = "MagWidth",
+							Page = "Magnifier",
+							Default = 0.3,
+						},
+						Input3 = InstanceInput {
+							SourceOp = "MagMask",
+							Source = "MagHeight",
+							Page = "Magnifier",
+							Default = 0.3,
+						},
+						Input4 = InstanceInput {
+							SourceOp = "MagMask",
+							Source = "CornerRadius",
+							Name = "Corner Radius (0=Square, 1=Circle)",
+							Page = "Magnifier",
+							Default = 1,
+						},
+						Input5 = InstanceInput {
+							SourceOp = "ZoomXF",
+							Source = "Size",
+							Name = "Zoom Amount",
+							Page = "Magnifier",
+							Default = 2,
+						},
+						Input18 = InstanceInput {
+							SourceOp = "PopTransform",
+							Source = "AnimSpeed",
+							Page = "Magnifier",
+							Default = 15,
+						},
+						Input6 = InstanceInput {
+							SourceOp = "Sharpen1",
+							Source = "SharpenSwitch",
+							Page = "Magnifier",
+							Default = 1,
+						},
+						Input7 = InstanceInput {
+							SourceOp = "Sharpen1",
+							Source = "sharpen",
+							Page = "Magnifier",
+							Default = 2,
+						},
+						Input8 = InstanceInput {
+							SourceOp = "LensBulge",
+							Source = "Strength",
+							Name = "Lens Bulge Amount",
+							Page = "Magnifier",
+							Default = 0.15,
+						},
+						Input9 = InstanceInput {
+							SourceOp = "BorderMask",
+							Source = "BorderWidth",
+							Name = "Border Thickness",
+							Page = "Magnifier",
+							Default = 0.01,
+						},
+						Input10 = InstanceInput {
+							SourceOp = "BorderBG",
+							Source = "TopLeftRed",
+							Name = "Border Color",
+							ControlGroup = 5,
+							Page = "Magnifier",
+							Default = 0.192156862745,
+						},
+						Input11 = InstanceInput {
+							SourceOp = "BorderBG",
+							Source = "TopLeftGreen",
+							ControlGroup = 5,
+							Default = 0.509803921568,
+						},
+						Input12 = InstanceInput {
+							SourceOp = "BorderBG",
+							Source = "TopLeftBlue",
+							ControlGroup = 5,
+							Default = 0.874509803921,
+						},
+						Input13 = InstanceInput {
+							SourceOp = "BorderBG",
+							Source = "TopLeftAlpha",
+							ControlGroup = 5,
+							Default = 1,
+						},
+						Input14 = InstanceInput {
+							SourceOp = "ShadowEffect",
+							Source = "shadowStrength",
+							Name = "Shadow Opacity (Strength)",
+							Page = "Shadow",
+							Default = 0.6,
+						},
+						Input15 = InstanceInput {
+							SourceOp = "ShadowEffect",
+							Source = "shadowBlur",
+							Name = "Shadow Softness (Blur)",
+							Page = "Shadow",
+							Default = 0.4,
+						},
+						Input16 = InstanceInput {
+							SourceOp = "ShadowEffect",
+							Source = "shadowAngle",
+							Name = "Shadow Angle",
+							Page = "Shadow",
+							Default = 45,
+						},
+						Input17 = InstanceInput {
+							SourceOp = "ShadowEffect",
+							Source = "ShadowDistance",
+							Name = "Shadow Distance",
+							Page = "Shadow",
+							Default = 0.02,
+						}
+					},
+					Outputs = {
+						MainOutput = InstanceOutput {
+							SourceOp = "FinalMerge",
+							Source = "Output",
+						}
+					},
+					ViewInfo = GroupInfo { Pos = { 62.6667, -168.584 } },
+					Tools = ordered() {
+						MediaIn1_1 = MediaIn {
+							ExtentSet = true,
+							CtrlWZoom = false,
+							CtrlWShown = false,
+							CustomData = { MediaProps = { MEDIA_HEIGHT = 1080, MEDIA_AUDIO_TRACKS_DESC = { { MEDIA_AUDIO_BIT_DEPTH = 32, MEDIA_AUDIO_TRACK_ID = "Timeline Audio", MEDIA_AUDIO_TRACK_NAME = "Timeline Audio [Timeline 1]", MEDIA_AUDIO_FRAME_RATE = 30, MEDIA_AUDIO_START_TIME = 0, MEDIA_AUDIO_SAMPLE_RATE = 48000, MEDIA_AUDIO_NUM_CHANNELS = 2 } }, MEDIA_IS_SOURCE_RES = false, MEDIA_PAR = 1, MEDIA_START_FRAME = 0, MEDIA_WIDTH = 1920, MEDIA_AUDIO_TRACKS_NUM = 1, MEDIA_SRC_FRAME_RATE = 30, MEDIA_MARK_OUT = 246, MEDIA_HAS_AUDIO = true, MEDIA_NUM_FRAMES = 247, MEDIA_MARK_IN = 0, MEDIA_NAME = "Adjustment Clip" }, },
+							Inputs = {
+								GlobalOut = Input { Value = 246, },
+								AudioTrack = Input { Value = FuID { "Timeline Audio" }, },
+								Layer = Input { Value = "", },
+								ClipTimeEnd = Input { Value = 246, },
+								DeepOutputMode = Input {
+									Value = 0,
+									Disabled = true,
+								},
+								LeftAudio = Input {
+									SourceOp = "Left",
+									Source = "Data",
+								},
+								RightAudio = Input {
+									SourceOp = "Right",
+									Source = "Data",
+								}
+							},
+							ViewInfo = OperatorInfo { Pos = { -385, 58.7572 } },
+							Version = 1
+						},
+						MagMask = RectangleMask {
+							CtrlWShown = false,
+							Inputs = {
+								Filter = Input { Value = FuID { "Fast Gaussian" }, },
+								MaskWidth = Input { Expression = "comp:GetPrefs(\"Comp.FrameFormat.Width\")", },
+								MaskHeight = Input { Expression = "comp:GetPrefs(\"Comp.FrameFormat.Height\")", },
+								PixelAspect = Input { Value = { 1, 1 }, },
+								ClippingMode = Input { Value = FuID { "None" }, },
+								Center = Input { Expression = "Point(max(MagWidth/2, min(1-MagWidth/2, LoupeCenter.X)), max(MagHeight*(comp:GetPrefs(\"Comp.FrameFormat.Width\")/comp:GetPrefs(\"Comp.FrameFormat.Height\"))/2, min(1-MagHeight*(comp:GetPrefs(\"Comp.FrameFormat.Width\")/comp:GetPrefs(\"Comp.FrameFormat.Height\"))/2, LoupeCenter.Y)))", }, LoupeCenter = Input { Value = { 0.5, 0.5 }, },
+								Width = Input {
+									Value = 0.3,
+									Expression = "MagWidth",
+								},
+								Height = Input {
+									Value = 0.533333333333334,
+									Expression = "MagHeight * (comp:GetPrefs(\"Comp.FrameFormat.Width\")/comp:GetPrefs(\"Comp.FrameFormat.Height\"))",
+								},
+								CornerRadius = Input { Value = 1, }
+							},
+							ViewInfo = OperatorInfo { Pos = { -275, 58.7572 } },
+							UserControls = ordered() { MagWidth = { INP_Default = 0.3, INPID_InputControl = "SliderControl", LINKS_Name = "Width", LINKID_DataType = "Number", }, MagHeight = { INP_Default = 0.3, INPID_InputControl = "SliderControl", LINKS_Name = "Height", LINKID_DataType = "Number", }, LoupeCenter = { LINKID_DataType = "Point", INPID_PreviewControl = "CrosshairControl", CHC_Style = 0, INPID_InputControl = "OffsetControl", LINKS_Name = "Position", } }
+						},
+						BorderMask = RectangleMask {
+							CtrlWShown = false,
+							Inputs = {
+								Filter = Input { Value = FuID { "Fast Gaussian" }, },
+								BorderWidth = Input { Value = 0.01, },
+								Solid = Input { Value = 0, },
+								MaskWidth = Input { Expression = "comp:GetPrefs(\"Comp.FrameFormat.Width\")", },
+								MaskHeight = Input { Expression = "comp:GetPrefs(\"Comp.FrameFormat.Height\")", },
+								PixelAspect = Input { Value = { 1, 1 }, },
+								ClippingMode = Input { Value = FuID { "None" }, },
+								Center = Input {
+									Value = { 0.503664495114006, 0.51511986409111 },
+									Expression = "MagMask.Center",
+								},
+								Width = Input {
+									Value = 0.3,
+									Expression = "MagMask.Width",
+								},
+								Height = Input {
+									Value = 0.533333333333334,
+									Expression = "MagMask.Height",
+								},
+								CornerRadius = Input {
+									Value = 1,
+									Expression = "MagMask.CornerRadius",
+								}
+							},
+							ViewInfo = OperatorInfo { Pos = { -275, 108.758 } },
+						},
+						ZoomXF = Transform {
+							CtrlWShown = false,
+							Inputs = {
+								Pivot = Input {
+									Value = { 0.503664495114006, 0.51511986409111 },
+									Expression = "MagMask.Center",
+								},
+								Size = Input { Value = 2, },
+								Input = Input {
+									SourceOp = "MediaIn1_1",
+									Source = "Output",
+								}
+							},
+							ViewInfo = OperatorInfo { Pos = { -165, 8.75716 } },
+						},
+						Sharpen1 = ofx.com.blackmagicdesign.resolvefx.Sharpen {
+							CtrlWShown = false,
+							Inputs = {
+								Source = Input {
+									SourceOp = "ZoomXF",
+									Source = "Output",
+								},
+								sharpen = Input { Value = 2, },
+								detailGroup = Input { Value = 1, },
+								finest = Input { Value = 0.0500000007450581, },
+								fine = Input { Value = 1, },
+								medium = Input { Value = 1, },
+								large = Input { Value = 1, },
+								lcGroup = Input { Value = 1, },
+								chroma = Input { Value = 1, },
+								blendGroup = Input { Value = 0, },
+								blendIn = Input { Value = 1, },
+								blend = Input {
+									Value = 1,
+									Expression = "SharpenSwitch",
+								},
+								ignoreContentShape = Input { Value = 0, },
+								legacyIsProcessRGBOnly = Input { Value = 0, },
+								IsNoTemporalFramesReqd = Input { Value = 0, },
+								refreshTrigger = Input { Value = 1, },
+								srcProcessingAlphaMode = Input { Value = -1, },
+								dstProcessingAlphaMode = Input { Value = -1, },
+								resolvefxVersion = Input { Value = "1.0", }
+							},
+							ViewInfo = OperatorInfo { Pos = { -55, 8.75716 } },
+							UserControls = ordered() { SharpenSwitch = { INP_MaxAllowed = 1, INP_Integer = true, INPID_InputControl = "CheckboxControl", INP_MaxScale = 1, INP_Default = 1, INP_MinScale = 0, INP_MinAllowed = 0, LINKID_DataType = "Number", LINKS_Name = "Sharpen On/Off", } }
+						},
+						LensBulge = Dent {
+							CtrlWShown = false,
+							Inputs = {
+								Type = Input { Value = 1, },
+								Center = Input {
+									Value = { 0.503664495114006, 0.51511986409111 },
+									Expression = "MagMask.Center",
+								},
+								Size = Input {
+									Value = 0.45,
+									Expression = "MagMask.MagWidth * 1.5",
+								},
+								Strength = Input { Value = 0, },
+								Input = Input {
+									SourceOp = "Sharpen1",
+									Source = "Output",
+								}
+							},
+							ViewInfo = OperatorInfo { Pos = { 55, 8.75716 } },
+						},
+						TransparentBG = Background {
+							CtrlWShown = false,
+							Inputs = {
+								Width = Input { Expression = "comp:GetPrefs(\"Comp.FrameFormat.Width\")", },
+								Height = Input { Expression = "comp:GetPrefs(\"Comp.FrameFormat.Height\")", },
+								["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+								TopLeftAlpha = Input { Value = 0, }
+							},
+							ViewInfo = OperatorInfo { Pos = { -165, 58.7572 } },
+						},
+						CutoutMerge = Merge {
+							CtrlWShown = false,
+							Inputs = {
+								EffectMask = Input {
+									SourceOp = "MagMask",
+									Source = "Mask",
+								},
+								Background = Input {
+									SourceOp = "TransparentBG",
+									Source = "Output",
+								},
+								Foreground = Input {
+									SourceOp = "LensBulge",
+									Source = "Output",
+								},
+								PerformDepthMerge = Input { Value = 0, }
+							},
+							ViewInfo = OperatorInfo { Pos = { -55, 58.7572 } },
+						},
+						ShadowEffect = ofx.com.blackmagicdesign.resolvefx.DropShadow {
+							CtrlWShown = false,
+							Inputs = {
+								Source = Input {
+									SourceOp = "CutoutMerge",
+									Source = "Output",
+								},
+								shadowStrength = Input { Value = 0.6, },
+								shadowAngle = Input { Value = 45, },
+								ShadowDistance = Input { Value = 0.02, },
+								shadowBlur = Input { Value = 0.4, },
+								shadowColorRed = Input { Value = 0, },
+								shadowColorGreen = Input { Value = 0, },
+								shadowColorBlue = Input { Value = 0, },
+								isLegacyComp = Input { Value = 0, },
+								blendGroup = Input { Value = 0, },
+								blendIn = Input { Value = 1, },
+								blend = Input { Value = 0, },
+								ignoreContentShape = Input { Value = 0, },
+								legacyIsProcessRGBOnly = Input { Value = 0, },
+								IsNoTemporalFramesReqd = Input { Value = 0, },
+								refreshTrigger = Input { Value = 1, },
+								srcProcessingAlphaMode = Input { Value = 2, },
+								dstProcessingAlphaMode = Input { Value = 2, },
+								resolvefxVersion = Input { Value = "2.0", }
+							},
+							ViewInfo = OperatorInfo { Pos = { 55, 58.7572 } },
+						},
+						BorderBG = Background {
+							CtrlWShown = false,
+							Inputs = {
+								EffectMask = Input {
+									SourceOp = "BorderMask",
+									Source = "Mask",
+								},
+								Width = Input { Expression = "comp:GetPrefs(\"Comp.FrameFormat.Width\")", },
+								Height = Input { Expression = "comp:GetPrefs(\"Comp.FrameFormat.Height\")", },
+								["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+								TopLeftRed = Input { Value = 0.192156862745, },
+								TopLeftGreen = Input { Value = 0.509803921568, },
+								TopLeftBlue = Input { Value = 0.874509803921, }
+							},
+							ViewInfo = OperatorInfo { Pos = { 55, 108.758 } },
+						},
+						IsolatedGlassMerge = Merge {
+							CtrlWShown = false,
+							Inputs = {
+								Background = Input {
+									SourceOp = "ShadowEffect",
+									Source = "Output",
+								},
+								Foreground = Input {
+									SourceOp = "BorderBG",
+									Source = "Output",
+								},
+								PerformDepthMerge = Input { Value = 0, }
+							},
+							ViewInfo = OperatorInfo { Pos = { 165, 58.7572 } },
+						},
+						PopTransform = Transform {
+							CtrlWShown = false,
+							Inputs = {
+								Pivot = Input { Expression = "MagMask.Center", },
+								Size = Input { Expression = "iif(time < AnimSpeed, sin((time/max(AnimSpeed, 1))*1.5708), iif(time > comp.RenderEnd - AnimSpeed, sin(((comp.RenderEnd - time)/max(AnimSpeed, 1))*1.5708), 1))", },
+								Input = Input {
+									SourceOp = "IsolatedGlassMerge",
+									Source = "Output",
+								}
+							},
+							ViewInfo = OperatorInfo { Pos = { 275, 58.7572 } },
+							UserControls = ordered() { AnimSpeed = { INP_Default = 15, INPID_InputControl = "SliderControl", LINKS_Name = "Intro/Outro Speed (Frames)", LINKID_DataType = "Number", } }
+						},
+						FinalMerge = Merge {
+							CtrlWShown = false,
+							Inputs = {
+								Background = Input {
+									SourceOp = "MediaIn1_1",
+									Source = "Output",
+								},
+								Foreground = Input {
+									SourceOp = "PopTransform",
+									Source = "Output",
+								},
+								PerformDepthMerge = Input { Value = 0, }
+							},
+							ViewInfo = OperatorInfo { Pos = { 385, 58.7572 } },
+						}
+					},
+				},
+				Left = AudioDisplay {
+					CtrlWZoom = false,
+				},
+				Right = AudioDisplay {
+					CtrlWZoom = false,
+				}
+			},
+		}
+	},
+	ActiveTool = "MacroTool1"
+}

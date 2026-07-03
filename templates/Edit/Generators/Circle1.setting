@@ -1,0 +1,363 @@
+{
+	Tools = ordered() {
+		Circle1 = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "Circle_Macro",
+					Source = "Position",
+					Page = "Circle Controls",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Circle_Macro",
+					Source = "Scale",
+					Page = "Circle Controls",
+					Default = 1,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Circle_Macro",
+					Source = "Rotation",
+					Page = "Circle Controls",
+					Default = 7.8,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Circle_Macro",
+					Source = "ColorRed",
+					Page = "Circle Controls",
+					Default = 1,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "Circle_Macro",
+					Source = "ColorGreen",
+					Page = "Circle Controls",
+					Default = 0,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "Circle_Macro",
+					Source = "ColorBlue",
+					Page = "Circle Controls",
+					Default = 0.0509803921569,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "Circle_Macro",
+					Source = "ShadowStrength",
+					Page = "Shadow",
+					Default = 0.646,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "Circle_Macro",
+					Source = "ShadowAngle",
+					Page = "Shadow",
+					Default = 40,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "Circle_Macro",
+					Source = "ShadowDistance",
+					MaxScale = 0.2000000029802,
+					Page = "Shadow",
+					Default = 0.0283,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "Circle_Macro",
+					Source = "ShadowBlur",
+					Page = "Shadow",
+					Default = 0.48,
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Circle_Macro",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				Circle_Macro = MacroOperator {
+					CtrlWZoom = false,
+					Inputs = ordered() {
+						Position = InstanceInput {
+							SourceOp = "Transform1",
+							Source = "Center",
+							Name = "Position",
+							Page = "Circle Controls",
+						},
+						Scale = InstanceInput {
+							SourceOp = "Transform1",
+							Source = "Size",
+							Name = "Scale",
+							Page = "Circle Controls",
+							Default = 1,
+						},
+						Rotation = InstanceInput {
+							SourceOp = "Transform1",
+							Source = "Angle",
+							Name = "Rotation",
+							Page = "Circle Controls",
+							Default = 7.8,
+						},
+						ColorRed = InstanceInput {
+							SourceOp = "Stroke1",
+							Source = "PaintApplyColor.Red",
+							Name = "Color Red",
+							Page = "Circle Controls",
+							Default = 0,
+						},
+						ColorGreen = InstanceInput {
+							SourceOp = "Stroke1",
+							Source = "PaintApplyColor.Green",
+							Name = "Color Green",
+							Page = "Circle Controls",
+							Default = 0,
+						},
+						ColorBlue = InstanceInput {
+							SourceOp = "Stroke1",
+							Source = "PaintApplyColor.Blue",
+							Name = "Color Blue",
+							Page = "Circle Controls",
+							Default = 0.05098,
+						},
+						ShadowStrength = InstanceInput {
+							SourceOp = "DropShadow1",
+							Source = "shadowStrength",
+							Page = "Shadow",
+							Default = 0.646,
+						},
+						ShadowAngle = InstanceInput {
+							SourceOp = "DropShadow1",
+							Source = "shadowAngle",
+							Name = "Shadow Angle",
+							Page = "Shadow",
+							Default = 40,
+						},
+						ShadowDistance = InstanceInput {
+							SourceOp = "DropShadow1",
+							Source = "ShadowDistance",
+							Name = "Shadow Distance",
+							Page = "Shadow",
+							Default = 0.0283,
+						},
+						ShadowBlur = InstanceInput {
+							SourceOp = "DropShadow1",
+							Source = "shadowBlur",
+							Name = "Shadow Blur",
+							Page = "Shadow",
+							Default = 0.48,
+						}
+					},
+					Outputs = {
+						Output = InstanceOutput {
+							SourceOp = "Transform1",
+							Source = "Output",
+						}
+					},
+					ViewInfo = GroupInfo { Pos = { 376.579, 53.2815 } },
+					Tools = ordered() {
+						Background1 = Background {
+							CtrlWShown = false,
+							Inputs = {
+								Width = Input { Value = 1920, },
+								Height = Input { Value = 1080, },
+								["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+								TopLeftAlpha = Input { Value = 0, }
+							},
+							ViewInfo = OperatorInfo { Pos = { -172.667, 8.45452 } },
+						},
+						Paint1 = Paint {
+							CtrlWShown = false,
+							Inputs = {
+								Input = Input {
+									SourceOp = "Background1",
+									Source = "Output",
+								},
+								Paint = Input {
+									SourceOp = "Stroke2",
+									Source = "Out",
+								}
+							},
+							ViewInfo = OperatorInfo { Pos = { -48, 8.45452 } },
+						},
+						Stroke2 = Stroke {
+							Points = {
+							},
+							IsThreaded = false,
+							Brushes = { "CircleBrush" },
+							ApplyModes = { "PaintApplyColor" },
+							CtrlWZoom = false,
+							Inputs = {
+								Paint = Input {
+									SourceOp = "Stroke1",
+									Source = "Out",
+								},
+								BrushControls = Input { Value = 1, },
+								BrushShape = Input { Value = FuID { "CircleBrush" }, },
+								["PaintApplyColor.Green"] = Input { Value = 0, },
+								["PaintApplyColor.Blue"] = Input { Value = 0.0509803921568627, },
+								StrokeControls = Input { Value = 1, },
+								StrokeAnimation = Input { Value = 2, },
+								Duration = Input { Value = 30, }
+							},
+						},
+						Stroke1 = Stroke {
+							Points = {
+								{ X = -0.000140786, Y = 0.102352, Time = 1856254 },
+								{ X = -0.00394017, Y = 0.105731, Time = 1856254 },
+								{ X = -0.0191377, Y = 0.109109, Time = 1856273, XSpeed = -0.799872, YSpeed = 0.100017 },
+								{ X = -0.0514326, Y = 0.115866, Time = 1856295, XSpeed = -1.46795, YSpeed = 0.172758 },
+								{ X = -0.0685298, Y = 0.115866, Time = 1856303, XSpeed = -2.13716 },
+								{ X = -0.0685298, Y = 0.115866, Time = 1856305 },
+								{ X = -0.108423, Y = 0.115866, Time = 1856321, XSpeed = -2.49335 },
+								{ X = -0.112223, Y = 0.115866, Time = 1856321, XSpeed = -2.49335 },
+								{ X = -0.144518, Y = 0.115866, Time = 1856338, XSpeed = -1.8997 },
+								{ X = -0.174913, Y = 0.112487, Time = 1856354, XSpeed = -1.8997, YSpeed = -0.118771 },
+								{ X = -0.178712, Y = 0.112487, Time = 1856354, XSpeed = -1.8997, YSpeed = -0.118771 },
+								{ X = -0.205308, Y = 0.098974, Time = 1856371, XSpeed = -1.56446, YSpeed = -0.447139 },
+								{ X = -0.235703, Y = 0.0618118, Time = 1856398, XSpeed = -1.12575, YSpeed = -0.774212 },
+								{ X = -0.235703, Y = 0.0584334, Time = 1856398, XSpeed = -1.12575, YSpeed = -0.774212 },
+								{ X = -0.241402, Y = 0.0482983, Time = 1856404, XSpeed = -0.949845, YSpeed = -0.95017 },
+								{ X = -0.241402, Y = 0.0482983, Time = 1856404, XSpeed = -0.949845, YSpeed = -0.95017 },
+								{ X = -0.2528, Y = 0.00775775, Time = 1856421, XSpeed = -0.670482, YSpeed = -1.34142 },
+								{ X = -0.258499, Y = -0.0395395, Time = 1856437, XSpeed = -0.356192, YSpeed = -1.6628 },
+								{ X = -0.2566, Y = -0.0868368, Time = 1856454, XSpeed = 0.111746, YSpeed = -1.56498 },
+								{ X = -0.235703, Y = -0.137513, Time = 1856470, XSpeed = 1.30604, YSpeed = -1.78157 },
+								{ X = -0.195809, Y = -0.181431, Time = 1856488, XSpeed = 2.21631, YSpeed = -1.37247 },
+								{ X = -0.0856271, Y = -0.232107, Time = 1856514, XSpeed = 4.23778, YSpeed = -1.09635 },
+								{ X = -0.0837274, Y = -0.235485, Time = 1856514, XSpeed = 4.23778, YSpeed = -1.09635 },
+								{ X = -0.0419341, Y = -0.245621, Time = 1856521, XSpeed = 5.97048, YSpeed = -0.814431 },
+								{ X = 0.0473516, Y = -0.262513, Time = 1856538, XSpeed = 5.2521, YSpeed = -0.558923 },
+								{ X = 0.0530507, Y = -0.262513, Time = 1856538, XSpeed = 5.2521, YSpeed = -0.558923 },
+								{ X = 0.130938, Y = -0.262513, Time = 1856554, XSpeed = 4.86797 },
+								{ X = 0.134738, Y = -0.262513, Time = 1856554, XSpeed = 4.86797 },
+								{ X = 0.203127, Y = -0.248999, Time = 1856570, XSpeed = 4.27432, YSpeed = 0.475084 },
+								{ X = 0.24492, Y = -0.218594, Time = 1856587, XSpeed = 2.45843, YSpeed = 1.00606 },
+								{ X = 0.24682, Y = -0.215215, Time = 1856587, XSpeed = 2.45843, YSpeed = 1.00606 },
+								{ X = 0.269616, Y = -0.181431, Time = 1856604, XSpeed = 1.34096, YSpeed = 1.11785 },
+								{ X = 0.284814, Y = -0.130756, Time = 1856631, XSpeed = 0.562873, YSpeed = 1.05574 },
+								{ X = 0.284814, Y = -0.127377, Time = 1856631, XSpeed = 0.562873, YSpeed = 1.05574 },
+								{ X = 0.286713, Y = -0.117242, Time = 1856638, XSpeed = 0.27138, YSpeed = 0.81443 },
+								{ X = 0.286713, Y = -0.113864, Time = 1856638, XSpeed = 0.27138, YSpeed = 0.81443 },
+								{ X = 0.286713, Y = -0.0800801, Time = 1856654, YSpeed = 2.11149 },
+								{ X = 0.273415, Y = -0.0462963, Time = 1856670, XSpeed = -0.831116, YSpeed = 1.18771 },
+								{ X = 0.252519, Y = -0.00575575, Time = 1856687, XSpeed = -1.22922, YSpeed = 1.34142 },
+								{ X = 0.250619, Y = -0.00575575, Time = 1856687, XSpeed = -1.22922, YSpeed = 1.34142 },
+								{ X = 0.216425, Y = 0.0415415, Time = 1856704, XSpeed = -2.01144, YSpeed = 1.56498 },
+								{ X = 0.212625, Y = 0.0449199, Time = 1856704, XSpeed = -2.01144, YSpeed = 1.56498 },
+								{ X = 0.151835, Y = 0.0922172, Time = 1856721, XSpeed = -3.5759, YSpeed = 1.56498 },
+								{ X = 0.149935, Y = 0.0955956, Time = 1856721, XSpeed = -3.5759, YSpeed = 1.56498 },
+								{ X = 0.0226555, Y = 0.159785, Time = 1856748, XSpeed = -4.71406, YSpeed = 1.33727 },
+								{ X = 0.0207559, Y = 0.159785, Time = 1856748, XSpeed = -4.71406, YSpeed = 1.33727 },
+								{ X = -0.00773954, Y = 0.16992, Time = 1856755, XSpeed = -4.07078, YSpeed = 0.814429 },
+								{ X = -0.0134386, Y = 0.173298, Time = 1856755, XSpeed = -4.07078, YSpeed = 0.814429 },
+								{ X = -0.0742289, Y = 0.19019, Time = 1856771, XSpeed = -3.79939, YSpeed = 0.593856 },
+								{ X = -0.121721, Y = 0.200325, Time = 1856787, XSpeed = -2.96827, YSpeed = 0.356313 },
+								{ X = -0.121721, Y = 0.200325, Time = 1856787, XSpeed = -2.96827, YSpeed = 0.356313 },
+								{ X = -0.152116, Y = 0.203704, Time = 1856804, XSpeed = -1.78795, YSpeed = 0.111785 },
+								{ X = -0.152116, Y = 0.203704, Time = 1856804, XSpeed = -1.78795, YSpeed = 0.111785 },
+								{ X = -0.167314, Y = 0.203704, Time = 1856821, XSpeed = -0.893975 }
+							},
+							IsThreaded = false,
+							Brushes = { "CircleBrush" },
+							ApplyModes = { "PaintApplyColor" },
+							CtrlWZoom = false,
+							Inputs = {
+								BrushControls = Input { Value = 1, },
+								BrushShape = Input { Value = FuID { "CircleBrush" }, },
+								["PaintApplyColor.Green"] = Input { Value = 0, },
+								["PaintApplyColor.Blue"] = Input { Value = 0.0509803921569, },
+								StrokeControls = Input { Value = 1, },
+								StrokeAnimation = Input { Value = 2, },
+								Duration = Input { Value = 30, },
+								WriteOnEnd = Input {
+									SourceOp = "Stroke1End",
+									Source = "Value",
+								},
+								Center = Input { Value = { 0.547253251075745, 0.373998999595642 }, }
+							},
+						},
+						Stroke1End = BezierSpline {
+							SplineColor = { Red = 72, Green = 233, Blue = 54 },
+							CtrlWZoom = false,
+							KeyFrames = {
+								[0] = { 0, RH = { 0.152, 0.0040298563738664 }, Flags = { Linear = true } },
+								[0.456] = { 0.0120895691215992, LH = { 0.304, 0.0080597127477328 }, RH = { 0.632, 0.0185275338590145 }, Flags = { Linear = true } },
+								[0.984] = { 0.0314034633338451, LH = { 0.808, 0.0249654985964298 }, RH = { 1.048, 0.0347395626207192 }, Flags = { Linear = true } },
+								[1.176] = { 0.0414117611944675, LH = { 1.112, 0.0380756619075934 }, RH = { 1.192, 0.0414117611944675 }, Flags = { Linear = true } },
+								[1.224] = { 0.0414117611944675, LH = { 1.208, 0.0414117611944675 }, RH = { 1.352, 0.0499373475710551 }, Flags = { Linear = true } },
+								[1.608] = { 0.0669885203242302, LH = { 1.48, 0.0584629339476426 }, RH = { 1.744, 0.073290042579174 }, Flags = { Linear = true } },
+								[2.016] = { 0.0858930870890617, LH = { 1.88, 0.0795915648341179 }, RH = { 2.144, 0.0926018084088961 }, Flags = { Linear = true } },
+								[2.4] = { 0.106019251048565, LH = { 2.272, 0.0993105297287306 }, RH = { 2.536, 0.111840215822061 }, Flags = { Linear = true } },
+								[2.808] = { 0.123482145369053, LH = { 2.672, 0.117661180595557 }, RH = { 3.024, 0.133509149154027 }, Flags = { Linear = true } },
+								[3.456] = { 0.153563156723976, LH = { 3.24, 0.143536152939002 }, RH = { 3.504, 0.155831982692083 }, Flags = { Linear = true } },
+								[3.6] = { 0.160369634628296, LH = { 3.552, 0.158100808660189 }, RH = { 3.736, 0.168586810429891 }, Flags = { Linear = true } },
+								[4.008] = { 0.185021162033081, LH = { 3.872, 0.176803986231486 }, RH = { 4.136, 0.19431679447492 }, Flags = { Linear = true } },
+								[4.392] = { 0.212908059358597, LH = { 4.264, 0.203612426916758 }, RH = { 4.528, 0.222144375244777 }, Flags = { Linear = true } },
+								[4.8] = { 0.240617007017136, LH = { 4.664, 0.231380691130956 }, RH = { 4.928, 0.251312782367071 }, Flags = { Linear = true } },
+								[5.184] = { 0.27270433306694, LH = { 5.056, 0.262008557717005 }, RH = { 5.328, 0.284281611442566 }, Flags = { Linear = true } },
+								[5.616] = { 0.307436168193817, LH = { 5.472, 0.295858889818191 }, RH = { 5.824, 0.33185663819313 }, Flags = { Linear = true } },
+								[6.24] = { 0.380697578191757, LH = { 6.032, 0.356277108192444 }, RH = { 6.296, 0.389088859160741 }, Flags = { Linear = true } },
+								[6.408] = { 0.405871421098709, LH = { 6.352, 0.397480140129725 }, RH = { 6.544, 0.424714336792628 }, Flags = { Linear = true } },
+								[6.816] = { 0.462400168180466, LH = { 6.68, 0.443557252486547 }, RH = { 6.944, 0.478339314460755 }, Flags = { Linear = true } },
+								[7.2] = { 0.510217607021332, LH = { 7.072, 0.494278460741043 }, RH = { 7.328, 0.523820022741954 }, Flags = { Linear = true } },
+								[7.584] = { 0.551024854183197, LH = { 7.456, 0.537422438462575 }, RH = { 7.72, 0.561865826447805 }, Flags = { Linear = true } },
+								[7.992] = { 0.58354777097702, LH = { 7.856, 0.572706798712412 }, RH = { 8.128, 0.591500182946523 }, Flags = { Linear = true } },
+								[8.4] = { 0.607405006885529, LH = { 8.264, 0.599452594916026 }, RH = { 8.616, 0.618387381235759 }, Flags = { Linear = true } },
+								[9.048] = { 0.640352129936218, LH = { 8.832, 0.629369755585988 }, RH = { 9.104, 0.643023391564687 }, Flags = { Linear = true } },
+								[9.216] = { 0.648365914821625, LH = { 9.16, 0.645694653193156 }, RH = { 9.344, 0.654957969983419 }, Flags = { Linear = true } },
+								[9.6] = { 0.668142080307007, LH = { 9.472, 0.661550025145213 }, RH = { 9.728, 0.675226410230001 }, Flags = { Linear = true } },
+								[9.984] = { 0.689395070075989, LH = { 9.856, 0.682310740152995 }, RH = { 10.12, 0.698665261268616 }, Flags = { Linear = true } },
+								[10.392] = { 0.71720564365387, LH = { 10.256, 0.707935452461243 }, RH = { 10.528, 0.729585846265157 }, Flags = { Linear = true } },
+								[10.8] = { 0.754346251487732, LH = { 10.664, 0.741966048876445 }, RH = { 10.936, 0.770131568113963 }, Flags = { Linear = true } },
+								[11.208] = { 0.801702201366425, LH = { 11.072, 0.785916884740194 }, RH = { 11.424, 0.829887807369232 }, Flags = { Linear = true } },
+								[11.856] = { 0.886259019374847, LH = { 11.64, 0.85807341337204 }, RH = { 11.912, 0.893453160921732 }, Flags = { Linear = true } },
+								[12.024] = { 0.907841444015503, LH = { 11.968, 0.900647302468618 }, RH = { 12.152, 0.920152544975281 }, Flags = { Linear = true } },
+								[12.408] = { 0.944774746894836, LH = { 12.28, 0.932463645935058 }, RH = { 12.536, 0.954250355561574 }, Flags = { Linear = true } },
+								[12.792] = { 0.97320157289505, LH = { 12.664, 0.963725964228312 }, RH = { 12.928, 0.979168951511383 }, Flags = { Linear = true } },
+								[13.2] = { 0.991103708744049, LH = { 13.064, 0.985136330127716 }, RH = { 13.336, 0.994069139162699 }, Flags = { Linear = true } },
+								[13.608] = { 1, LH = { 13.472, 0.99703456958135 }, Flags = { Linear = true } }
+							}
+						},
+						DropShadow1 = ofx.com.blackmagicdesign.resolvefx.DropShadow {
+							CtrlWShown = false,
+							Inputs = {
+								Source = Input {
+									SourceOp = "Paint1",
+									Source = "Output",
+								},
+								shadowStrength = Input { Value = 0.646, },
+								shadowAngle = Input { Value = 40, },
+								ShadowDistance = Input { Value = 0.0283, },
+								shadowBlur = Input { Value = 0.48, },
+								shadowColorRed = Input { Value = 0, },
+								shadowColorGreen = Input { Value = 0, },
+								shadowColorBlue = Input { Value = 0, },
+								isLegacyComp = Input { Value = 0, },
+								blendGroup = Input { Value = 0, },
+								blendIn = Input { Value = 1, },
+								blend = Input { Value = 0, },
+								ignoreContentShape = Input { Value = 0, },
+								legacyIsProcessRGBOnly = Input { Value = 0, },
+								IsNoTemporalFramesReqd = Input { Value = 0, },
+								refreshTrigger = Input { Value = 1, },
+								srcProcessingAlphaMode = Input { Value = 2, },
+								dstProcessingAlphaMode = Input { Value = 2, },
+								resolvefxVersion = Input { Value = "2.0", }
+							},
+							ViewInfo = OperatorInfo { Pos = { 62, 8.45452 } },
+						},
+						Transform1 = Transform {
+							CtrlWZoom = false,
+							CtrlWShown = false,
+							Inputs = {
+								Angle = Input { Value = 7.8, },
+								Input = Input {
+									SourceOp = "DropShadow1",
+									Source = "Output",
+								}
+							},
+							ViewInfo = OperatorInfo { Pos = { 172, 9.06062 } },
+						}
+					},
+				}
+			},
+		}
+	},
+	ActiveTool = "Circle1"
+}

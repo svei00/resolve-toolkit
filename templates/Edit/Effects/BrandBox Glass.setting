@@ -1,0 +1,358 @@
+{
+	Tools = ordered() {
+		BrandBoxGlass = MacroOperator {
+			CtrlWZoom = false,
+			Inputs = ordered() {
+				Position = InstanceInput {
+					SourceOp = "BoxMask",
+					Source = "Center",
+					Name = "Position",
+					Page = "Controls",
+				},
+				BoxWidth = InstanceInput {
+					SourceOp = "BoxMask",
+					Source = "Width",
+					Name = "Box Width",
+					MinScale = 0.05,
+					MaxScale = 1,
+					Page = "Controls",
+					Default = 0.5,
+				},
+				BoxHeight = InstanceInput {
+					SourceOp = "BoxMask",
+					Source = "Height",
+					Name = "Box Height",
+					MinScale = 0.05,
+					MaxScale = 1,
+					Page = "Controls",
+					Default = 0.18,
+				},
+				CornerRadius = InstanceInput {
+					SourceOp = "BoxMask",
+					Source = "CornerRadius",
+					Name = "Corner Radius",
+					Page = "Controls",
+					Default = 0.4,
+				},
+				BlurAmount = InstanceInput {
+					SourceOp = "GlassBlur",
+					Source = "XBlurSize",
+					Name = "Blur (Glass) Amount",
+					MinScale = 0,
+					MaxScale = 60,
+					Page = "Controls",
+					Default = 25,
+				},
+				TintColorR = InstanceInput {
+					SourceOp = "TintBG",
+					Source = "TopLeftRed",
+					Name = "Glass Tint Color",
+					ControlGroup = 1,
+					Page = "Controls",
+					Default = 0.19216,
+				},
+				TintColorG = InstanceInput {
+					SourceOp = "TintBG",
+					Source = "TopLeftGreen",
+					ControlGroup = 1,
+					Default = 0.50980,
+				},
+				TintColorB = InstanceInput {
+					SourceOp = "TintBG",
+					Source = "TopLeftBlue",
+					ControlGroup = 1,
+					Default = 0.87451,
+				},
+				TintOpacity = InstanceInput {
+					SourceOp = "TintBG",
+					Source = "TopLeftAlpha",
+					Name = "Tint Opacity",
+					Page = "Controls",
+					Default = 0.35,
+				},
+				BorderWidth = InstanceInput {
+					SourceOp = "BorderMask",
+					Source = "BorderWidth",
+					Name = "Border Width",
+					MinScale = 0,
+					MaxScale = 0.03,
+					Page = "Controls",
+					Default = 0.004,
+				},
+				BorderColorR = InstanceInput {
+					SourceOp = "BorderBG",
+					Source = "TopLeftRed",
+					Name = "Border Color",
+					ControlGroup = 2,
+					Page = "Controls",
+					Default = 0.94510,
+				},
+				BorderColorG = InstanceInput {
+					SourceOp = "BorderBG",
+					Source = "TopLeftGreen",
+					ControlGroup = 2,
+					Default = 0.92157,
+				},
+				BorderColorB = InstanceInput {
+					SourceOp = "BorderBG",
+					Source = "TopLeftBlue",
+					ControlGroup = 2,
+					Default = 0.87451,
+				},
+				BorderOpacity = InstanceInput {
+					SourceOp = "BorderBG",
+					Source = "TopLeftAlpha",
+					Name = "Border Opacity",
+					Page = "Controls",
+					Default = 0.5,
+				},
+				IntroSpeed = InstanceInput {
+					SourceOp = "FinalMerge",
+					Source = "IntroSpeed",
+					Name = "Intro Speed (Frames)",
+					Page = "Controls",
+					Default = 15,
+				},
+				OutroSpeed = InstanceInput {
+					SourceOp = "FinalMerge",
+					Source = "OutroSpeed",
+					Name = "Outro Speed (Frames)",
+					Page = "Controls",
+					Default = 12,
+				},
+				ShadowStrength = InstanceInput {
+					SourceOp = "DropShadow1",
+					Source = "shadowStrength",
+					Name = "Shadow Opacity",
+					Page = "Shadow",
+					Default = 0.4,
+				},
+				ShadowAngle = InstanceInput {
+					SourceOp = "DropShadow1",
+					Source = "shadowAngle",
+					Name = "Shadow Angle",
+					Page = "Shadow",
+					Default = 315,
+				},
+				ShadowDistance = InstanceInput {
+					SourceOp = "DropShadow1",
+					Source = "ShadowDistance",
+					Name = "Shadow Distance",
+					MaxScale = 0.2000000029802,
+					Page = "Shadow",
+					Default = 0.015,
+				},
+				ShadowBlur = InstanceInput {
+					SourceOp = "DropShadow1",
+					Source = "shadowBlur",
+					Name = "Shadow Softness",
+					Page = "Shadow",
+					Default = 0.4,
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "FinalMerge",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				MediaIn1 = MediaIn {
+					ExtentSet = true,
+					CtrlWShown = false,
+					CustomData = { MediaProps = { MEDIA_WIDTH = 1920, MEDIA_HEIGHT = 1080, MEDIA_NAME = "Adjustment Clip" }, },
+					Inputs = {
+						Layer = Input { Value = "", },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -550, 0 } },
+					Version = 1
+				},
+				GlassBlur = Blur {
+					CtrlWShown = false,
+					Inputs = {
+						XBlurSize = Input { Value = 25, },
+						Input = Input {
+							SourceOp = "MediaIn1",
+							Source = "Output",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -440, -50 } },
+				},
+				TintBG = Background {
+					CtrlWShown = false,
+					Inputs = {
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0.19216, },
+						TopLeftGreen = Input { Value = 0.50980, },
+						TopLeftBlue = Input { Value = 0.87451, },
+						TopLeftAlpha = Input { Value = 0.35, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -440, 75 } },
+				},
+				TintedBlur = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "GlassBlur",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "TintBG",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -330, -50 } },
+				},
+				TransparentBG = Background {
+					CtrlWShown = false,
+					Inputs = {
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0, },
+						TopLeftGreen = Input { Value = 0, },
+						TopLeftBlue = Input { Value = 0, },
+						TopLeftAlpha = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -330, 75 } },
+				},
+				BoxMask = RectangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Expression = "comp:GetPrefs(\"Comp.FrameFormat.Width\")", },
+						MaskHeight = Input { Expression = "comp:GetPrefs(\"Comp.FrameFormat.Height\")", },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						CornerRadius = Input { Value = 0.4, },
+						Width = Input { Value = 0.5, },
+						Height = Input { Value = 0.18, },
+						Center = Input { Value = { 0.5, 0.5 }, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -330, 150 } },
+				},
+				FrostPanel = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "BoxMask",
+							Source = "Mask",
+						},
+						Background = Input {
+							SourceOp = "TransparentBG",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "TintedBlur",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -220, -50 } },
+				},
+				BorderMask = RectangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Expression = "comp:GetPrefs(\"Comp.FrameFormat.Width\")", },
+						MaskHeight = Input { Expression = "comp:GetPrefs(\"Comp.FrameFormat.Height\")", },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						Solid = Input { Value = 0, },
+						BorderWidth = Input { Value = 0.004, },
+						CornerRadius = Input { Expression = "BoxMask.CornerRadius", },
+						Width = Input { Expression = "BoxMask.Width", },
+						Height = Input { Expression = "BoxMask.Height", },
+						Center = Input { Expression = "BoxMask.Center", }
+					},
+					ViewInfo = OperatorInfo { Pos = { -220, 150 } },
+				},
+				BorderBG = Background {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "BorderMask",
+							Source = "Mask",
+						},
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0.94510, },
+						TopLeftGreen = Input { Value = 0.92157, },
+						TopLeftBlue = Input { Value = 0.87451, },
+						TopLeftAlpha = Input { Value = 0.5, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -220, 75 } },
+				},
+				BorderPanel = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "FrostPanel",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "BorderBG",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -110, -50 } },
+				},
+				DropShadow1 = ofx.com.blackmagicdesign.resolvefx.DropShadow {
+					CtrlWShown = false,
+					Inputs = {
+						Source = Input {
+							SourceOp = "BorderPanel",
+							Source = "Output",
+						},
+						shadowStrength = Input { Value = 0.4, },
+						shadowAngle = Input { Value = 315, },
+						ShadowDistance = Input { Value = 0.015, },
+						shadowBlur = Input { Value = 0.4, },
+						shadowColorRed = Input { Value = 0, },
+						shadowColorGreen = Input { Value = 0, },
+						shadowColorBlue = Input { Value = 0, },
+						isLegacyComp = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						srcProcessingAlphaMode = Input { Value = 2, },
+						dstProcessingAlphaMode = Input { Value = 2, },
+						resolvefxVersion = Input { Value = "2.0", }
+					},
+					ViewInfo = OperatorInfo { Pos = { 0, -50 } },
+				},
+				FinalMerge = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input {
+							SourceOp = "MediaIn1",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "DropShadow1",
+							Source = "Output",
+						},
+						Blend = Input {
+							Expression = "(min(1,max(0,time/max(IntroSpeed,1)))*min(1,max(0,time/max(IntroSpeed,1)))*(3-2*min(1,max(0,time/max(IntroSpeed,1)))))*(min(1,max(0,(comp.RenderEnd-time)/max(OutroSpeed,1)))*min(1,max(0,(comp.RenderEnd-time)/max(OutroSpeed,1)))*(3-2*min(1,max(0,(comp.RenderEnd-time)/max(OutroSpeed,1)))))",
+						},
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 110, 0 } },
+					UserControls = ordered() {
+						IntroSpeed = { INP_Default = 15, INP_Integer = true, INPID_InputControl = "SliderControl", INP_MinScale = 1, INP_MaxScale = 60, INP_MinAllowed = 1, INP_MaxAllowed = 240, LINKID_DataType = "Number", LINKS_Name = "Intro Speed (Frames)", ICS_ControlPage = "Controls", },
+						OutroSpeed = { INP_Default = 12, INP_Integer = true, INPID_InputControl = "SliderControl", INP_MinScale = 1, INP_MaxScale = 60, INP_MinAllowed = 1, INP_MaxAllowed = 240, LINKID_DataType = "Number", LINKS_Name = "Outro Speed (Frames)", ICS_ControlPage = "Controls", }
+					}
+				}
+			},
+		}
+	},
+	ActiveTool = "BrandBoxGlass"
+}

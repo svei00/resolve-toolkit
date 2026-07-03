@@ -1,0 +1,715 @@
+{
+	Tools = ordered() {
+		TechLowerThird = MacroOperator {
+			CtrlWZoom = false,
+			Inputs = ordered() {
+				Position = InstanceInput {
+					SourceOp = "MasterXF",
+					Source = "Center",
+					Name = "Position",
+					Page = "Controls",
+				},
+				Scale = InstanceInput {
+					SourceOp = "MasterXF",
+					Source = "Size",
+					Name = "Scale",
+					MinScale = 0.1,
+					MaxScale = 4,
+					Page = "Controls",
+					Default = 1,
+				},
+				Rotation = InstanceInput {
+					SourceOp = "MasterXF",
+					Source = "Angle",
+					Name = "Rotation",
+					Page = "Controls",
+					Default = 0,
+				},
+				BarWidth = InstanceInput {
+					SourceOp = "BarMask",
+					Source = "BarWidthU",
+					Name = "Bar Width",
+					MinScale = 0.05,
+					MaxScale = 1,
+					Page = "Controls",
+					Default = 0.628,
+				},
+				BarHeight = InstanceInput {
+					SourceOp = "BarMask",
+					Source = "Height",
+					Name = "Bar Height",
+					MinScale = 0.02,
+					MaxScale = 0.4,
+					Page = "Controls",
+					Default = 0.088,
+				},
+				CornerRadius = InstanceInput {
+					SourceOp = "BarMask",
+					Source = "CornerRadius",
+					Name = "Corner Radius",
+					MinScale = 0,
+					MaxScale = 1,
+					Page = "Controls",
+					Default = 0.18,
+				},
+				StartPreset = InstanceInput { SourceOp = "BarStartBG", Source = "StartPreset", Name = "Bar Color (Start)", Page = "Controls", Default = 1, },
+				CustomStartColorR = InstanceInput { SourceOp = "CustomStartColorBG", Source = "TopLeftRed", Name = "Custom Start Color", ControlGroup = 1, Page = "Controls", Default = 0.19216, },
+				CustomStartColorG = InstanceInput { SourceOp = "CustomStartColorBG", Source = "TopLeftGreen", ControlGroup = 1, Default = 0.50980, },
+				CustomStartColorB = InstanceInput { SourceOp = "CustomStartColorBG", Source = "TopLeftBlue", ControlGroup = 1, Default = 0.87451, },
+				EndPreset = InstanceInput { SourceOp = "BarEndBG", Source = "EndPreset", Name = "Bar Color (End)", Page = "Controls", Default = 0, },
+				CustomEndColorR = InstanceInput { SourceOp = "CustomEndColorBG", Source = "TopLeftRed", Name = "Custom End Color", ControlGroup = 2, Page = "Controls", Default = 0.0157, },
+				CustomEndColorG = InstanceInput { SourceOp = "CustomEndColorBG", Source = "TopLeftGreen", ControlGroup = 2, Default = 0.055, },
+				CustomEndColorB = InstanceInput { SourceOp = "CustomEndColorBG", Source = "TopLeftBlue", ControlGroup = 2, Default = 0.212, },
+				BarOpacity = InstanceInput {
+					SourceOp = "FinalMerge",
+					Source = "Blend",
+					Name = "Bar Opacity",
+					MinScale = 0,
+					MaxScale = 1,
+					Page = "Controls",
+					Default = 1,
+				},
+				Accent1Preset = InstanceInput { SourceOp = "AccentL1BG", Source = "AccentPreset", Name = "Accent 1 Color (cyan)", Page = "Controls", Default = 0, },
+				CustomAccent1R = InstanceInput { SourceOp = "CustomAccent1BG", Source = "TopLeftRed", Name = "Custom Accent 1", ControlGroup = 3, Page = "Controls", Default = 0.522, },
+				CustomAccent1G = InstanceInput { SourceOp = "CustomAccent1BG", Source = "TopLeftGreen", ControlGroup = 3, Default = 0.820, },
+				CustomAccent1B = InstanceInput { SourceOp = "CustomAccent1BG", Source = "TopLeftBlue", ControlGroup = 3, Default = 0.910, },
+				Accent2Preset = InstanceInput { SourceOp = "AccentL2BG", Source = "AccentPreset", Name = "Accent 2 Color (azul)", Page = "Controls", Default = 1, },
+				CustomAccent2R = InstanceInput { SourceOp = "CustomAccent2BG", Source = "TopLeftRed", Name = "Custom Accent 2", ControlGroup = 4, Page = "Controls", Default = 0.19216, },
+				CustomAccent2G = InstanceInput { SourceOp = "CustomAccent2BG", Source = "TopLeftGreen", ControlGroup = 4, Default = 0.50980, },
+				CustomAccent2B = InstanceInput { SourceOp = "CustomAccent2BG", Source = "TopLeftBlue", ControlGroup = 4, Default = 0.87451, },
+				Accent3Preset = InstanceInput { SourceOp = "AccentR1BG", Source = "AccentPreset", Name = "Accent 3 Color (plata)", Page = "Controls", Default = 0, },
+				CustomAccent3R = InstanceInput { SourceOp = "CustomAccent3BG", Source = "TopLeftRed", Name = "Custom Accent 3", ControlGroup = 5, Page = "Controls", Default = 0.72549, },
+				CustomAccent3G = InstanceInput { SourceOp = "CustomAccent3BG", Source = "TopLeftGreen", ControlGroup = 5, Default = 0.75294, },
+				CustomAccent3B = InstanceInput { SourceOp = "CustomAccent3BG", Source = "TopLeftBlue", ControlGroup = 5, Default = 0.78824, },
+				SheenOpacity = InstanceInput { SourceOp = "SheenL1BG", Source = "SheenOpacity", Name = "Sheen Opacity", MinScale = 0, MaxScale = 1, Page = "Controls", Default = 0.6, },
+				NameTextI = InstanceInput { SourceOp = "NameText", Source = "StyledText", Name = "Name", Page = "Controls", },
+				TextSize = InstanceInput { SourceOp = "NameText", Source = "Size", Name = "Text Size", MinScale = 0.01, MaxScale = 0.2, Page = "Controls", Default = 0.06, },
+				TextPosition = InstanceInput { SourceOp = "NameText", Source = "Center", Name = "Text Position", Page = "Controls", },
+				TextPreset = InstanceInput { SourceOp = "NameText", Source = "TextPreset", Name = "Text Color", Page = "Controls", Default = 9, },
+				CustomTextColorR = InstanceInput { SourceOp = "CustomTextColorBG", Source = "TopLeftRed", Name = "Custom Text Color", ControlGroup = 6, Page = "Controls", Default = 0.94510, },
+				CustomTextColorG = InstanceInput { SourceOp = "CustomTextColorBG", Source = "TopLeftGreen", ControlGroup = 6, Default = 0.92157, },
+				CustomTextColorB = InstanceInput { SourceOp = "CustomTextColorBG", Source = "TopLeftBlue", ControlGroup = 6, Default = 0.87451, },
+				FontName = InstanceInput { SourceOp = "NameText", Source = "Font", Name = "Font", Page = "Controls", },
+				FontStyle = InstanceInput { SourceOp = "NameText", Source = "Style", Name = "Font Style", Page = "Controls", },
+				WriteOnSpeed = InstanceInput { SourceOp = "NameText", Source = "TextSpeed", Name = "Write-On Speed (Frames)", Page = "Controls", Default = 15, },
+				ShadowStrength = InstanceInput { SourceOp = "TextShadow", Source = "shadowStrength", Name = "Shadow Opacity", Page = "Shadow", Default = 0.5, },
+				ShadowAngle = InstanceInput { SourceOp = "TextShadow", Source = "shadowAngle", Name = "Shadow Angle", Page = "Shadow", Default = 315, },
+				ShadowDistance = InstanceInput { SourceOp = "TextShadow", Source = "ShadowDistance", Name = "Shadow Distance", MaxScale = 0.2, Page = "Shadow", Default = 0.01, },
+				ShadowBlur = InstanceInput { SourceOp = "TextShadow", Source = "shadowBlur", Name = "Shadow Softness", Page = "Shadow", Default = 0.4, },
+				RevealSpeed = InstanceInput { SourceOp = "BarMask", Source = "RevealSpeed", Name = "Reveal Speed (Frames)", Page = "Controls", Default = 15, },
+				DotsOpacityI = InstanceInput { SourceOp = "DotsNoise", Source = "DotsOpacity", Name = "Dots Opacity", MinScale = 0, MaxScale = 1, Page = "Controls", Default = 0.7, },
+				DotsDensity = InstanceInput { SourceOp = "DotsNoise", Source = "XScale", Name = "Dots Density", MinScale = 20, MaxScale = 300, Page = "Controls", Default = 120, },
+				TwinkleSpeed = InstanceInput { SourceOp = "DotsNoise", Source = "SeetheRate", Name = "Twinkle Speed", MinScale = 0, MaxScale = 2, Page = "Controls", Default = 0.5, }
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "FinalMerge",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				CustomStartColorBG = Background {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 2048, },
+						Height = Input { Value = 2048, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0.19216, },
+						TopLeftGreen = Input { Value = 0.50980, },
+						TopLeftBlue = Input { Value = 0.87451, },
+						TopLeftAlpha = Input { Value = 1, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -660, 150 } },
+				},
+				CustomEndColorBG = Background {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 2048, },
+						Height = Input { Value = 2048, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0.0157, },
+						TopLeftGreen = Input { Value = 0.055, },
+						TopLeftBlue = Input { Value = 0.212, },
+						TopLeftAlpha = Input { Value = 1, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -660, 220 } },
+				},
+				BarStartBG = Background {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 2048, },
+						Height = Input { Value = 2048, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Expression = "iif(StartPreset<0.5, CustomStartColorBG.TopLeftRed, iif(StartPreset<1.5, 0.19216, iif(StartPreset<2.5, 0.12941, iif(StartPreset<3.5, 0.82353, iif(StartPreset<4.5, 0.48235, iif(StartPreset<5.5, 0.38431, iif(StartPreset<6.5, 0.83137, iif(StartPreset<7.5, 0.15686, iif(StartPreset<8.5, 0.70196, iif(StartPreset<9.5, 0.94510, iif(StartPreset<10.5, 0.43137, 0.03922)))))))))))", },
+						TopLeftGreen = Input { Expression = "iif(StartPreset<0.5, CustomStartColorBG.TopLeftGreen, iif(StartPreset<1.5, 0.50980, iif(StartPreset<2.5, 0.72157, iif(StartPreset<3.5, 0.41176, iif(StartPreset<4.5, 0.12157, iif(StartPreset<5.5, 0.06667, iif(StartPreset<6.5, 0.75686, iif(StartPreset<7.5, 0.36078, iif(StartPreset<8.5, 0.55686, iif(StartPreset<9.5, 0.92157, iif(StartPreset<10.5, 0.39216, 0.03922)))))))))))", },
+						TopLeftBlue = Input { Expression = "iif(StartPreset<0.5, CustomStartColorBG.TopLeftBlue, iif(StartPreset<1.5, 0.87451, iif(StartPreset<2.5, 0.40784, iif(StartPreset<3.5, 0.11765, iif(StartPreset<4.5, 0.63529, iif(StartPreset<5.5, 0.19608, iif(StartPreset<6.5, 0.61176, iif(StartPreset<7.5, 0.30196, iif(StartPreset<8.5, 0.36471, iif(StartPreset<9.5, 0.87451, iif(StartPreset<10.5, 0.31373, 0.03922)))))))))))", },
+						TopLeftAlpha = Input { Value = 1, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -440, 0 } },
+					UserControls = ordered() {
+						StartPreset = { LINKS_Name = "Bar Color (Start)", LINKID_DataType = "Number", INPID_InputControl = "ComboControl", INP_Integer = true, INP_Default = 1, { CCS_AddString = "Custom" }, { CCS_AddString = "Azul" }, { CCS_AddString = "Verde" }, { CCS_AddString = "Naranja" }, { CCS_AddString = "Purpura" }, { CCS_AddString = "Red" }, { CCS_AddString = "Gold" }, { CCS_AddString = "Verde Osc" }, { CCS_AddString = "Strong" }, { CCS_AddString = "Light" }, { CCS_AddString = "Cafe" }, { CCS_AddString = "Black" }, ICS_ControlPage = "Controls", },
+					}
+				},
+				RampBG = Background {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 2048, },
+						Height = Input { Value = 2048, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Type = Input { Value = FuID { "Gradient" }, },
+						Start = Input { Expression = "Point(BarMask.Center.X - BarMask.Width/2, 0.5)", },
+						End = Input { Expression = "Point(BarMask.Center.X + BarMask.Width/2, 0.5)", },
+						Gradient = Input {
+							Value = Gradient {
+								Colors = {
+									[0] = { 0, 0, 0, 0 },
+									[1] = { 1, 1, 1, 1 }
+								}
+							},
+						},
+					},
+					ViewInfo = OperatorInfo { Pos = { -440, 90 } },
+				},
+				BarEndBG = Background {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input { SourceOp = "RampBG", Source = "Output", },
+						Width = Input { Value = 2048, },
+						Height = Input { Value = 2048, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Expression = "iif(EndPreset<0.5, CustomEndColorBG.TopLeftRed, iif(EndPreset<1.5, 0.19216, iif(EndPreset<2.5, 0.12941, iif(EndPreset<3.5, 0.82353, iif(EndPreset<4.5, 0.48235, iif(EndPreset<5.5, 0.38431, iif(EndPreset<6.5, 0.83137, iif(EndPreset<7.5, 0.15686, iif(EndPreset<8.5, 0.70196, iif(EndPreset<9.5, 0.94510, iif(EndPreset<10.5, 0.43137, 0.03922)))))))))))", },
+						TopLeftGreen = Input { Expression = "iif(EndPreset<0.5, CustomEndColorBG.TopLeftGreen, iif(EndPreset<1.5, 0.50980, iif(EndPreset<2.5, 0.72157, iif(EndPreset<3.5, 0.41176, iif(EndPreset<4.5, 0.12157, iif(EndPreset<5.5, 0.06667, iif(EndPreset<6.5, 0.75686, iif(EndPreset<7.5, 0.36078, iif(EndPreset<8.5, 0.55686, iif(EndPreset<9.5, 0.92157, iif(EndPreset<10.5, 0.39216, 0.03922)))))))))))", },
+						TopLeftBlue = Input { Expression = "iif(EndPreset<0.5, CustomEndColorBG.TopLeftBlue, iif(EndPreset<1.5, 0.87451, iif(EndPreset<2.5, 0.40784, iif(EndPreset<3.5, 0.11765, iif(EndPreset<4.5, 0.63529, iif(EndPreset<5.5, 0.19608, iif(EndPreset<6.5, 0.61176, iif(EndPreset<7.5, 0.30196, iif(EndPreset<8.5, 0.36471, iif(EndPreset<9.5, 0.87451, iif(EndPreset<10.5, 0.31373, 0.03922)))))))))))", },
+						TopLeftAlpha = Input { Value = 1, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -330, 0 } },
+					UserControls = ordered() {
+						EndPreset = { LINKS_Name = "Bar Color (End)", LINKID_DataType = "Number", INPID_InputControl = "ComboControl", INP_Integer = true, INP_Default = 0, { CCS_AddString = "Custom" }, { CCS_AddString = "Azul" }, { CCS_AddString = "Verde" }, { CCS_AddString = "Naranja" }, { CCS_AddString = "Purpura" }, { CCS_AddString = "Red" }, { CCS_AddString = "Gold" }, { CCS_AddString = "Verde Osc" }, { CCS_AddString = "Strong" }, { CCS_AddString = "Light" }, { CCS_AddString = "Cafe" }, { CCS_AddString = "Black" }, ICS_ControlPage = "Controls", },
+					}
+				},
+				GradientMerge = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input { SourceOp = "BarStartBG", Source = "Output", },
+						Foreground = Input { SourceOp = "BarEndBG", Source = "Output", },
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -220, 0 } },
+				},
+				BarMask = RectangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 2048, },
+						MaskHeight = Input { Value = 2048, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						CornerRadius = Input { Value = 0.18, },
+						Width = Input { Expression = "BarWidthU * min((min(1,max(0,time/max(RevealSpeed,1))))*(min(1,max(0,time/max(RevealSpeed,1))))*(3-2*(min(1,max(0,time/max(RevealSpeed,1))))), (min(1,max(0,(comp.RenderEnd-time)/max(RevealSpeed,1))))*(min(1,max(0,(comp.RenderEnd-time)/max(RevealSpeed,1))))*(3-2*(min(1,max(0,(comp.RenderEnd-time)/max(RevealSpeed,1))))))" },
+						Height = Input { Value = 0.088, },
+						Center = Input { Value = { 0.439, 0.493 }, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -220, 90 } },
+					UserControls = ordered() {
+						BarWidthU = { INP_Default = 0.628, INPID_InputControl = "SliderControl", INP_MinScale = 0.05, INP_MaxScale = 1, LINKID_DataType = "Number", LINKS_Name = "Bar Width", ICS_ControlPage = "Controls", },
+						RevealSpeed = { INP_Default = 15, INP_Integer = true, INPID_InputControl = "SliderControl", INP_MinScale = 1, INP_MaxScale = 60, INP_MinAllowed = 1, INP_MaxAllowed = 240, LINKID_DataType = "Number", LINKS_Name = "Reveal Speed (Frames)", ICS_ControlPage = "Controls", },
+					}
+				},
+				ClipBG = Background {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 2048, },
+						Height = Input { Value = 2048, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0, },
+						TopLeftGreen = Input { Value = 0, },
+						TopLeftBlue = Input { Value = 0, },
+						TopLeftAlpha = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -160, 90 } },
+				},
+				ClipMerge = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input { SourceOp = "BarMask", Source = "Mask", },
+						Background = Input { SourceOp = "ClipBG", Source = "Output", },
+						Foreground = Input { SourceOp = "GradientMerge", Source = "Output", },
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -110, 0 } },
+				},
+				CustomAccent1BG = Background {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 2048, },
+						Height = Input { Value = 2048, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0.522, },
+						TopLeftGreen = Input { Value = 0.820, },
+						TopLeftBlue = Input { Value = 0.910, },
+						TopLeftAlpha = Input { Value = 1, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -660, 320 } },
+				},
+				CustomAccent2BG = Background {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 2048, },
+						Height = Input { Value = 2048, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0.19216, },
+						TopLeftGreen = Input { Value = 0.50980, },
+						TopLeftBlue = Input { Value = 0.87451, },
+						TopLeftAlpha = Input { Value = 1, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -660, 390 } },
+				},
+				CustomAccent3BG = Background {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 2048, },
+						Height = Input { Value = 2048, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0.72549, },
+						TopLeftGreen = Input { Value = 0.75294, },
+						TopLeftBlue = Input { Value = 0.78824, },
+						TopLeftAlpha = Input { Value = 1, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -660, 460 } },
+				},
+				AccentL1Mask = RectangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 2048, },
+						MaskHeight = Input { Value = 2048, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						CornerRadius = Input { Value = 0.4, },
+						Width = Input { Value = 0.018, },
+						Height = Input { Value = 0.105, },
+						Angle = Input { Value = -35, },
+						Center = Input { Expression = "Point(BarMask.Center.X - BarMask.Width/2 + 0.015, BarMask.Center.Y)", }
+					},
+					ViewInfo = OperatorInfo { Pos = { -330, 320 } },
+				},
+				AccentL2Mask = RectangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 2048, },
+						MaskHeight = Input { Value = 2048, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						CornerRadius = Input { Value = 0.4, },
+						Width = Input { Value = 0.018, },
+						Height = Input { Value = 0.105, },
+						Angle = Input { Value = -35, },
+						Center = Input { Expression = "Point(BarMask.Center.X - BarMask.Width/2 + 0.045, BarMask.Center.Y)", }
+					},
+					ViewInfo = OperatorInfo { Pos = { -330, 390 } },
+				},
+				AccentR1Mask = RectangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 2048, },
+						MaskHeight = Input { Value = 2048, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						CornerRadius = Input { Value = 0.4, },
+						Width = Input { Value = 0.018, },
+						Height = Input { Value = 0.105, },
+						Angle = Input { Value = -35, },
+						Center = Input { Expression = "Point(BarMask.Center.X + BarMask.Width/2 - 0.02, BarMask.Center.Y)", }
+					},
+					ViewInfo = OperatorInfo { Pos = { -330, 460 } },
+				},
+				AccentL1BG = Background {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input { SourceOp = "AccentL1Mask", Source = "Mask", },
+						Width = Input { Value = 2048, },
+						Height = Input { Value = 2048, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Expression = "iif(AccentPreset<0.5, CustomAccent1BG.TopLeftRed, iif(AccentPreset<1.5, 0.19216, iif(AccentPreset<2.5, 0.12941, iif(AccentPreset<3.5, 0.82353, iif(AccentPreset<4.5, 0.48235, iif(AccentPreset<5.5, 0.38431, iif(AccentPreset<6.5, 0.83137, iif(AccentPreset<7.5, 0.15686, iif(AccentPreset<8.5, 0.70196, iif(AccentPreset<9.5, 0.94510, iif(AccentPreset<10.5, 0.43137, 0.03922)))))))))))", },
+						TopLeftGreen = Input { Expression = "iif(AccentPreset<0.5, CustomAccent1BG.TopLeftGreen, iif(AccentPreset<1.5, 0.50980, iif(AccentPreset<2.5, 0.72157, iif(AccentPreset<3.5, 0.41176, iif(AccentPreset<4.5, 0.12157, iif(AccentPreset<5.5, 0.06667, iif(AccentPreset<6.5, 0.75686, iif(AccentPreset<7.5, 0.36078, iif(AccentPreset<8.5, 0.55686, iif(AccentPreset<9.5, 0.92157, iif(AccentPreset<10.5, 0.39216, 0.03922)))))))))))", },
+						TopLeftBlue = Input { Expression = "iif(AccentPreset<0.5, CustomAccent1BG.TopLeftBlue, iif(AccentPreset<1.5, 0.87451, iif(AccentPreset<2.5, 0.40784, iif(AccentPreset<3.5, 0.11765, iif(AccentPreset<4.5, 0.63529, iif(AccentPreset<5.5, 0.19608, iif(AccentPreset<6.5, 0.61176, iif(AccentPreset<7.5, 0.30196, iif(AccentPreset<8.5, 0.36471, iif(AccentPreset<9.5, 0.87451, iif(AccentPreset<10.5, 0.31373, 0.03922)))))))))))", },
+						TopLeftAlpha = Input { Value = 1, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -220, 320 } },
+					UserControls = ordered() {
+						AccentPreset = { LINKS_Name = "Accent 1 Color (cyan)", LINKID_DataType = "Number", INPID_InputControl = "ComboControl", INP_Integer = true, INP_Default = 0, { CCS_AddString = "Custom" }, { CCS_AddString = "Azul" }, { CCS_AddString = "Verde" }, { CCS_AddString = "Naranja" }, { CCS_AddString = "Purpura" }, { CCS_AddString = "Red" }, { CCS_AddString = "Gold" }, { CCS_AddString = "Verde Osc" }, { CCS_AddString = "Strong" }, { CCS_AddString = "Light" }, { CCS_AddString = "Cafe" }, { CCS_AddString = "Black" }, ICS_ControlPage = "Controls", },
+					}
+				},
+				AccentL2BG = Background {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input { SourceOp = "AccentL2Mask", Source = "Mask", },
+						Width = Input { Value = 2048, },
+						Height = Input { Value = 2048, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Expression = "iif(AccentPreset<0.5, CustomAccent2BG.TopLeftRed, iif(AccentPreset<1.5, 0.19216, iif(AccentPreset<2.5, 0.12941, iif(AccentPreset<3.5, 0.82353, iif(AccentPreset<4.5, 0.48235, iif(AccentPreset<5.5, 0.38431, iif(AccentPreset<6.5, 0.83137, iif(AccentPreset<7.5, 0.15686, iif(AccentPreset<8.5, 0.70196, iif(AccentPreset<9.5, 0.94510, iif(AccentPreset<10.5, 0.43137, 0.03922)))))))))))", },
+						TopLeftGreen = Input { Expression = "iif(AccentPreset<0.5, CustomAccent2BG.TopLeftGreen, iif(AccentPreset<1.5, 0.50980, iif(AccentPreset<2.5, 0.72157, iif(AccentPreset<3.5, 0.41176, iif(AccentPreset<4.5, 0.12157, iif(AccentPreset<5.5, 0.06667, iif(AccentPreset<6.5, 0.75686, iif(AccentPreset<7.5, 0.36078, iif(AccentPreset<8.5, 0.55686, iif(AccentPreset<9.5, 0.92157, iif(AccentPreset<10.5, 0.39216, 0.03922)))))))))))", },
+						TopLeftBlue = Input { Expression = "iif(AccentPreset<0.5, CustomAccent2BG.TopLeftBlue, iif(AccentPreset<1.5, 0.87451, iif(AccentPreset<2.5, 0.40784, iif(AccentPreset<3.5, 0.11765, iif(AccentPreset<4.5, 0.63529, iif(AccentPreset<5.5, 0.19608, iif(AccentPreset<6.5, 0.61176, iif(AccentPreset<7.5, 0.30196, iif(AccentPreset<8.5, 0.36471, iif(AccentPreset<9.5, 0.87451, iif(AccentPreset<10.5, 0.31373, 0.03922)))))))))))", },
+						TopLeftAlpha = Input { Value = 1, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -220, 390 } },
+					UserControls = ordered() {
+						AccentPreset = { LINKS_Name = "Accent 2 Color (azul)", LINKID_DataType = "Number", INPID_InputControl = "ComboControl", INP_Integer = true, INP_Default = 1, { CCS_AddString = "Custom" }, { CCS_AddString = "Azul" }, { CCS_AddString = "Verde" }, { CCS_AddString = "Naranja" }, { CCS_AddString = "Purpura" }, { CCS_AddString = "Red" }, { CCS_AddString = "Gold" }, { CCS_AddString = "Verde Osc" }, { CCS_AddString = "Strong" }, { CCS_AddString = "Light" }, { CCS_AddString = "Cafe" }, { CCS_AddString = "Black" }, ICS_ControlPage = "Controls", },
+					}
+				},
+				AccentR1BG = Background {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input { SourceOp = "AccentR1Mask", Source = "Mask", },
+						Width = Input { Value = 2048, },
+						Height = Input { Value = 2048, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Expression = "iif(AccentPreset<0.5, CustomAccent3BG.TopLeftRed, iif(AccentPreset<1.5, 0.19216, iif(AccentPreset<2.5, 0.12941, iif(AccentPreset<3.5, 0.82353, iif(AccentPreset<4.5, 0.48235, iif(AccentPreset<5.5, 0.38431, iif(AccentPreset<6.5, 0.83137, iif(AccentPreset<7.5, 0.15686, iif(AccentPreset<8.5, 0.70196, iif(AccentPreset<9.5, 0.94510, iif(AccentPreset<10.5, 0.43137, 0.03922)))))))))))", },
+						TopLeftGreen = Input { Expression = "iif(AccentPreset<0.5, CustomAccent3BG.TopLeftGreen, iif(AccentPreset<1.5, 0.50980, iif(AccentPreset<2.5, 0.72157, iif(AccentPreset<3.5, 0.41176, iif(AccentPreset<4.5, 0.12157, iif(AccentPreset<5.5, 0.06667, iif(AccentPreset<6.5, 0.75686, iif(AccentPreset<7.5, 0.36078, iif(AccentPreset<8.5, 0.55686, iif(AccentPreset<9.5, 0.92157, iif(AccentPreset<10.5, 0.39216, 0.03922)))))))))))", },
+						TopLeftBlue = Input { Expression = "iif(AccentPreset<0.5, CustomAccent3BG.TopLeftBlue, iif(AccentPreset<1.5, 0.87451, iif(AccentPreset<2.5, 0.40784, iif(AccentPreset<3.5, 0.11765, iif(AccentPreset<4.5, 0.63529, iif(AccentPreset<5.5, 0.19608, iif(AccentPreset<6.5, 0.61176, iif(AccentPreset<7.5, 0.30196, iif(AccentPreset<8.5, 0.36471, iif(AccentPreset<9.5, 0.87451, iif(AccentPreset<10.5, 0.31373, 0.03922)))))))))))", },
+						TopLeftAlpha = Input { Value = 1, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -220, 460 } },
+					UserControls = ordered() {
+						AccentPreset = { LINKS_Name = "Accent 3 Color (plata)", LINKID_DataType = "Number", INPID_InputControl = "ComboControl", INP_Integer = true, INP_Default = 0, { CCS_AddString = "Custom" }, { CCS_AddString = "Azul" }, { CCS_AddString = "Verde" }, { CCS_AddString = "Naranja" }, { CCS_AddString = "Purpura" }, { CCS_AddString = "Red" }, { CCS_AddString = "Gold" }, { CCS_AddString = "Verde Osc" }, { CCS_AddString = "Strong" }, { CCS_AddString = "Light" }, { CCS_AddString = "Cafe" }, { CCS_AddString = "Black" }, ICS_ControlPage = "Controls", },
+					}
+				},
+				MergeAcc1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input { SourceOp = "MergeSheen3", Source = "Output", },
+						Foreground = Input { SourceOp = "AccentL1BG", Source = "Output", },
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -55, 0 } },
+				},
+				MergeAcc2 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input { SourceOp = "MergeAcc1", Source = "Output", },
+						Foreground = Input { SourceOp = "AccentL2BG", Source = "Output", },
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { -10, 0 } },
+				},
+				MergeAcc3 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input { SourceOp = "MergeAcc2", Source = "Output", },
+						Foreground = Input { SourceOp = "AccentR1BG", Source = "Output", },
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 35, 0 } },
+				},
+				SheenL1Mask = RectangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 2048, },
+						MaskHeight = Input { Value = 2048, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						CornerRadius = Input { Value = 0.4, },
+						Width = Input { Value = 0.016, },
+						Height = Input { Value = 0.12, },
+						Angle = Input { Value = -35, },
+						Center = Input { Expression = "Point(BarMask.Center.X - BarMask.Width/2 + 0.004, BarMask.Center.Y)", }
+					},
+					ViewInfo = OperatorInfo { Pos = { -110, 320 } },
+				},
+				SheenL2Mask = RectangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 2048, },
+						MaskHeight = Input { Value = 2048, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						CornerRadius = Input { Value = 0.4, },
+						Width = Input { Value = 0.016, },
+						Height = Input { Value = 0.12, },
+						Angle = Input { Value = -35, },
+						Center = Input { Expression = "Point(BarMask.Center.X - BarMask.Width/2 + 0.036, BarMask.Center.Y)", }
+					},
+					ViewInfo = OperatorInfo { Pos = { -110, 390 } },
+				},
+				SheenR1Mask = RectangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 2048, },
+						MaskHeight = Input { Value = 2048, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						CornerRadius = Input { Value = 0.4, },
+						Width = Input { Value = 0.016, },
+						Height = Input { Value = 0.12, },
+						Angle = Input { Value = -35, },
+						Center = Input { Expression = "Point(BarMask.Center.X + BarMask.Width/2 - 0.010, BarMask.Center.Y)", }
+					},
+					ViewInfo = OperatorInfo { Pos = { -110, 460 } },
+				},
+				SheenL1BG = Background {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input { SourceOp = "SheenL1Mask", Source = "Mask", },
+						Width = Input { Value = 2048, },
+						Height = Input { Value = 2048, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0.95, },
+						TopLeftGreen = Input { Value = 0.95, },
+						TopLeftBlue = Input { Value = 0.95, },
+						TopLeftAlpha = Input { Expression = "SheenOpacity", }
+					},
+					ViewInfo = OperatorInfo { Pos = { 80, 320 } },
+					UserControls = ordered() {
+						SheenOpacity = { INP_Default = 0.6, INPID_InputControl = "SliderControl", INP_MinScale = 0, INP_MaxScale = 1, LINKID_DataType = "Number", LINKS_Name = "Sheen Opacity", ICS_ControlPage = "Controls", },
+					}
+				},
+				SheenL2BG = Background {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input { SourceOp = "SheenL2Mask", Source = "Mask", },
+						Width = Input { Value = 2048, },
+						Height = Input { Value = 2048, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0.95, },
+						TopLeftGreen = Input { Value = 0.95, },
+						TopLeftBlue = Input { Value = 0.95, },
+						TopLeftAlpha = Input { Expression = "SheenL1BG.SheenOpacity", }
+					},
+					ViewInfo = OperatorInfo { Pos = { 80, 390 } },
+				},
+				SheenR1BG = Background {
+					CtrlWShown = false,
+					Inputs = {
+						EffectMask = Input { SourceOp = "SheenR1Mask", Source = "Mask", },
+						Width = Input { Value = 2048, },
+						Height = Input { Value = 2048, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0.95, },
+						TopLeftGreen = Input { Value = 0.95, },
+						TopLeftBlue = Input { Value = 0.95, },
+						TopLeftAlpha = Input { Expression = "SheenL1BG.SheenOpacity", }
+					},
+					ViewInfo = OperatorInfo { Pos = { 80, 460 } },
+				},
+				MergeSheen1 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input { SourceOp = "ClipMerge", Source = "Output", },
+						Foreground = Input { SourceOp = "SheenL1BG", Source = "Output", },
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 130, 0 } },
+				},
+				MergeSheen2 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input { SourceOp = "MergeSheen1", Source = "Output", },
+						Foreground = Input { SourceOp = "SheenL2BG", Source = "Output", },
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 175, 0 } },
+				},
+				MergeSheen3 = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input { SourceOp = "MergeSheen2", Source = "Output", },
+						Foreground = Input { SourceOp = "SheenR1BG", Source = "Output", },
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 220, 0 } },
+				},
+				FrameBG = Background {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0, },
+						TopLeftGreen = Input { Value = 0, },
+						TopLeftBlue = Input { Value = 0, },
+						TopLeftAlpha = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 0, 90 } },
+				},
+				CustomTextColorBG = Background {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 2048, },
+						Height = Input { Value = 2048, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftRed = Input { Value = 0.94510, },
+						TopLeftGreen = Input { Value = 0.92157, },
+						TopLeftBlue = Input { Value = 0.87451, },
+						TopLeftAlpha = Input { Value = 1, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 280, 200 } },
+				},
+				NameText = TextPlus {
+					CtrlWShown = false,
+					Inputs = {
+						GlobalOut = Input { Value = 20000, },
+						SelectElement = Input { Value = 1, },
+						Select = Input { Value = 1, },
+						AdvancedFontControls = Input { Value = 1, },
+						Width = Input { Value = 2048, },
+						Height = Input { Value = 2048, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Center = Input { Value = { 0.43, 0.493 }, },
+						StyledText = Input { Value = "Nombre Apellido", },
+						Font = Input { Value = "Tahoma", },
+						Style = Input { Value = "Bold", },
+						Size = Input { Value = 0.06, },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalJustificationNew = Input { Value = 3, },
+						Start = Input { Value = 0, },
+						End = Input { Expression = "min((min(1,max(0,(time-BarMask.RevealSpeed)/max(TextSpeed,1))))*(min(1,max(0,(time-BarMask.RevealSpeed)/max(TextSpeed,1))))*(3-2*(min(1,max(0,(time-BarMask.RevealSpeed)/max(TextSpeed,1))))), (min(1,max(0,(comp.RenderEnd-time-BarMask.RevealSpeed)/max(TextSpeed,1))))*(min(1,max(0,(comp.RenderEnd-time-BarMask.RevealSpeed)/max(TextSpeed,1))))*(3-2*(min(1,max(0,(comp.RenderEnd-time-BarMask.RevealSpeed)/max(TextSpeed,1))))))" },
+						Red1 = Input { Expression = "iif(TextPreset<0.5, CustomTextColorBG.TopLeftRed, iif(TextPreset<1.5, 0.19216, iif(TextPreset<2.5, 0.12941, iif(TextPreset<3.5, 0.82353, iif(TextPreset<4.5, 0.48235, iif(TextPreset<5.5, 0.38431, iif(TextPreset<6.5, 0.83137, iif(TextPreset<7.5, 0.15686, iif(TextPreset<8.5, 0.70196, iif(TextPreset<9.5, 0.94510, iif(TextPreset<10.5, 0.43137, 0.03922)))))))))))", },
+						Green1 = Input { Expression = "iif(TextPreset<0.5, CustomTextColorBG.TopLeftGreen, iif(TextPreset<1.5, 0.50980, iif(TextPreset<2.5, 0.72157, iif(TextPreset<3.5, 0.41176, iif(TextPreset<4.5, 0.12157, iif(TextPreset<5.5, 0.06667, iif(TextPreset<6.5, 0.75686, iif(TextPreset<7.5, 0.36078, iif(TextPreset<8.5, 0.55686, iif(TextPreset<9.5, 0.92157, iif(TextPreset<10.5, 0.39216, 0.03922)))))))))))", },
+						Blue1 = Input { Expression = "iif(TextPreset<0.5, CustomTextColorBG.TopLeftBlue, iif(TextPreset<1.5, 0.87451, iif(TextPreset<2.5, 0.40784, iif(TextPreset<3.5, 0.11765, iif(TextPreset<4.5, 0.63529, iif(TextPreset<5.5, 0.19608, iif(TextPreset<6.5, 0.61176, iif(TextPreset<7.5, 0.30196, iif(TextPreset<8.5, 0.36471, iif(TextPreset<9.5, 0.87451, iif(TextPreset<10.5, 0.31373, 0.03922)))))))))))", }
+					},
+					ViewInfo = OperatorInfo { Pos = { 280, 100 } },
+					UserControls = ordered() {
+						TextPreset = { LINKS_Name = "Text Color", LINKID_DataType = "Number", INPID_InputControl = "ComboControl", INP_Integer = true, INP_Default = 9, { CCS_AddString = "Custom" }, { CCS_AddString = "Azul" }, { CCS_AddString = "Verde" }, { CCS_AddString = "Naranja" }, { CCS_AddString = "Purpura" }, { CCS_AddString = "Red" }, { CCS_AddString = "Gold" }, { CCS_AddString = "Verde Osc" }, { CCS_AddString = "Strong" }, { CCS_AddString = "Light" }, { CCS_AddString = "Cafe" }, { CCS_AddString = "Black" }, ICS_ControlPage = "Controls", },
+						TextSpeed = { INP_Default = 15, INP_Integer = true, INPID_InputControl = "SliderControl", INP_MinScale = 1, INP_MaxScale = 60, INP_MinAllowed = 1, INP_MaxAllowed = 240, LINKID_DataType = "Number", LINKS_Name = "Write-On Speed (Frames)", ICS_ControlPage = "Controls", },
+					}
+				},
+				TextShadow = ofx.com.blackmagicdesign.resolvefx.DropShadow {
+					CtrlWShown = false,
+					Inputs = {
+						Source = Input { SourceOp = "NameText", Source = "Output", },
+						shadowStrength = Input { Value = 0.5, },
+						shadowAngle = Input { Value = 315, },
+						ShadowDistance = Input { Value = 0.01, },
+						shadowBlur = Input { Value = 0.4, },
+						shadowColorRed = Input { Value = 0, },
+						shadowColorGreen = Input { Value = 0, },
+						shadowColorBlue = Input { Value = 0, },
+						isLegacyComp = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						srcProcessingAlphaMode = Input { Value = 2, },
+						dstProcessingAlphaMode = Input { Value = 2, },
+						resolvefxVersion = Input { Value = "2.0", }
+					},
+					ViewInfo = OperatorInfo { Pos = { 340, 100 } },
+				},
+				DotsNoise = FastNoise {
+					CtrlWShown = false,
+					Inputs = {
+						Width = Input { Value = 2048, },
+						Height = Input { Value = 2048, },
+						Depth = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						Detail = Input { Value = 1, },
+						XScale = Input { Value = 120, },
+						Contrast = Input { Value = 4, },
+						Brightness = Input { Value = -0.35, },
+						Type = Input { Value = 1, },
+						SeetheRate = Input { Value = 0.5, },
+						GradientType = Input { Value = 1, },
+						Gradient = Input { Value = Gradient { Colors = { [0] = { 0, 0, 0, 0 }, [1] = { 0.31, 0.7, 1, 1 } } }, },
+					},
+					ViewInfo = OperatorInfo { Pos = { 250, 200 } },
+					UserControls = ordered() {
+						DotsOpacity = { INP_Default = 0.7, INPID_InputControl = "SliderControl", INP_MinScale = 0, INP_MaxScale = 1, LINKID_DataType = "Number", LINKS_Name = "Dots Opacity", ICS_ControlPage = "Controls", },
+					}
+				},
+				DotLeftMask = RectangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 2048, },
+						MaskHeight = Input { Value = 2048, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						SoftEdge = Input { Value = 0.04, },
+						Width = Input { Value = 0.16, },
+						Height = Input { Value = 0.09, },
+						Center = Input { Expression = "Point(BarMask.Center.X - BarMask.Width/2 + 0.08, BarMask.Center.Y)", }
+					},
+					ViewInfo = OperatorInfo { Pos = { 250, 280 } },
+				},
+				DotRightMask = RectangleMask {
+					CtrlWShown = false,
+					Inputs = {
+						Filter = Input { Value = FuID { "Fast Gaussian" }, },
+						MaskWidth = Input { Value = 2048, },
+						MaskHeight = Input { Value = 2048, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						ClippingMode = Input { Value = FuID { "None" }, },
+						SoftEdge = Input { Value = 0.04, },
+						Width = Input { Value = 0.16, },
+						Height = Input { Value = 0.09, },
+						Center = Input { Expression = "Point(BarMask.Center.X + BarMask.Width/2 - 0.08, BarMask.Center.Y)", }
+					},
+					ViewInfo = OperatorInfo { Pos = { 250, 350 } },
+				},
+				MergeDotsL = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input { SourceOp = "MergeAcc3", Source = "Output", },
+						Foreground = Input { SourceOp = "DotsNoise", Source = "Output", },
+						EffectMask = Input { SourceOp = "DotLeftMask", Source = "Mask", },
+						Blend = Input { Expression = "DotsNoise.DotsOpacity" },
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 330, 0 } },
+				},
+				MergeDotsR = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input { SourceOp = "MergeDotsL", Source = "Output", },
+						Foreground = Input { SourceOp = "DotsNoise", Source = "Output", },
+						EffectMask = Input { SourceOp = "DotRightMask", Source = "Mask", },
+						Blend = Input { Expression = "DotsNoise.DotsOpacity" },
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 360, 0 } },
+				},
+				MergeText = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input { SourceOp = "MergeDotsR", Source = "Output", },
+						Foreground = Input { SourceOp = "TextShadow", Source = "Output", },
+						Blend = Input { Value = 1, },
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 400, 0 } },
+				},
+				MasterXF = Transform {
+					CtrlWShown = false,
+					Inputs = {
+						Center = Input { Value = { 0.5, 0.5 }, },
+						Size = Input { Value = 1, },
+						Angle = Input { Value = 0, },
+						Input = Input { SourceOp = "MergeText", Source = "Output", }
+					},
+					ViewInfo = OperatorInfo { Pos = { 0, 0 } },
+				},
+				FinalMerge = Merge {
+					CtrlWShown = false,
+					Inputs = {
+						Background = Input { SourceOp = "FrameBG", Source = "Output", },
+						Foreground = Input { SourceOp = "MasterXF", Source = "Output", },
+						Blend = Input { Value = 1, },
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 110, 0 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "TechLowerThird"
+}
